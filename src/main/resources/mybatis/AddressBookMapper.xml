@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zwx.transmanage.mapper.AddressBookMapper">
+
+    <resultMap id="AddressBookVoMap" type="com.zwx.transmanage.domain.vo.AddressBookVo">
+        <id column="ID" property="id"/>
+        <result column="USERID" property="userId"/>
+        <result column="CHINESENAME" property="chineseName"/>
+        <result column="ENGLISHNAME" property="englishName"/>
+        <result column="ANOTHERNAME" property="anotherName"/>
+        <result column="QQNUMBER" property="qqNumber"/>
+        <result column="WEIXIN" property="weixin"/>
+        <result column="DOMICILE" property="domicile"/>
+        <result column="ADDRESS" property="address"/>
+        <result column="EMAIL" property="email"/>
+        <result column="PHONE" property="phone"/>
+        <result column="WEIBO" property="weibo"/>
+        <result column="PROFESSION" property="profession"/>
+        <result column="TYPE" property="type"/>
+        <result column="CREATETIME" property="createTime"/>
+        <result column="UPDATETIME" property="updateTime"/>
+    </resultMap>
+
+    <select id="selectAddressBookVoByUserId" resultMap="AddressBookVoMap">
+        select * from `addressbook` where `USERID` = #{userId};
+    </select>
+
+    <insert id="add" parameterType="com.zwx.transmanage.domain.dto.AddressBookDto">
+        INSERT  INTO `addressbook` (`USERID`,`CHINESENAME`,`ENGLISHNAME`,`ANOTHERNAME`,`QQNUMBER`,
+        `WEIXIN`,`DOMICILE`,`ADDRESS`,`EMAIL`,`PHONE`,`WEIBO`,`PROFESSION`,`TYPE`,`CREATETIME`,`UPDATETIME`) VALUES (
+        #{userId},#{chineseName},#{englishName},#{anotherName},#{qqNumber},
+        #{weixin},#{domicile},#{address},#{email},#{phone},#{weibo},#{profession},#{type},now(),now()
+        )
+    </insert>
+
+    <select id="selectAddressBookById" resultMap="AddressBookVoMap">
+        SELECT * FROM `addressbook` where id = #{id}
+    </select>
+
+    <update id="update" parameterType="com.zwx.transmanage.domain.dto.AddressBookDto">
+        update `addressbook` SET
+        `CHINESENAME` = #{chineseName},
+        `ENGLISHNAME` = #{englishName},
+        `ANOTHERNAME` = #{anotherName},
+        `QQNUMBER` = #{qqNumber},
+        `WEIXIN` = #{weixin},
+        `DOMICILE` = #{domicile},
+        `ADDRESS` = #{address},
+        `EMAIL` = #{email},
+        `PHONE` = #{phone},
+        `WEIBO` = #{weibo},
+        `UPDATETIME` = now()
+        where id = #{id}
+    </update>
+
+    <delete id="delete">
+        delete from `addressbook` where id = #{id}
+    </delete>
+</mapper>

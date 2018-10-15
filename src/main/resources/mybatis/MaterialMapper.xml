@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zwx.transmanage.mapper.MaterialMapper">
+    <resultMap id="MaterialVoMap" type="com.zwx.transmanage.domain.vo.MaterialVo">
+        <id column="ID" property="id"/>
+        <result column="USERID" property="userId"/>
+        <result column="DESCRIPTION" property="description"/>
+        <result column="URL" property="url"/>
+        <result column="TYPE" property="type"/>
+        <result column="CREATETIME" property="createTime"/>
+        <result column="UPDATETIME" property="updateTime"/>
+    </resultMap>
+
+    <select id="countMaterial" parameterType="Integer" resultType="Integer">
+        SELECT COUNT(1) from material where 1=1 and `USERID` = #{userId};
+    </select>
+
+    <select id="selectMaterialListByUserId" resultMap="MaterialVoMap">
+        SELECT  * from `material` where 1=1 and
+        `USERID` = #{userId} order by UPDATETIME desc
+        limit #{pageModel.startRow},#{pageModel.pageSize}
+    </select>
+
+    <insert id="addMaterial" parameterType="com.zwx.transmanage.domain.dto.MaterialDto">
+        insert INTO  `material`(`USERID`,`DESCRIPTION`,`URL`,`TYPE`,`CREATETIME`,`UPDATETIME`)
+        VALUES (#{userId},#{description},#{url},#{type},now(),now())
+    </insert>
+
+    <delete id="delete" parameterType="Integer">
+        delete FROM `material` where `id` = #{id}
+    </delete>
+
+    <update id="update" parameterType="com.zwx.transmanage.domain.dto.MaterialDto">
+        update `material`
+        set `DESCRIPTION` = #{description},
+        `URL` = #{url},
+        `TYPE` = #{type},
+        `UPDATETIME` = now()
+        where `id` = #{id}
+    </update>
+</mapper>

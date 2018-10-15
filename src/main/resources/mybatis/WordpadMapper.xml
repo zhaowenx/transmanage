@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zwx.transmanage.mapper.WordpadMapper">
+
+    <resultMap id="wordpadMap" type="com.zwx.transmanage.domain.vo.WordpadVo">
+        <id column="ID" property="id"/>
+        <id column="USERID" property="userId"/>
+        <result column="TITLE" property="title"/>
+        <result column="CONTENT" property="content"/>
+        <result column="CREATETIME" property="createTime"/>
+        <result column="UPDATETIME" property="updateTime"/>
+        <result column="ISDELETE" property="isDelete"/>
+        <result column="ISSHIELD" property="isShield"/>
+    </resultMap>
+
+    <insert id="saveWordpad" parameterType="com.zwx.transmanage.domain.dto.WordpadDto">
+        INSERT INTO wordpad
+        (`USERID`,`TITLE`,`CONTENT`,`CREATETIME`,`UPDATETIME`,`ISDELETE`,`ISSHIELD`)
+        VALUES (
+        #{userId},#{title},#{content},NOW(),NOW(),'N','N'
+        )
+    </insert>
+
+    <select id="selectWordpadByUserId" resultMap="wordpadMap">
+        SELECT * FROM  wordpad
+        where 1=1 and userid = #{userId} and ISDELETE = 'N' AND ISSHIELD = 'N' ORDER BY UPDATETIME DESC
+        limit #{startRow},#{endRow}
+    </select>
+
+    <select id="countWordpadList" resultType="Integer">
+        select count(1) from wordpad
+        where 1=1 and userid = #{userId} and ISDELETE = 'N' AND ISSHIELD = 'N'
+    </select>
+
+    <delete id="deleteWordpad" parameterType="Integer">
+        delete from wordpad where id = #{id}
+    </delete>
+
+    <select id="selectWordpadById" parameterType="Integer" resultMap="wordpadMap">
+        select * from wordpad
+        WHERE  1=1 and id = #{id} and ISDELETE = 'N' AND ISSHIELD = 'N'
+    </select>
+
+    <update id="updateWordpad" parameterType="com.zwx.transmanage.domain.dto.WordpadDto">
+        UPDATE  wordpad SET `TITLE` = #{title},`CONTENT` = #{content},`UPDATETIME` = NOW() where `id` = #{id}
+    </update>
+
+</mapper>
