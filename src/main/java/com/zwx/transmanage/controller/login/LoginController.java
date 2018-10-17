@@ -173,7 +173,7 @@ public class LoginController {
         /**
          * 登录成功后向session中存放sessionId
          */
-        session.setAttribute("sessionId",userVo.getId());
+        session.setAttribute(SESSION_ID,userVo.getId());
 
         /**
          * 登录成功后修改用户信息
@@ -193,10 +193,11 @@ public class LoginController {
      * @return
      */
     @RequestMapping(value = "/toIndex")
-    public String toIndex(HttpServletRequest request) throws Exception{
+    public String toIndex(HttpServletRequest request,HttpServletResponse response) throws Exception{
         HttpSession session = request.getSession(true);
         if(session.getAttribute(SESSION_ID) == null){
-            return "logout";
+            removeCookieRedis(request,response);
+            return "login";
         }
         UserVo userVo = UserUtil.getLoginUser(request,redisUtil);
         List<PublishNotificationVo> publishNotificationVoList = publishNotificationService.selectAllPublish();
