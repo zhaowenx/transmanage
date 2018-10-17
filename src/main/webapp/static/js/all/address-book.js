@@ -198,6 +198,7 @@ function updateAddress(id) {
                 $("#profession").val(data.data.profession);
                 $("#type").val(data.data.type);
                 $("#id").val(data.data.id);
+                $("#birthday").val(data.data.birthday);
                 // var option1 = '';
                 // option1 += "<option value=''>----请选择----</option>";
                 // for(var i=0;i<data.data.length;i++){

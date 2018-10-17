@@ -49,7 +49,7 @@
 <div class="layui-fluid layadmin-maillist-fluid">
     <div class="layui-row layui-col-space15">
             <div class="layui-col-md4 layui-col-sm6 layui-show-1" th:each="address:${addressBookVoList}">
-                <div class="layadmin-contact-box" th:onclick="'javascript:updateAddress('+${address.id}+')' ">
+                <div class="layadmin-contact-box">
                     <div class="layui-col-md4 layui-col-sm6">
                         <a href="javascript:;">
                             <div class="layadmin-text-center">
@@ -84,7 +84,8 @@
                                 <strong>出生地:</strong>&nbsp;&nbsp;<span th:text="${address.domicile}"></span><br>
                                 <strong>邮箱:</strong>&nbsp;&nbsp;<span th:text="${address.email}"></span><br>
                                 <strong>手机:</strong>&nbsp;&nbsp;<span th:text="${address.phone}"></span><br>
-                                <strong>微博:</strong>&nbsp;&nbsp;<span th:text="${address.weibo}"></span>
+                                <strong>微博:</strong>&nbsp;&nbsp;<span th:text="${address.weibo}"></span><br>
+                                <strong>出生日期:</strong>&nbsp;&nbsp;<span th:text="${address.birthday}"></span>
                             </a>
                         </div>
                     </div>
@@ -182,6 +183,12 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">出生日期：</label>
+                <div class="layui-input-inline">
+                    <input type="text" placeholder="请输入出生日期" name="birthday" class="layui-input"  lay-verify="required|number" maxlength="8" />
+                </div>
+            </div>
             <div class="layui-inline layui-form-btn-all">
                 <button class="layui-btn layui-btn-sm" lay-submit lay-filter="addAddressBook"><a class="layui-icon">&#xe609;</a><span>保存</span></button>
             </div>
@@ -283,6 +290,12 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">出生日期：</label>
+                <div class="layui-input-inline">
+                    <input type="text" placeholder="请输入出生日期" name="birthday" id="birthday" class="layui-input"  lay-verify="required|number" maxlength="8" />
+                </div>
+            </div>
             <div class="layui-inline layui-form-btn-all">
                 <button class="layui-btn layui-btn-sm" lay-submit lay-filter="updateAddressBook"><a class="layui-icon">&#xe609;</a><span>保存</span></button>
             </div>

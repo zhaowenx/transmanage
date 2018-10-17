@@ -178,6 +178,8 @@ CREATE TABLE `ADDRESSBOOK` (
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='通讯录表';
 
+ALTER TABLE `ADDRESSBOOK` ADD COLUMN `BIRTHDAY` VARCHAR(8) DEFAULT NULL COMMENT '生日';
+
 INSERT INTO `transmanage`.`addressbook` (
 	`USERID`,
 	`CHINESENAME`,
@@ -193,7 +195,8 @@ INSERT INTO `transmanage`.`addressbook` (
 	`PROFESSION`,
 	`TYPE`,
 	`CREATETIME`,
-	`UPDATETIME`
+	`UPDATETIME`,
+	`BIRTHDAY`
 )
 VALUES
 	(
@@ -211,7 +214,8 @@ VALUES
 		'1',
 		'1',
 		now(),
-		now()
+		now(),
+		'19950820'
 	);
 
 

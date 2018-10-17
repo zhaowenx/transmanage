@@ -23,6 +23,15 @@ public class AddressBookVo {
     private String type;//分类
     private Date createTime;//创建时间
     private Date updateTime;//更新时间
+    private String birthday;//生日
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
 
     public Integer getId() {
         return id;
@@ -171,6 +180,7 @@ public class AddressBookVo {
                 ", type='" + type + '\'' +
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +
+                ", birthday='" + birthday + '\'' +
                 '}';
     }
 }

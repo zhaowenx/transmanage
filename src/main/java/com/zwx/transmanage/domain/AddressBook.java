@@ -24,6 +24,15 @@ public class AddressBook {
     private String type;//分类
     private String createTime;//创建时间
     private String updateTime;//更新时间
+    private String birthday;//生日
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
 
     public Integer getId() {
         return id;
@@ -172,6 +181,7 @@ public class AddressBook {
                 ", type='" + type + '\'' +
                 ", createTime='" + createTime + '\'' +
                 ", updateTime='" + updateTime + '\'' +
+                ", birthday='" + birthday + '\'' +
                 '}';
     }
 }

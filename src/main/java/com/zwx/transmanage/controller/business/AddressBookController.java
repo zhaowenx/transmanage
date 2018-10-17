@@ -48,6 +48,10 @@ public class AddressBookController {
      * 大于0的正整数
      */
     public static final String BIG_ZERO_NUMBER = "[1-9][0-9]{4,14}";
+    /**
+     * 8位的正整数
+     */
+    public static final String BIRTHDAY = "\\b\\d{4}((?:0[13578]|1[02])(?:0[1-9]|[12]\\d|3[01])|02(?:0[1-9]|[12]\\d)|(?:0[469]|11)(?:0[1-9]|[12]\\d|30))\\b";
 
     @Autowired
     private RedisUtil redisUtil;
@@ -98,6 +102,12 @@ public class AddressBookController {
             if(!check(addressBook.getQqNumber(),BIG_ZERO_NUMBER)){
                 return ResponseUtil.buildVo(false,ResponseCode.PARAMETER_NULL.getCode(),"请输入正确的QQ号码",null);
             }
+        }
+        if(StringUtils.isBlank(addressBook.getBirthday())){
+            return ResponseUtil.buildVo(false,ResponseCode.PARAMETER_NULL.getCode(),"出生日期不能为空",null);
+        }
+        if(!check(addressBook.getBirthday(),BIRTHDAY)){
+            return ResponseUtil.buildVo(false,ResponseCode.PARAMETER_NULL.getCode(),"出生日期的格式为yyyyMMdd",null);
         }
 
         Integer userId = UserUtil.getUserId(request,redisUtil);
@@ -168,6 +178,12 @@ public class AddressBookController {
             if(!check(addressBook.getQqNumber(),BIG_ZERO_NUMBER)){
                 return ResponseUtil.buildVo(false,ResponseCode.PARAMETER_NULL.getCode(),"请输入正确的QQ号码",null);
             }
+        }
+        if(StringUtils.isBlank(addressBook.getBirthday())){
+            return ResponseUtil.buildVo(false,ResponseCode.PARAMETER_NULL.getCode(),"出生日期不能为空",null);
+        }
+        if(!check(addressBook.getBirthday(),BIRTHDAY)){
+            return ResponseUtil.buildVo(false,ResponseCode.PARAMETER_NULL.getCode(),"出生日期的格式为yyyyMMdd",null);
         }
         AddressBookDto addressBookDto = new AddressBookDto();
         BeanUtils.copyProperties(addressBookDto,addressBook);
