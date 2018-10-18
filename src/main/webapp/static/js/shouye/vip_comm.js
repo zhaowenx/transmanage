@@ -195,7 +195,13 @@ layui.use(['layer', 'element', 'util','element'], function () {
     // 右键提示框菜单操作-关闭页面
     $(document).on('click', '.card-close', function () {
         // 删除
-        window.delTab(cardLayId);
+        if ($(this).index() == 1) {
+            layer.msg('首页不能关闭');
+            //element.tabDelete('card', $(this).attr('lay-id'));
+        }else{
+            window.delTab(cardLayId);
+        }
+
     });
 
     // 右键提示框菜单操作-关闭所有页面

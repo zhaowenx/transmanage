@@ -8113,3 +8113,649 @@ java.lang.IndexOutOfBoundsException: Index: 22, Size: 2
 2018-10-18 16:20:40.674 [http-nio-8888-exec-2] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
 2018-10-18 16:20:40.674 [http-nio-8888-exec-2] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
 2018-10-18 16:20:40.676 [http-nio-8888-exec-2] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:30:22.958 [http-nio-8888-exec-5] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:30:22.962 [http-nio-8888-exec-5] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:30:22.963 [http-nio-8888-exec-5] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:30:22.964 [http-nio-8888-exec-5] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:30:23.029 [http-nio-8888-exec-6] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:30:23.030 [http-nio-8888-exec-6] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:30:23.030 [http-nio-8888-exec-6] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:30:23.031 [http-nio-8888-exec-6] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:30:23.883 [http-nio-8888-exec-8] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:30:23.886 [http-nio-8888-exec-8] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:30:23.887 [http-nio-8888-exec-8] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:30:23.888 [http-nio-8888-exec-8] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:30:23.927 [http-nio-8888-exec-7] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:30:23.928 [http-nio-8888-exec-7] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:30:23.929 [http-nio-8888-exec-7] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:30:23.930 [http-nio-8888-exec-7] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:30:29.043 [http-nio-8888-exec-4] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:30:29.046 [http-nio-8888-exec-4] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:30:29.048 [http-nio-8888-exec-4] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:30:29.049 [http-nio-8888-exec-4] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:30:31.518 [http-nio-8888-exec-8] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/html/sys-dict.html ]
+2018-10-18 16:30:31.633 [http-nio-8888-exec-5] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/dict/showDict ]
+2018-10-18 16:30:31.634 [http-nio-8888-exec-5] INFO  c.z.t.c.business.SysDictController:37 - SysDictController|showDict|pageSize:10|currentPage:1
+2018-10-18 16:30:31.634 [http-nio-8888-exec-5] DEBUG c.z.t.m.SysDictMapper.countSysDict:159 - ==>  Preparing: select count(1) from `sys_dict`; 
+2018-10-18 16:30:31.635 [http-nio-8888-exec-5] DEBUG c.z.t.m.SysDictMapper.countSysDict:159 - ==> Parameters: 
+2018-10-18 16:30:31.635 [http-nio-8888-exec-5] DEBUG c.z.t.m.SysDictMapper.countSysDict:159 - <==      Total: 1
+2018-10-18 16:30:31.636 [http-nio-8888-exec-5] INFO  c.z.t.c.business.SysDictController:42 - SysDictController|showDict|count：8
+2018-10-18 16:30:31.636 [http-nio-8888-exec-5] INFO  c.z.t.c.business.SysDictController:47 - SysDictController|showDict|pageModel:PageModel{currentPage=1, pageSize=10, totalPage=0, totalRecord=8, dataList=null}
+2018-10-18 16:30:31.636 [http-nio-8888-exec-1] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/dict/showDictItem ]
+2018-10-18 16:30:31.636 [http-nio-8888-exec-5] DEBUG c.z.t.m.SysDictMapper.selectSysDict:159 - ==>  Preparing: select * from `sys_dict` where DICT not in (select dict from `sys_dict` where `groupdict` = 'root') limit ?,?; 
+2018-10-18 16:30:31.637 [http-nio-8888-exec-5] DEBUG c.z.t.m.SysDictMapper.selectSysDict:159 - ==> Parameters: 0(Integer), 10(Integer)
+2018-10-18 16:30:31.637 [http-nio-8888-exec-1] INFO  c.z.t.c.business.SysDictController:55 - SysDictController|showDictItem|dict:
+2018-10-18 16:30:31.638 [http-nio-8888-exec-5] DEBUG c.z.t.m.SysDictMapper.selectSysDict:159 - <==      Total: 6
+2018-10-18 16:30:31.638 [http-nio-8888-exec-5] INFO  c.z.t.c.business.SysDictController:49 - SysDictController|showDict|sysDictVoList:[SysDictVo{dict='id_type', dictName='证件类型', groupDict='system'}, SysDictVo{dict='material_type', dictName='资料类型', groupDict='system'}, SysDictVo{dict='profession', dictName='职业', groupDict='system'}, SysDictVo{dict='roletype', dictName='角色类型', groupDict='user'}, SysDictVo{dict='sex', dictName='性别', groupDict='system'}, SysDictVo{dict='type', dictName='身份分类', groupDict='user'}]
+2018-10-18 16:30:31.638 [http-nio-8888-exec-1] DEBUG c.z.t.m.S.selectSysDictItem:159 - ==>  Preparing: select * from `sys_dict_item` where 1=1 and `dict` = ? order by itemKey ASC; 
+2018-10-18 16:30:31.638 [http-nio-8888-exec-1] DEBUG c.z.t.m.S.selectSysDictItem:159 - ==> Parameters: (String)
+2018-10-18 16:30:31.640 [http-nio-8888-exec-1] DEBUG c.z.t.m.S.selectSysDictItem:159 - <==      Total: 0
+2018-10-18 16:30:31.640 [http-nio-8888-exec-1] INFO  c.z.t.c.business.SysDictController:60 - SysDictController|showDictItem|sysDictItemVoList:[]
+2018-10-18 16:30:43.611 [http-nio-8888-exec-2] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:30:43.616 [http-nio-8888-exec-2] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:30:43.617 [http-nio-8888-exec-2] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:30:43.618 [http-nio-8888-exec-2] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:30:43.670 [http-nio-8888-exec-4] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:30:43.671 [http-nio-8888-exec-4] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:30:43.672 [http-nio-8888-exec-4] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:30:43.673 [http-nio-8888-exec-4] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:30:43.956 [http-nio-8888-exec-10] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:30:43.958 [http-nio-8888-exec-10] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:30:43.959 [http-nio-8888-exec-10] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:30:43.960 [http-nio-8888-exec-10] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:30:44.005 [http-nio-8888-exec-9] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:30:44.006 [http-nio-8888-exec-9] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:30:44.008 [http-nio-8888-exec-9] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:30:44.009 [http-nio-8888-exec-9] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:30:44.131 [http-nio-8888-exec-9] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:30:44.132 [http-nio-8888-exec-9] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:30:44.133 [http-nio-8888-exec-9] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:30:44.134 [http-nio-8888-exec-9] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:30:44.183 [http-nio-8888-exec-1] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:30:44.185 [http-nio-8888-exec-1] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:30:44.185 [http-nio-8888-exec-1] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:30:44.186 [http-nio-8888-exec-1] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:31:45.373 [http-nio-8888-exec-9] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:31:45.376 [http-nio-8888-exec-9] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:31:45.377 [http-nio-8888-exec-9] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:31:45.379 [http-nio-8888-exec-9] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:31:45.450 [http-nio-8888-exec-3] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:31:45.451 [http-nio-8888-exec-3] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:31:45.452 [http-nio-8888-exec-3] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:31:45.453 [http-nio-8888-exec-3] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:31:47.044 [http-nio-8888-exec-1] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:31:47.046 [http-nio-8888-exec-1] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:31:47.047 [http-nio-8888-exec-1] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:31:47.048 [http-nio-8888-exec-1] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:35:05.998 [http-nio-8888-exec-8] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:35:06.002 [http-nio-8888-exec-8] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:35:06.003 [http-nio-8888-exec-8] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:35:06.004 [http-nio-8888-exec-8] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:35:06.072 [http-nio-8888-exec-5] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:35:06.073 [http-nio-8888-exec-5] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:35:06.074 [http-nio-8888-exec-5] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:35:06.075 [http-nio-8888-exec-5] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:35:06.193 [http-nio-8888-exec-3] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:35:06.196 [http-nio-8888-exec-3] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:35:06.197 [http-nio-8888-exec-3] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:35:06.198 [http-nio-8888-exec-3] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:35:06.248 [http-nio-8888-exec-2] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:35:06.249 [http-nio-8888-exec-2] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:35:06.249 [http-nio-8888-exec-2] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:35:06.250 [http-nio-8888-exec-2] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:35:06.347 [http-nio-8888-exec-4] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:35:06.349 [http-nio-8888-exec-4] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:35:06.351 [http-nio-8888-exec-4] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:35:06.352 [http-nio-8888-exec-4] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:35:06.416 [http-nio-8888-exec-5] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:35:06.417 [http-nio-8888-exec-5] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:35:06.417 [http-nio-8888-exec-5] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:35:06.418 [http-nio-8888-exec-5] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:35:06.505 [http-nio-8888-exec-1] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:35:06.507 [http-nio-8888-exec-1] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:35:06.509 [http-nio-8888-exec-1] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:35:06.510 [http-nio-8888-exec-1] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:35:06.557 [http-nio-8888-exec-3] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:35:06.559 [http-nio-8888-exec-3] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:35:06.560 [http-nio-8888-exec-3] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:35:06.562 [http-nio-8888-exec-3] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:35:09.497 [http-nio-8888-exec-7] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:35:09.501 [http-nio-8888-exec-7] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:35:09.502 [http-nio-8888-exec-7] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:35:09.503 [http-nio-8888-exec-7] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:35:09.549 [http-nio-8888-exec-5] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:35:09.550 [http-nio-8888-exec-5] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:35:09.551 [http-nio-8888-exec-5] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:35:09.552 [http-nio-8888-exec-5] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:35:09.834 [http-nio-8888-exec-8] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:35:09.836 [http-nio-8888-exec-8] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:35:09.838 [http-nio-8888-exec-8] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:35:09.839 [http-nio-8888-exec-8] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:35:09.881 [http-nio-8888-exec-2] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:35:09.882 [http-nio-8888-exec-2] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:35:09.882 [http-nio-8888-exec-2] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:35:09.883 [http-nio-8888-exec-2] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:35:09.986 [http-nio-8888-exec-10] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:35:09.988 [http-nio-8888-exec-10] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:35:09.989 [http-nio-8888-exec-10] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:35:09.990 [http-nio-8888-exec-10] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:35:10.029 [http-nio-8888-exec-6] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:35:10.030 [http-nio-8888-exec-6] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:35:10.031 [http-nio-8888-exec-6] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:35:10.031 [http-nio-8888-exec-6] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:35:15.508 [http-nio-8888-exec-10] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:35:15.511 [http-nio-8888-exec-10] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:35:15.513 [http-nio-8888-exec-10] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:35:15.514 [http-nio-8888-exec-10] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:35:15.578 [http-nio-8888-exec-4] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:35:15.579 [http-nio-8888-exec-4] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:35:15.580 [http-nio-8888-exec-4] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:35:15.581 [http-nio-8888-exec-4] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:35:15.713 [http-nio-8888-exec-4] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:35:15.714 [http-nio-8888-exec-4] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:35:15.715 [http-nio-8888-exec-4] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:35:15.716 [http-nio-8888-exec-4] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:35:15.767 [http-nio-8888-exec-8] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:35:15.768 [http-nio-8888-exec-8] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:35:15.769 [http-nio-8888-exec-8] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:35:15.770 [http-nio-8888-exec-8] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:35:15.881 [http-nio-8888-exec-3] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:35:15.882 [http-nio-8888-exec-3] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:35:15.882 [http-nio-8888-exec-3] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:35:15.883 [http-nio-8888-exec-3] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:35:15.935 [http-nio-8888-exec-9] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:35:15.937 [http-nio-8888-exec-9] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:35:15.937 [http-nio-8888-exec-9] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:35:15.939 [http-nio-8888-exec-9] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:35:21.508 [http-nio-8888-exec-7] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:35:21.512 [http-nio-8888-exec-7] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:35:21.512 [http-nio-8888-exec-7] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:35:21.514 [http-nio-8888-exec-7] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:35:21.573 [http-nio-8888-exec-8] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:35:21.574 [http-nio-8888-exec-8] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:35:21.575 [http-nio-8888-exec-8] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:35:21.576 [http-nio-8888-exec-8] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:37:22.803 [http-nio-8888-exec-7] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:37:22.806 [http-nio-8888-exec-7] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:37:22.807 [http-nio-8888-exec-7] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:37:22.808 [http-nio-8888-exec-7] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:37:22.893 [http-nio-8888-exec-6] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:37:22.894 [http-nio-8888-exec-6] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:37:22.895 [http-nio-8888-exec-6] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:37:22.896 [http-nio-8888-exec-6] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:37:23.153 [http-nio-8888-exec-1] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:37:23.154 [http-nio-8888-exec-1] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:37:23.154 [http-nio-8888-exec-1] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:37:23.155 [http-nio-8888-exec-1] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:37:23.213 [http-nio-8888-exec-7] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:37:23.215 [http-nio-8888-exec-7] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:37:23.216 [http-nio-8888-exec-7] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:37:23.218 [http-nio-8888-exec-7] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:37:23.310 [http-nio-8888-exec-2] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:37:23.311 [http-nio-8888-exec-2] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:37:23.313 [http-nio-8888-exec-2] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:37:23.313 [http-nio-8888-exec-2] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:37:23.402 [http-nio-8888-exec-6] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:37:23.404 [http-nio-8888-exec-6] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:37:23.404 [http-nio-8888-exec-6] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:37:23.405 [http-nio-8888-exec-6] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:37:40.701 [http-nio-8888-exec-4] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:37:40.703 [http-nio-8888-exec-4] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:37:40.704 [http-nio-8888-exec-4] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:37:40.705 [http-nio-8888-exec-4] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:37:40.769 [http-nio-8888-exec-8] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:37:40.770 [http-nio-8888-exec-8] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:37:40.771 [http-nio-8888-exec-8] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:37:40.772 [http-nio-8888-exec-8] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:37:45.106 [http-nio-8888-exec-9] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:37:45.108 [http-nio-8888-exec-9] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:37:45.109 [http-nio-8888-exec-9] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:37:45.110 [http-nio-8888-exec-9] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:37:45.164 [http-nio-8888-exec-10] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:37:45.165 [http-nio-8888-exec-10] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:37:45.166 [http-nio-8888-exec-10] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:37:45.167 [http-nio-8888-exec-10] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:37:45.281 [http-nio-8888-exec-5] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:37:45.282 [http-nio-8888-exec-5] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:37:45.282 [http-nio-8888-exec-5] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:37:45.283 [http-nio-8888-exec-5] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:37:45.339 [http-nio-8888-exec-2] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:37:45.341 [http-nio-8888-exec-2] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:37:45.341 [http-nio-8888-exec-2] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:37:45.342 [http-nio-8888-exec-2] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:39:03.968 [http-nio-8888-exec-5] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:39:03.970 [http-nio-8888-exec-5] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:39:03.971 [http-nio-8888-exec-5] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:39:03.972 [http-nio-8888-exec-5] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:39:04.052 [http-nio-8888-exec-1] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:39:04.054 [http-nio-8888-exec-1] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:39:04.055 [http-nio-8888-exec-1] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:39:04.056 [http-nio-8888-exec-1] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:39:04.307 [http-nio-8888-exec-6] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:39:04.309 [http-nio-8888-exec-6] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:39:04.311 [http-nio-8888-exec-6] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:39:04.312 [http-nio-8888-exec-6] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:39:04.383 [http-nio-8888-exec-2] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:39:04.384 [http-nio-8888-exec-2] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:39:04.384 [http-nio-8888-exec-2] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:39:04.385 [http-nio-8888-exec-2] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:39:04.643 [http-nio-8888-exec-3] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:39:04.645 [http-nio-8888-exec-3] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:39:04.647 [http-nio-8888-exec-3] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:39:04.648 [http-nio-8888-exec-3] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:39:04.716 [http-nio-8888-exec-1] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:39:04.717 [http-nio-8888-exec-1] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:39:04.718 [http-nio-8888-exec-1] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:39:04.719 [http-nio-8888-exec-1] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:39:16.798 [http-nio-8888-exec-10] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:39:16.802 [http-nio-8888-exec-10] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:39:16.803 [http-nio-8888-exec-10] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:39:16.805 [http-nio-8888-exec-10] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:39:16.863 [http-nio-8888-exec-9] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:39:16.864 [http-nio-8888-exec-9] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:39:16.864 [http-nio-8888-exec-9] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:39:16.865 [http-nio-8888-exec-9] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:39:19.183 [http-nio-8888-exec-6] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/html/material.html ]
+2018-10-18 16:39:19.316 [http-nio-8888-exec-4] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/material/show ]
+2018-10-18 16:39:19.320 [http-nio-8888-exec-4] INFO  c.z.t.c.business.MaterialController:42 - MaterialController|show|pageSize:10|currentPage:1
+2018-10-18 16:39:19.321 [http-nio-8888-exec-4] INFO  c.z.t.c.business.MaterialController:47 - MaterialController|show|userId:2
+2018-10-18 16:39:19.322 [http-nio-8888-exec-4] DEBUG c.z.t.m.M.countMaterial:159 - ==>  Preparing: SELECT COUNT(1) from material where 1=1 and `USERID` = ?; 
+2018-10-18 16:39:19.322 [http-nio-8888-exec-4] DEBUG c.z.t.m.M.countMaterial:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:39:19.323 [http-nio-8888-exec-4] DEBUG c.z.t.m.M.countMaterial:159 - <==      Total: 1
+2018-10-18 16:39:19.323 [http-nio-8888-exec-4] INFO  c.z.t.c.business.MaterialController:49 - MaterialController|show|count：41
+2018-10-18 16:39:19.324 [http-nio-8888-exec-4] INFO  c.z.t.c.business.MaterialController:53 - MaterialController|show|count：41
+2018-10-18 16:39:19.324 [http-nio-8888-exec-4] DEBUG c.z.t.m.M.selectMaterialListByUserId:159 - ==>  Preparing: SELECT * from `material` where 1=1 and `USERID` = ? order by UPDATETIME desc limit ?,? 
+2018-10-18 16:39:19.325 [http-nio-8888-exec-4] DEBUG c.z.t.m.M.selectMaterialListByUserId:159 - ==> Parameters: 2(Integer), 0(Integer), 10(Integer)
+2018-10-18 16:39:19.326 [http-nio-8888-exec-4] DEBUG c.z.t.m.M.selectMaterialListByUserId:159 - <==      Total: 10
+2018-10-18 16:39:19.326 [http-nio-8888-exec-4] INFO  c.z.t.c.business.MaterialController:56 - MaterialController|show|materialVoList:[MaterialVo{id=42, userId=2, description='将项目部署到github', url='https://blog.csdn.net/highboys/article/details/78701095', type='2', createTime=Mon Oct 15 18:46:57 CST 2018, updateTime=Mon Oct 15 18:46:57 CST 2018}, MaterialVo{id=40, userId=2, description='如何将项目部署到github', url='https://blog.csdn.net/qq_37932082/article/details/79464676', type='2', createTime=Mon Oct 15 14:16:20 CST 2018, updateTime=Mon Oct 15 18:46:31 CST 2018}, MaterialVo{id=41, userId=2, description='Git 中 SSH key 生成步骤', url='https://www.cnblogs.com/horanly/p/6604104.html', type='2', createTime=Mon Oct 15 18:45:48 CST 2018, updateTime=Mon Oct 15 18:45:48 CST 2018}, MaterialVo{id=39, userId=2, description='maven搜索jar', url='https://repository.sonatype.org/#welcome', type='2', createTime=Mon Sep 10 14:15:53 CST 2018, updateTime=Mon Sep 10 14:15:53 CST 2018}, MaterialVo{id=38, userId=2, description='电影天堂', url='https://www.dy2018.com/', type='1', createTime=Tue Sep 04 17:49:44 CST 2018, updateTime=Tue Sep 04 17:49:44 CST 2018}, MaterialVo{id=37, userId=2, description='thymeleaf学习笔记', url='https://blog.csdn.net/xiao______xin/article/details/73302447', type='2', createTime=Tue Sep 04 17:49:07 CST 2018, updateTime=Tue Sep 04 17:49:07 CST 2018}, MaterialVo{id=36, userId=2, description='thymeleaf模板', url='https://blog.csdn.net/f0rd_/article/details/80580225', type='2', createTime=Tue Sep 04 17:48:48 CST 2018, updateTime=Tue Sep 04 17:48:48 CST 2018}, MaterialVo{id=35, userId=2, description='layui模板', url='http://demo.vip-admin.com/', type='2', createTime=Tue Sep 04 17:48:11 CST 2018, updateTime=Tue Sep 04 17:48:11 CST 2018}, MaterialVo{id=34, userId=2, description='layui官方文档', url='https://www.layui.com/doc/', type='2', createTime=Tue Sep 04 17:47:48 CST 2018, updateTime=Tue Sep 04 17:47:48 CST 2018}, MaterialVo{id=33, userId=2, description='码云', url='https://gitee.com/', type='2', createTime=Tue Sep 04 17:47:25 CST 2018, updateTime=Tue Sep 04 17:47:25 CST 2018}]
+2018-10-18 16:39:19.327 [http-nio-8888-exec-4] INFO  c.z.t.c.business.MaterialController:57 - MaterialController|show|pageModel:PageModel{currentPage=1, pageSize=10, totalPage=0, totalRecord=41, dataList=null}
+2018-10-18 16:39:19.711 [http-nio-8888-exec-9] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/html/wordpad.html ]
+2018-10-18 16:39:19.758 [http-nio-8888-exec-10] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/wordpad/showWordPad ]
+2018-10-18 16:39:19.759 [http-nio-8888-exec-10] INFO  c.z.t.c.business.WordpadController:39 - WordpadController|showWordPad|pageSize:5|currentPage:1
+2018-10-18 16:39:19.760 [http-nio-8888-exec-10] INFO  com.zwx.transmanage.util.UserUtil:74 - userId:2
+2018-10-18 16:39:19.761 [http-nio-8888-exec-10] INFO  c.z.t.c.business.WordpadController:44 - WordpadController|showWordPad|userId:2
+2018-10-18 16:39:19.761 [http-nio-8888-exec-10] DEBUG c.z.t.m.W.countWordpadList:159 - ==>  Preparing: select count(1) from wordpad where 1=1 and userid = ? and ISDELETE = 'N' AND ISSHIELD = 'N' 
+2018-10-18 16:39:19.761 [http-nio-8888-exec-10] DEBUG c.z.t.m.W.countWordpadList:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:39:19.762 [http-nio-8888-exec-10] DEBUG c.z.t.m.W.countWordpadList:159 - <==      Total: 1
+2018-10-18 16:39:19.762 [http-nio-8888-exec-10] INFO  c.z.t.c.business.WordpadController:49 - WordpadController|showWordPad|count：19
+2018-10-18 16:39:19.762 [http-nio-8888-exec-10] DEBUG c.z.t.m.W.selectWordpadByUserId:159 - ==>  Preparing: SELECT * FROM wordpad where 1=1 and userid = ? and ISDELETE = 'N' AND ISSHIELD = 'N' ORDER BY UPDATETIME DESC limit ?,? 
+2018-10-18 16:39:19.762 [http-nio-8888-exec-10] DEBUG c.z.t.m.W.selectWordpadByUserId:159 - ==> Parameters: 2(Integer), 0(Integer), 5(Integer)
+2018-10-18 16:39:19.763 [http-nio-8888-exec-10] DEBUG c.z.t.m.W.selectWordpadByUserId:159 - <==      Total: 5
+2018-10-18 16:39:19.763 [http-nio-8888-exec-10] INFO  c.z.t.c.business.WordpadController:51 - WordpadController|showWordPad|wordpadVoList:[WordpadVo{id=46, userId=2, title='十月七号，飞机票报销', content='自行承担费用165', createTime=Wed Oct 17 14:09:38 CST 2018, updateTime=Wed Oct 17 14:09:38 CST 2018, isDelete='N', isShield='N'}, WordpadVo{id=45, userId=2, title='开科地址', content='总部地址：北京市海淀区北四环西路68号左岸工社大厦519-521室
+深圳：深圳市南山区高新南一道008号创维大厦A座805-806室 
+石家庄：石家庄市桥西区建设南大街150号国富大厦808
+长沙：长沙市芙蓉区芙蓉中路388号定王大厦2422
+武汉：武汉市武昌区中北路109号凯德1818中心6号楼1614 
+成都：成都市武侯区航空路1号国航世纪中心B座802', createTime=Wed Oct 17 14:08:17 CST 2018, updateTime=Wed Oct 17 14:08:17 CST 2018, isDelete='N', isShield='N'}, WordpadVo{id=42, userId=2, title='舒舒', content='生日：19950902
+第一次见面：20181001晚', createTime=Thu Oct 11 18:37:14 CST 2018, updateTime=Tue Oct 16 18:15:01 CST 2018, isDelete='N', isShield='N'}, WordpadVo{id=44, userId=2, title='太原宿舍', content='宿舍合同编号：QT2018-035-BJ-01
+宿舍地址名称：山西省太原市南中环街200号北际花园4幢1单元4层0401号
+租赁日期：2018-03-24~2019-03-23', createTime=Mon Oct 15 16:15:39 CST 2018, updateTime=Mon Oct 15 16:15:39 CST 2018, isDelete='N', isShield='N'}, WordpadVo{id=43, userId=2, title='github', content='zhaowenx
+xuan1533147879', createTime=Mon Oct 15 14:09:55 CST 2018, updateTime=Mon Oct 15 14:09:55 CST 2018, isDelete='N', isShield='N'}]
+2018-10-18 16:39:19.764 [http-nio-8888-exec-10] INFO  c.z.t.c.business.WordpadController:53 - WordpadController|showWordPad|pageModel:PageModel{currentPage=1, pageSize=5, totalPage=0, totalRecord=19, dataList=[WordpadVo{id=46, userId=2, title='十月七号，飞机票报销', content='自行承担费用165', createTime=Wed Oct 17 14:09:38 CST 2018, updateTime=Wed Oct 17 14:09:38 CST 2018, isDelete='N', isShield='N'}, WordpadVo{id=45, userId=2, title='开科地址', content='总部地址：北京市海淀区北四环西路68号左岸工社大厦519-521室
+深圳：深圳市南山区高新南一道008号创维大厦A座805-806室 
+石家庄：石家庄市桥西区建设南大街150号国富大厦808
+长沙：长沙市芙蓉区芙蓉中路388号定王大厦2422
+武汉：武汉市武昌区中北路109号凯德1818中心6号楼1614 
+成都：成都市武侯区航空路1号国航世纪中心B座802', createTime=Wed Oct 17 14:08:17 CST 2018, updateTime=Wed Oct 17 14:08:17 CST 2018, isDelete='N', isShield='N'}, WordpadVo{id=42, userId=2, title='舒舒', content='生日：19950902
+第一次见面：20181001晚', createTime=Thu Oct 11 18:37:14 CST 2018, updateTime=Tue Oct 16 18:15:01 CST 2018, isDelete='N', isShield='N'}, WordpadVo{id=44, userId=2, title='太原宿舍', content='宿舍合同编号：QT2018-035-BJ-01
+宿舍地址名称：山西省太原市南中环街200号北际花园4幢1单元4层0401号
+租赁日期：2018-03-24~2019-03-23', createTime=Mon Oct 15 16:15:39 CST 2018, updateTime=Mon Oct 15 16:15:39 CST 2018, isDelete='N', isShield='N'}, WordpadVo{id=43, userId=2, title='github', content='zhaowenx
+xuan1533147879', createTime=Mon Oct 15 14:09:55 CST 2018, updateTime=Mon Oct 15 14:09:55 CST 2018, isDelete='N', isShield='N'}]}
+2018-10-18 16:39:20.551 [http-nio-8888-exec-3] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/html/daily.html ]
+2018-10-18 16:39:20.689 [http-nio-8888-exec-9] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/daily/show ]
+2018-10-18 16:39:20.691 [http-nio-8888-exec-9] INFO  c.z.t.c.business.DailyController:41 - DailyController|show|pageSize:10|currentPage:1
+2018-10-18 16:39:20.691 [http-nio-8888-exec-9] INFO  c.z.t.c.business.DailyController:46 - DailyController|show|userId:2
+2018-10-18 16:39:20.692 [http-nio-8888-exec-9] DEBUG c.z.t.mapper.DailyMapper.countDaily:159 - ==>  Preparing: select count(1) from `daily` where `USERID` = ?; 
+2018-10-18 16:39:20.692 [http-nio-8888-exec-9] DEBUG c.z.t.mapper.DailyMapper.countDaily:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:39:20.693 [http-nio-8888-exec-9] DEBUG c.z.t.mapper.DailyMapper.countDaily:159 - <==      Total: 1
+2018-10-18 16:39:20.694 [http-nio-8888-exec-9] INFO  c.z.t.c.business.DailyController:48 - DailyController|show|count：18
+2018-10-18 16:39:20.694 [http-nio-8888-exec-9] INFO  c.z.t.c.business.DailyController:52 - DailyController|show|count：18
+2018-10-18 16:39:20.694 [http-nio-8888-exec-9] DEBUG c.z.t.m.D.selectDailyListByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by UPDATETIME desc limit ?,? 
+2018-10-18 16:39:20.694 [http-nio-8888-exec-9] DEBUG c.z.t.m.D.selectDailyListByUserId:159 - ==> Parameters: 2(Integer), 0(Integer), 10(Integer)
+2018-10-18 16:39:20.695 [http-nio-8888-exec-9] DEBUG c.z.t.m.D.selectDailyListByUserId:159 - <==      Total: 10
+2018-10-18 16:39:20.695 [http-nio-8888-exec-9] INFO  c.z.t.c.business.DailyController:55 - DailyController|show|dailyVoList:[DailyVo{id=23, userId=2, content='编写系统集成quartz定时器的代码，同时完成动态生成生日提醒公告功能', isEvection='Y', dailyDate='2018-10-18', createTime=Thu Oct 18 16:20:09 CST 2018, updateTime=Thu Oct 18 16:20:38 CST 2018, userName='zhaowenx'}, DailyVo{id=22, userId=2, content='继续学习晋城银行理财销售500060认购交易的代码', isEvection='Y', dailyDate='2018-10-17', createTime=Wed Oct 17 11:00:17 CST 2018, updateTime=Wed Oct 17 11:00:17 CST 2018, userName='zhaowenx'}, DailyVo{id=21, userId=2, content='学习晋城银行理财销售500060认购交易的代码', isEvection='Y', dailyDate='2018-10-16', createTime=Tue Oct 16 17:54:43 CST 2018, updateTime=Tue Oct 16 17:54:43 CST 2018, userName='zhaowenx'}, DailyVo{id=19, userId=2, content='完善系统', isEvection='Y', dailyDate='2018-10-09', createTime=Sun Oct 14 17:09:17 CST 2018, updateTime=Mon Oct 15 14:05:27 CST 2018, userName='zhaowenx'}, DailyVo{id=20, userId=2, content='晚上系统的新增用户，删除用户功能，优化部分功能', isEvection='Y', dailyDate='2018-10-15', createTime=Mon Oct 15 14:03:57 CST 2018, updateTime=Mon Oct 15 14:03:57 CST 2018, userName='zhaowenx'}, DailyVo{id=18, userId=2, content='睡觉，玩游戏，做饭，看视频', isEvection='Y', dailyDate='2018-10-14', createTime=Sun Oct 14 15:00:02 CST 2018, updateTime=Sun Oct 14 15:00:02 CST 2018, userName='zhaowenx'}, DailyVo{id=17, userId=2, content='完成通讯录功能的编写', isEvection='Y', dailyDate='2018-10-13', createTime=Fri Oct 12 14:58:57 CST 2018, updateTime=Fri Oct 12 14:58:57 CST 2018, userName='zhaowenx'}, DailyVo{id=16, userId=2, content='完成公告消息功能的编写', isEvection='Y', dailyDate='2018-10-10', createTime=Fri Oct 12 11:19:00 CST 2018, updateTime=Fri Oct 12 11:19:00 CST 2018, userName='zhaowenx'}, DailyVo{id=15, userId=2, content='完成数据字典功能的编写', isEvection='Y', dailyDate='2018-10-11', createTime=Fri Oct 12 11:18:35 CST 2018, updateTime=Fri Oct 12 11:18:35 CST 2018, userName='zhaowenx'}, DailyVo{id=14, userId=2, content='完成系统顶部滚动点击后的优化
+', isEvection='Y', dailyDate='2018-10-12', createTime=Fri Oct 12 11:18:05 CST 2018, updateTime=Fri Oct 12 11:18:05 CST 2018, userName='zhaowenx'}]
+2018-10-18 16:39:20.696 [http-nio-8888-exec-9] INFO  c.z.t.c.business.DailyController:57 - DailyController|show|pageModel:PageModel{currentPage=1, pageSize=10, totalPage=0, totalRecord=18, dataList=null}
+2018-10-18 16:39:21.285 [http-nio-8888-exec-8] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/address/show ]
+2018-10-18 16:39:21.286 [http-nio-8888-exec-8] INFO  c.z.t.c.business.IndexController:65 - AddressBookController|show|展示通讯录开始
+2018-10-18 16:39:21.287 [http-nio-8888-exec-8] DEBUG c.z.t.m.A.selectAddressBookVoByUserId:159 - ==>  Preparing: select * from `addressbook` where `USERID` = ?; 
+2018-10-18 16:39:21.287 [http-nio-8888-exec-8] DEBUG c.z.t.m.A.selectAddressBookVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:39:21.288 [http-nio-8888-exec-8] DEBUG c.z.t.m.A.selectAddressBookVoByUserId:159 - <==      Total: 8
+2018-10-18 16:39:21.289 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:39:21.289 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: profession(String), 1(String)
+2018-10-18 16:39:21.290 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:39:21.291 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:39:21.291 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: type(String), 1(String)
+2018-10-18 16:39:21.292 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:39:21.293 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:39:21.293 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: profession(String), 15(String)
+2018-10-18 16:39:21.294 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:39:21.294 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:39:21.294 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: type(String), 3(String)
+2018-10-18 16:39:21.301 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:39:21.301 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:39:21.301 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: profession(String), 5(String)
+2018-10-18 16:39:21.302 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:39:21.302 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:39:21.303 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: type(String), 2(String)
+2018-10-18 16:39:21.303 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:39:21.303 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:39:21.304 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: profession(String), 17(String)
+2018-10-18 16:39:21.305 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:39:21.305 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:39:21.305 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: type(String), 2(String)
+2018-10-18 16:39:21.306 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:39:21.306 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:39:21.306 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: profession(String), 6(String)
+2018-10-18 16:39:21.306 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:39:21.307 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:39:21.307 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: type(String), 2(String)
+2018-10-18 16:39:21.307 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:39:21.307 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:39:21.308 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: profession(String), 17(String)
+2018-10-18 16:39:21.308 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:39:21.308 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:39:21.308 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: type(String), 2(String)
+2018-10-18 16:39:21.309 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:39:21.309 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:39:21.309 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: profession(String), 1(String)
+2018-10-18 16:39:21.310 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:39:21.310 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:39:21.310 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: type(String), 4(String)
+2018-10-18 16:39:21.311 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:39:21.311 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:39:21.311 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: profession(String), (String)
+2018-10-18 16:39:21.311 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 0
+2018-10-18 16:39:21.312 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:39:21.312 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: type(String), (String)
+2018-10-18 16:39:21.312 [http-nio-8888-exec-8] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 0
+2018-10-18 16:39:21.688 [http-nio-8888-exec-9] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/html/sys-dict.html ]
+2018-10-18 16:39:21.813 [http-nio-8888-exec-5] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/dict/showDict ]
+2018-10-18 16:39:21.814 [http-nio-8888-exec-5] INFO  c.z.t.c.business.SysDictController:37 - SysDictController|showDict|pageSize:10|currentPage:1
+2018-10-18 16:39:21.815 [http-nio-8888-exec-5] DEBUG c.z.t.m.SysDictMapper.countSysDict:159 - ==>  Preparing: select count(1) from `sys_dict`; 
+2018-10-18 16:39:21.815 [http-nio-8888-exec-5] DEBUG c.z.t.m.SysDictMapper.countSysDict:159 - ==> Parameters: 
+2018-10-18 16:39:21.816 [http-nio-8888-exec-5] DEBUG c.z.t.m.SysDictMapper.countSysDict:159 - <==      Total: 1
+2018-10-18 16:39:21.816 [http-nio-8888-exec-5] INFO  c.z.t.c.business.SysDictController:42 - SysDictController|showDict|count：8
+2018-10-18 16:39:21.817 [http-nio-8888-exec-5] INFO  c.z.t.c.business.SysDictController:47 - SysDictController|showDict|pageModel:PageModel{currentPage=1, pageSize=10, totalPage=0, totalRecord=8, dataList=null}
+2018-10-18 16:39:21.817 [http-nio-8888-exec-5] DEBUG c.z.t.m.SysDictMapper.selectSysDict:159 - ==>  Preparing: select * from `sys_dict` where DICT not in (select dict from `sys_dict` where `groupdict` = 'root') limit ?,?; 
+2018-10-18 16:39:21.817 [http-nio-8888-exec-5] DEBUG c.z.t.m.SysDictMapper.selectSysDict:159 - ==> Parameters: 0(Integer), 10(Integer)
+2018-10-18 16:39:21.819 [http-nio-8888-exec-5] DEBUG c.z.t.m.SysDictMapper.selectSysDict:159 - <==      Total: 6
+2018-10-18 16:39:21.819 [http-nio-8888-exec-5] INFO  c.z.t.c.business.SysDictController:49 - SysDictController|showDict|sysDictVoList:[SysDictVo{dict='id_type', dictName='证件类型', groupDict='system'}, SysDictVo{dict='material_type', dictName='资料类型', groupDict='system'}, SysDictVo{dict='profession', dictName='职业', groupDict='system'}, SysDictVo{dict='roletype', dictName='角色类型', groupDict='user'}, SysDictVo{dict='sex', dictName='性别', groupDict='system'}, SysDictVo{dict='type', dictName='身份分类', groupDict='user'}]
+2018-10-18 16:39:21.819 [http-nio-8888-exec-10] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/dict/showDictItem ]
+2018-10-18 16:39:21.820 [http-nio-8888-exec-10] INFO  c.z.t.c.business.SysDictController:55 - SysDictController|showDictItem|dict:
+2018-10-18 16:39:21.820 [http-nio-8888-exec-10] DEBUG c.z.t.m.S.selectSysDictItem:159 - ==>  Preparing: select * from `sys_dict_item` where 1=1 and `dict` = ? order by itemKey ASC; 
+2018-10-18 16:39:21.821 [http-nio-8888-exec-10] DEBUG c.z.t.m.S.selectSysDictItem:159 - ==> Parameters: (String)
+2018-10-18 16:39:21.822 [http-nio-8888-exec-10] DEBUG c.z.t.m.S.selectSysDictItem:159 - <==      Total: 0
+2018-10-18 16:39:21.822 [http-nio-8888-exec-10] INFO  c.z.t.c.business.SysDictController:60 - SysDictController|showDictItem|sysDictItemVoList:[]
+2018-10-18 16:39:39.960 [http-nio-8888-exec-4] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:39:39.962 [http-nio-8888-exec-4] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:39:39.963 [http-nio-8888-exec-4] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:39:39.963 [http-nio-8888-exec-4] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:40:13.962 [http-nio-8888-exec-2] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:40:13.963 [http-nio-8888-exec-2] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:40:13.963 [http-nio-8888-exec-2] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:40:13.964 [http-nio-8888-exec-2] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:40:14.031 [http-nio-8888-exec-5] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:40:14.032 [http-nio-8888-exec-5] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:40:14.033 [http-nio-8888-exec-5] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:40:14.033 [http-nio-8888-exec-5] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:40:14.295 [http-nio-8888-exec-8] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:40:14.296 [http-nio-8888-exec-8] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:40:14.297 [http-nio-8888-exec-8] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:40:14.297 [http-nio-8888-exec-8] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:40:14.363 [http-nio-8888-exec-2] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:40:14.365 [http-nio-8888-exec-2] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:40:14.366 [http-nio-8888-exec-2] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:40:14.367 [http-nio-8888-exec-2] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:40:14.620 [http-nio-8888-exec-6] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:40:14.622 [http-nio-8888-exec-6] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:40:14.623 [http-nio-8888-exec-6] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:40:14.624 [http-nio-8888-exec-6] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:40:14.684 [http-nio-8888-exec-4] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:40:14.687 [http-nio-8888-exec-4] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:40:14.688 [http-nio-8888-exec-4] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:40:14.689 [http-nio-8888-exec-4] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:40:22.351 [http-nio-8888-exec-7] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/address/show ]
+2018-10-18 16:40:22.353 [http-nio-8888-exec-7] INFO  c.z.t.c.business.IndexController:65 - AddressBookController|show|展示通讯录开始
+2018-10-18 16:40:22.354 [http-nio-8888-exec-7] DEBUG c.z.t.m.A.selectAddressBookVoByUserId:159 - ==>  Preparing: select * from `addressbook` where `USERID` = ?; 
+2018-10-18 16:40:22.355 [http-nio-8888-exec-7] DEBUG c.z.t.m.A.selectAddressBookVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:40:22.356 [http-nio-8888-exec-7] DEBUG c.z.t.m.A.selectAddressBookVoByUserId:159 - <==      Total: 8
+2018-10-18 16:40:22.358 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:22.358 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: profession(String), 1(String)
+2018-10-18 16:40:22.359 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:22.359 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:22.359 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: type(String), 1(String)
+2018-10-18 16:40:22.360 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:22.360 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:22.360 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: profession(String), 15(String)
+2018-10-18 16:40:22.362 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:22.362 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:22.362 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: type(String), 3(String)
+2018-10-18 16:40:22.362 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:22.363 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:22.363 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: profession(String), 5(String)
+2018-10-18 16:40:22.363 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:22.364 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:22.365 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: type(String), 2(String)
+2018-10-18 16:40:22.367 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:22.367 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:22.367 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: profession(String), 17(String)
+2018-10-18 16:40:22.368 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:22.368 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:22.368 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: type(String), 2(String)
+2018-10-18 16:40:22.369 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:22.369 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:22.369 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: profession(String), 6(String)
+2018-10-18 16:40:22.370 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:22.370 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:22.370 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: type(String), 2(String)
+2018-10-18 16:40:22.371 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:22.371 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:22.371 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: profession(String), 17(String)
+2018-10-18 16:40:22.372 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:22.372 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:22.372 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: type(String), 2(String)
+2018-10-18 16:40:22.372 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:22.373 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:22.373 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: profession(String), 1(String)
+2018-10-18 16:40:22.373 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:22.373 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:22.374 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: type(String), 4(String)
+2018-10-18 16:40:22.374 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:22.374 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:22.374 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: profession(String), (String)
+2018-10-18 16:40:22.375 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 0
+2018-10-18 16:40:22.375 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:22.375 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: type(String), (String)
+2018-10-18 16:40:22.376 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 0
+2018-10-18 16:40:22.615 [http-nio-8888-exec-2] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/html/wordpad.html ]
+2018-10-18 16:40:22.658 [http-nio-8888-exec-10] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/wordpad/showWordPad ]
+2018-10-18 16:40:22.658 [http-nio-8888-exec-10] INFO  c.z.t.c.business.WordpadController:39 - WordpadController|showWordPad|pageSize:5|currentPage:1
+2018-10-18 16:40:22.659 [http-nio-8888-exec-10] INFO  com.zwx.transmanage.util.UserUtil:74 - userId:2
+2018-10-18 16:40:22.659 [http-nio-8888-exec-10] INFO  c.z.t.c.business.WordpadController:44 - WordpadController|showWordPad|userId:2
+2018-10-18 16:40:22.659 [http-nio-8888-exec-10] DEBUG c.z.t.m.W.countWordpadList:159 - ==>  Preparing: select count(1) from wordpad where 1=1 and userid = ? and ISDELETE = 'N' AND ISSHIELD = 'N' 
+2018-10-18 16:40:22.659 [http-nio-8888-exec-10] DEBUG c.z.t.m.W.countWordpadList:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:40:22.660 [http-nio-8888-exec-10] DEBUG c.z.t.m.W.countWordpadList:159 - <==      Total: 1
+2018-10-18 16:40:22.660 [http-nio-8888-exec-10] INFO  c.z.t.c.business.WordpadController:49 - WordpadController|showWordPad|count：19
+2018-10-18 16:40:22.660 [http-nio-8888-exec-10] DEBUG c.z.t.m.W.selectWordpadByUserId:159 - ==>  Preparing: SELECT * FROM wordpad where 1=1 and userid = ? and ISDELETE = 'N' AND ISSHIELD = 'N' ORDER BY UPDATETIME DESC limit ?,? 
+2018-10-18 16:40:22.661 [http-nio-8888-exec-10] DEBUG c.z.t.m.W.selectWordpadByUserId:159 - ==> Parameters: 2(Integer), 0(Integer), 5(Integer)
+2018-10-18 16:40:22.661 [http-nio-8888-exec-10] DEBUG c.z.t.m.W.selectWordpadByUserId:159 - <==      Total: 5
+2018-10-18 16:40:22.661 [http-nio-8888-exec-10] INFO  c.z.t.c.business.WordpadController:51 - WordpadController|showWordPad|wordpadVoList:[WordpadVo{id=46, userId=2, title='十月七号，飞机票报销', content='自行承担费用165', createTime=Wed Oct 17 14:09:38 CST 2018, updateTime=Wed Oct 17 14:09:38 CST 2018, isDelete='N', isShield='N'}, WordpadVo{id=45, userId=2, title='开科地址', content='总部地址：北京市海淀区北四环西路68号左岸工社大厦519-521室
+深圳：深圳市南山区高新南一道008号创维大厦A座805-806室 
+石家庄：石家庄市桥西区建设南大街150号国富大厦808
+长沙：长沙市芙蓉区芙蓉中路388号定王大厦2422
+武汉：武汉市武昌区中北路109号凯德1818中心6号楼1614 
+成都：成都市武侯区航空路1号国航世纪中心B座802', createTime=Wed Oct 17 14:08:17 CST 2018, updateTime=Wed Oct 17 14:08:17 CST 2018, isDelete='N', isShield='N'}, WordpadVo{id=42, userId=2, title='舒舒', content='生日：19950902
+第一次见面：20181001晚', createTime=Thu Oct 11 18:37:14 CST 2018, updateTime=Tue Oct 16 18:15:01 CST 2018, isDelete='N', isShield='N'}, WordpadVo{id=44, userId=2, title='太原宿舍', content='宿舍合同编号：QT2018-035-BJ-01
+宿舍地址名称：山西省太原市南中环街200号北际花园4幢1单元4层0401号
+租赁日期：2018-03-24~2019-03-23', createTime=Mon Oct 15 16:15:39 CST 2018, updateTime=Mon Oct 15 16:15:39 CST 2018, isDelete='N', isShield='N'}, WordpadVo{id=43, userId=2, title='github', content='zhaowenx
+xuan1533147879', createTime=Mon Oct 15 14:09:55 CST 2018, updateTime=Mon Oct 15 14:09:55 CST 2018, isDelete='N', isShield='N'}]
+2018-10-18 16:40:22.662 [http-nio-8888-exec-10] INFO  c.z.t.c.business.WordpadController:53 - WordpadController|showWordPad|pageModel:PageModel{currentPage=1, pageSize=5, totalPage=0, totalRecord=19, dataList=[WordpadVo{id=46, userId=2, title='十月七号，飞机票报销', content='自行承担费用165', createTime=Wed Oct 17 14:09:38 CST 2018, updateTime=Wed Oct 17 14:09:38 CST 2018, isDelete='N', isShield='N'}, WordpadVo{id=45, userId=2, title='开科地址', content='总部地址：北京市海淀区北四环西路68号左岸工社大厦519-521室
+深圳：深圳市南山区高新南一道008号创维大厦A座805-806室 
+石家庄：石家庄市桥西区建设南大街150号国富大厦808
+长沙：长沙市芙蓉区芙蓉中路388号定王大厦2422
+武汉：武汉市武昌区中北路109号凯德1818中心6号楼1614 
+成都：成都市武侯区航空路1号国航世纪中心B座802', createTime=Wed Oct 17 14:08:17 CST 2018, updateTime=Wed Oct 17 14:08:17 CST 2018, isDelete='N', isShield='N'}, WordpadVo{id=42, userId=2, title='舒舒', content='生日：19950902
+第一次见面：20181001晚', createTime=Thu Oct 11 18:37:14 CST 2018, updateTime=Tue Oct 16 18:15:01 CST 2018, isDelete='N', isShield='N'}, WordpadVo{id=44, userId=2, title='太原宿舍', content='宿舍合同编号：QT2018-035-BJ-01
+宿舍地址名称：山西省太原市南中环街200号北际花园4幢1单元4层0401号
+租赁日期：2018-03-24~2019-03-23', createTime=Mon Oct 15 16:15:39 CST 2018, updateTime=Mon Oct 15 16:15:39 CST 2018, isDelete='N', isShield='N'}, WordpadVo{id=43, userId=2, title='github', content='zhaowenx
+xuan1533147879', createTime=Mon Oct 15 14:09:55 CST 2018, updateTime=Mon Oct 15 14:09:55 CST 2018, isDelete='N', isShield='N'}]}
+2018-10-18 16:40:27.124 [http-nio-8888-exec-7] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/address/show ]
+2018-10-18 16:40:27.126 [http-nio-8888-exec-7] INFO  c.z.t.c.business.IndexController:65 - AddressBookController|show|展示通讯录开始
+2018-10-18 16:40:27.128 [http-nio-8888-exec-7] DEBUG c.z.t.m.A.selectAddressBookVoByUserId:159 - ==>  Preparing: select * from `addressbook` where `USERID` = ?; 
+2018-10-18 16:40:27.128 [http-nio-8888-exec-7] DEBUG c.z.t.m.A.selectAddressBookVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:40:27.130 [http-nio-8888-exec-7] DEBUG c.z.t.m.A.selectAddressBookVoByUserId:159 - <==      Total: 8
+2018-10-18 16:40:27.131 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:27.131 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: profession(String), 1(String)
+2018-10-18 16:40:27.132 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:27.132 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:27.132 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: type(String), 1(String)
+2018-10-18 16:40:27.133 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:27.133 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:27.134 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: profession(String), 15(String)
+2018-10-18 16:40:27.134 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:27.135 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:27.135 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: type(String), 3(String)
+2018-10-18 16:40:27.136 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:27.136 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:27.137 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: profession(String), 5(String)
+2018-10-18 16:40:27.137 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:27.138 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:27.138 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: type(String), 2(String)
+2018-10-18 16:40:27.138 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:27.138 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:27.139 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: profession(String), 17(String)
+2018-10-18 16:40:27.139 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:27.140 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:27.140 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: type(String), 2(String)
+2018-10-18 16:40:27.140 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:27.140 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:27.141 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: profession(String), 6(String)
+2018-10-18 16:40:27.141 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:27.141 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:27.142 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: type(String), 2(String)
+2018-10-18 16:40:27.142 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:27.142 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:27.142 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: profession(String), 17(String)
+2018-10-18 16:40:27.143 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:27.143 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:27.143 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: type(String), 2(String)
+2018-10-18 16:40:27.144 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:27.144 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:27.144 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: profession(String), 1(String)
+2018-10-18 16:40:27.145 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:27.145 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:27.145 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: type(String), 4(String)
+2018-10-18 16:40:27.146 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 1
+2018-10-18 16:40:27.146 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:27.147 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: profession(String), (String)
+2018-10-18 16:40:27.147 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 0
+2018-10-18 16:40:27.148 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==>  Preparing: select `itemval` from `sys_dict_item` where `dict` = ? and `itemkey` = ?; 
+2018-10-18 16:40:27.149 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - ==> Parameters: type(String), (String)
+2018-10-18 16:40:27.149 [http-nio-8888-exec-7] DEBUG c.z.t.m.S.selectItemValByKey:159 - <==      Total: 0
+2018-10-18 16:40:27.410 [http-nio-8888-exec-5] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/html/material.html ]
+2018-10-18 16:40:27.546 [http-nio-8888-exec-2] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/material/show ]
+2018-10-18 16:40:27.547 [http-nio-8888-exec-2] INFO  c.z.t.c.business.MaterialController:42 - MaterialController|show|pageSize:10|currentPage:1
+2018-10-18 16:40:27.548 [http-nio-8888-exec-2] INFO  c.z.t.c.business.MaterialController:47 - MaterialController|show|userId:2
+2018-10-18 16:40:27.548 [http-nio-8888-exec-2] DEBUG c.z.t.m.M.countMaterial:159 - ==>  Preparing: SELECT COUNT(1) from material where 1=1 and `USERID` = ?; 
+2018-10-18 16:40:27.548 [http-nio-8888-exec-2] DEBUG c.z.t.m.M.countMaterial:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:40:27.549 [http-nio-8888-exec-2] DEBUG c.z.t.m.M.countMaterial:159 - <==      Total: 1
+2018-10-18 16:40:27.549 [http-nio-8888-exec-2] INFO  c.z.t.c.business.MaterialController:49 - MaterialController|show|count：41
+2018-10-18 16:40:27.549 [http-nio-8888-exec-2] INFO  c.z.t.c.business.MaterialController:53 - MaterialController|show|count：41
+2018-10-18 16:40:27.549 [http-nio-8888-exec-2] DEBUG c.z.t.m.M.selectMaterialListByUserId:159 - ==>  Preparing: SELECT * from `material` where 1=1 and `USERID` = ? order by UPDATETIME desc limit ?,? 
+2018-10-18 16:40:27.549 [http-nio-8888-exec-2] DEBUG c.z.t.m.M.selectMaterialListByUserId:159 - ==> Parameters: 2(Integer), 0(Integer), 10(Integer)
+2018-10-18 16:40:27.551 [http-nio-8888-exec-2] DEBUG c.z.t.m.M.selectMaterialListByUserId:159 - <==      Total: 10
+2018-10-18 16:40:27.552 [http-nio-8888-exec-2] INFO  c.z.t.c.business.MaterialController:56 - MaterialController|show|materialVoList:[MaterialVo{id=42, userId=2, description='将项目部署到github', url='https://blog.csdn.net/highboys/article/details/78701095', type='2', createTime=Mon Oct 15 18:46:57 CST 2018, updateTime=Mon Oct 15 18:46:57 CST 2018}, MaterialVo{id=40, userId=2, description='如何将项目部署到github', url='https://blog.csdn.net/qq_37932082/article/details/79464676', type='2', createTime=Mon Oct 15 14:16:20 CST 2018, updateTime=Mon Oct 15 18:46:31 CST 2018}, MaterialVo{id=41, userId=2, description='Git 中 SSH key 生成步骤', url='https://www.cnblogs.com/horanly/p/6604104.html', type='2', createTime=Mon Oct 15 18:45:48 CST 2018, updateTime=Mon Oct 15 18:45:48 CST 2018}, MaterialVo{id=39, userId=2, description='maven搜索jar', url='https://repository.sonatype.org/#welcome', type='2', createTime=Mon Sep 10 14:15:53 CST 2018, updateTime=Mon Sep 10 14:15:53 CST 2018}, MaterialVo{id=38, userId=2, description='电影天堂', url='https://www.dy2018.com/', type='1', createTime=Tue Sep 04 17:49:44 CST 2018, updateTime=Tue Sep 04 17:49:44 CST 2018}, MaterialVo{id=37, userId=2, description='thymeleaf学习笔记', url='https://blog.csdn.net/xiao______xin/article/details/73302447', type='2', createTime=Tue Sep 04 17:49:07 CST 2018, updateTime=Tue Sep 04 17:49:07 CST 2018}, MaterialVo{id=36, userId=2, description='thymeleaf模板', url='https://blog.csdn.net/f0rd_/article/details/80580225', type='2', createTime=Tue Sep 04 17:48:48 CST 2018, updateTime=Tue Sep 04 17:48:48 CST 2018}, MaterialVo{id=35, userId=2, description='layui模板', url='http://demo.vip-admin.com/', type='2', createTime=Tue Sep 04 17:48:11 CST 2018, updateTime=Tue Sep 04 17:48:11 CST 2018}, MaterialVo{id=34, userId=2, description='layui官方文档', url='https://www.layui.com/doc/', type='2', createTime=Tue Sep 04 17:47:48 CST 2018, updateTime=Tue Sep 04 17:47:48 CST 2018}, MaterialVo{id=33, userId=2, description='码云', url='https://gitee.com/', type='2', createTime=Tue Sep 04 17:47:25 CST 2018, updateTime=Tue Sep 04 17:47:25 CST 2018}]
+2018-10-18 16:40:27.552 [http-nio-8888-exec-2] INFO  c.z.t.c.business.MaterialController:57 - MaterialController|show|pageModel:PageModel{currentPage=1, pageSize=10, totalPage=0, totalRecord=41, dataList=null}
+2018-10-18 16:40:44.280 [http-nio-8888-exec-8] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:40:44.283 [http-nio-8888-exec-8] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:40:44.283 [http-nio-8888-exec-8] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:40:44.284 [http-nio-8888-exec-8] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:40:44.367 [http-nio-8888-exec-9] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:40:44.368 [http-nio-8888-exec-9] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:40:44.369 [http-nio-8888-exec-9] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:40:44.370 [http-nio-8888-exec-9] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:40:50.362 [http-nio-8888-exec-7] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:40:50.365 [http-nio-8888-exec-7] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:40:50.366 [http-nio-8888-exec-7] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:40:50.367 [http-nio-8888-exec-7] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:40:50.416 [http-nio-8888-exec-1] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:40:50.418 [http-nio-8888-exec-1] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:40:50.419 [http-nio-8888-exec-1] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:40:50.420 [http-nio-8888-exec-1] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:40:50.545 [http-nio-8888-exec-4] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:40:50.548 [http-nio-8888-exec-4] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:40:50.548 [http-nio-8888-exec-4] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:40:50.550 [http-nio-8888-exec-4] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:40:50.600 [http-nio-8888-exec-8] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:40:50.602 [http-nio-8888-exec-8] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:40:50.602 [http-nio-8888-exec-8] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:40:50.604 [http-nio-8888-exec-8] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:40:50.745 [http-nio-8888-exec-1] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:40:50.747 [http-nio-8888-exec-1] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:40:50.748 [http-nio-8888-exec-1] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:40:50.749 [http-nio-8888-exec-1] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:40:50.801 [http-nio-8888-exec-9] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:40:50.803 [http-nio-8888-exec-9] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:40:50.803 [http-nio-8888-exec-9] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:40:50.805 [http-nio-8888-exec-9] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:40:50.922 [http-nio-8888-exec-4] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:40:50.923 [http-nio-8888-exec-4] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:40:50.924 [http-nio-8888-exec-4] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:40:50.925 [http-nio-8888-exec-4] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:40:50.971 [http-nio-8888-exec-10] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:40:50.972 [http-nio-8888-exec-10] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:40:50.972 [http-nio-8888-exec-10] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:40:50.973 [http-nio-8888-exec-10] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:40:51.071 [http-nio-8888-exec-3] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:40:51.072 [http-nio-8888-exec-3] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:40:51.073 [http-nio-8888-exec-3] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:40:51.073 [http-nio-8888-exec-3] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:40:51.111 [http-nio-8888-exec-6] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:40:51.113 [http-nio-8888-exec-6] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:40:51.114 [http-nio-8888-exec-6] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:40:51.115 [http-nio-8888-exec-6] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:40:51.257 [http-nio-8888-exec-2] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:40:51.259 [http-nio-8888-exec-2] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:40:51.259 [http-nio-8888-exec-2] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:40:51.260 [http-nio-8888-exec-2] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:40:51.303 [http-nio-8888-exec-8] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:40:51.304 [http-nio-8888-exec-8] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:40:51.305 [http-nio-8888-exec-8] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:40:51.306 [http-nio-8888-exec-8] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:41:22.532 [http-nio-8888-exec-7] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:41:22.535 [http-nio-8888-exec-7] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:41:22.536 [http-nio-8888-exec-7] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:41:22.537 [http-nio-8888-exec-7] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:41:28.700 [http-nio-8888-exec-5] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:41:28.703 [http-nio-8888-exec-5] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:41:28.704 [http-nio-8888-exec-5] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:41:28.706 [http-nio-8888-exec-5] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:41:28.756 [http-nio-8888-exec-10] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:41:28.757 [http-nio-8888-exec-10] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:41:28.757 [http-nio-8888-exec-10] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:41:28.759 [http-nio-8888-exec-10] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:41:29.032 [http-nio-8888-exec-7] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:41:29.033 [http-nio-8888-exec-7] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:41:29.033 [http-nio-8888-exec-7] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:41:29.035 [http-nio-8888-exec-7] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:41:29.072 [http-nio-8888-exec-9] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:41:29.073 [http-nio-8888-exec-9] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:41:29.073 [http-nio-8888-exec-9] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:41:29.074 [http-nio-8888-exec-9] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:41:29.290 [http-nio-8888-exec-2] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:41:29.293 [http-nio-8888-exec-2] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:41:29.294 [http-nio-8888-exec-2] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:41:29.296 [http-nio-8888-exec-2] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:41:29.339 [http-nio-8888-exec-4] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:41:29.340 [http-nio-8888-exec-4] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:41:29.340 [http-nio-8888-exec-4] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:41:29.341 [http-nio-8888-exec-4] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
+2018-10-18 16:41:29.476 [http-nio-8888-exec-10] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/login/toIndex.html ]
+2018-10-18 16:41:29.478 [http-nio-8888-exec-10] DEBUG c.z.t.m.P.selectAllPublish:159 - ==>  Preparing: select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc; 
+2018-10-18 16:41:29.479 [http-nio-8888-exec-10] DEBUG c.z.t.m.P.selectAllPublish:159 - ==> Parameters: 
+2018-10-18 16:41:29.481 [http-nio-8888-exec-10] DEBUG c.z.t.m.P.selectAllPublish:159 - <==      Total: 2
+2018-10-18 16:41:29.536 [http-nio-8888-exec-7] INFO  c.z.transmanage.filter.LoginFilter:101 - ******URL******: [ http://127.0.0.1:8888/index/show ]
+2018-10-18 16:41:29.538 [http-nio-8888-exec-7] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==>  Preparing: SELECT * from `daily` where 1=1 and `USERID` = ? order by `dailydate` desc limit 7 
+2018-10-18 16:41:29.539 [http-nio-8888-exec-7] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - ==> Parameters: 2(Integer)
+2018-10-18 16:41:29.539 [http-nio-8888-exec-7] DEBUG c.z.t.m.D.selectDailyVoByUserId:159 - <==      Total: 7
