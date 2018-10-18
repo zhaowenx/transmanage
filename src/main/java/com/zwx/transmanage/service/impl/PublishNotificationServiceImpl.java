@@ -60,4 +60,9 @@ public class PublishNotificationServiceImpl implements PublishNotificationServic
     public List<PublishNotificationVo> selectAllPublish() {
         return publishNotificationMapper.selectAllPublish();
     }
+
+    @Override
+    public List<PublishNotificationVo> selectPublishNotificationByMessageType(Integer messageType) {
+        return publishNotificationMapper.selectPublishNotificationByMessageType(messageType);
+    }
 }

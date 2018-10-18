@@ -21,4 +21,5 @@ public interface PublishNotificationMapper {
     void delete(Integer id);
     Integer shield(PublishNotificationDto publishNotificationDto);
     List<PublishNotificationVo> selectAllPublish();
+    List<PublishNotificationVo> selectPublishNotificationByMessageType(@Param("messageType") Integer messageType);
 }

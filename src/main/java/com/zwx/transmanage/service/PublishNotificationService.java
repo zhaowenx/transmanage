@@ -18,4 +18,5 @@ public interface PublishNotificationService {
     void delete(Integer id);
     Integer shield(PublishNotificationDto publishNotificationDto);
     List<PublishNotificationVo> selectAllPublish();
+    List<PublishNotificationVo> selectPublishNotificationByMessageType(Integer messageType);
 }

@@ -7,6 +7,9 @@ layui.use(['table', 'form', 'layer','laydate'], function () {
         , laydate = layui.laydate
         , $ = layui.jquery;
 
+    var option;
+    var option1;
+
     $('#btn-refresh').on('click', function () {
         window.location.reload();
     });
@@ -24,7 +27,7 @@ layui.use(['table', 'form', 'layer','laydate'], function () {
             data : JSON.stringify(param1),
             success : function(data) {
                 if (data.success) {
-                    var option = '';
+                    option = '';
                     option += "<option value=''>----请选择----</option>";
                     for(var i=0;i<data.data.length;i++){
                         option +="<option value=\""+data.data[i].itemKey+"\">"+data.data[i].itemKey+"-"+data.data[i].itemVal+"</option>"; //动态添加数据
@@ -39,7 +42,7 @@ layui.use(['table', 'form', 'layer','laydate'], function () {
                         data : JSON.stringify(param2),
                         success : function(data) {
                             if (data.success) {
-                                var option1 = '';
+                                option1 = '';
                                 option1 += "<option value=''>----请选择----</option>";
                                 for(var i=0;i<data.data.length;i++){
                                     option1 +="<option value=\""+data.data[i].itemKey+"\">"+data.data[i].itemKey+"-"+data.data[i].itemVal+"</option>"; //动态添加数据
@@ -144,6 +147,10 @@ layui.use(['table', 'form', 'layer','laydate'], function () {
         return false;
     });
 
+    $('#update-address').on('click',function () {
+
+    });
+
 });
 
 // $(function () {
@@ -199,6 +206,7 @@ function updateAddress(id) {
                 $("#type").val(data.data.type);
                 $("#id").val(data.data.id);
                 $("#birthday").val(data.data.birthday);
+                // setSelectChecked("profession",data.data.profession);
                 // var option1 = '';
                 // option1 += "<option value=''>----请选择----</option>";
                 // for(var i=0;i<data.data.length;i++){
@@ -292,4 +300,14 @@ function deleteAddress(id) {
         })
     });
 }
+
+function setSelectChecked(selectId, checkValue){
+    var select = document.getElementById(selectId);
+    for(var i=0; i<select.options.length; i++){
+        if(select.options[i].innerHTML == checkValue){
+            select.options[i].selected = true;
+            break;
+        }
+    }
+};
 

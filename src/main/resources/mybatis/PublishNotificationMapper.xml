@@ -70,4 +70,8 @@
     <select id="selectAllPublish" resultMap="PublishNotificationVoMap">
         select * from `publishnotification` where `status` = 0 and `isDelete` = 2 order by publishDate,updateDate asc;
     </select>
+
+    <select id="selectPublishNotificationByMessageType" resultMap="PublishNotificationVoMap">
+        select * from `publishnotification` where `messageType` = #{messageType}
+    </select>
 </mapper>

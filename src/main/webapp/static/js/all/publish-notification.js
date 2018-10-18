@@ -55,6 +55,8 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
             , {field: 'messageType', title: '消息类型', width: 120,align: 'center',templet:function (data) {
                 if(data.messageType == 1){
                     return "系统消息";
+                }else if(data.messageType == 2){
+                    return "生日消息";
                 }else{
                     return "其他消息";
                 }
@@ -107,8 +109,8 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
                                 ,icon: 1
                                 ,time: 1000
                             }, function(){
-                                // window.location.reload();
-                                parent.location.reload();
+                                window.location.reload();
+                                // parent.location.reload();
                             });
                         } else {
                             layer.open({
@@ -146,6 +148,9 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
             $("#stick").val(data.stick);
             $("#messageType").val(data.messageType);
             $("#messageAttachment").val(data.messageAttachment);
+            if(data.messageAttachment.indexOf("AbCdEfG")!=-1){
+                $("#messageAttachment").attr("readonly",true);
+            }
             $("#id").val(data.id);
             form.render('select');
             layer.open({
@@ -172,8 +177,8 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
                                 ,icon: 1
                                 ,time: 1000
                             }, function(){
-                                // window.location.reload();
-                                parent.location.reload();
+                                window.location.reload();
+                                // parent.location.reload();
                             });
                         } else {
                             layer.open({
@@ -233,8 +238,8 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
                     ,time: 1000
                 }, function(){
                     // window.location.href="/login/toIndex";
-                    // window.location.reload();
-                    parent.location.reload();
+                    window.location.reload();
+                    // parent.location.reload();
                 });
             }else{
                 layer.open({
@@ -258,14 +263,14 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
         $("#submit").hide();
         $.post('/publish/update',data.field,function (res) {
             if(res.success){
-                layer.msg('修改日报成功', {
+                layer.msg('修改公告成功', {
                     offset: '20px'
                     ,icon: 1
                     ,time: 1000
                 }, function(){
                     // window.location.href="/login/toIndex";
-                    // window.location.reload();
-                    parent.location.reload();
+                    window.location.reload();
+                    // parent.location.reload();
                 });
             }else{
                 layer.open({

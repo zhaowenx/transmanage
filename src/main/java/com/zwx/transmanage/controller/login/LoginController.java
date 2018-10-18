@@ -2,12 +2,15 @@ package com.zwx.transmanage.controller.login;
 
 import com.alibaba.fastjson.JSONObject;
 import com.zwx.transmanage.commen.constant.*;
+import com.zwx.transmanage.domain.dto.PublishNotificationDto;
 import com.zwx.transmanage.domain.dto.UserDto;
+import com.zwx.transmanage.domain.vo.AddressBookVo;
 import com.zwx.transmanage.domain.vo.PublishNotificationVo;
 import com.zwx.transmanage.model.ResponseVo;
 import com.zwx.transmanage.domain.User;
 import com.zwx.transmanage.model.ValidateCodeReturn;
 import com.zwx.transmanage.domain.vo.UserVo;
+import com.zwx.transmanage.service.AddressBookService;
 import com.zwx.transmanage.service.PublishNotificationService;
 import com.zwx.transmanage.service.UserService;
 import com.zwx.transmanage.util.*;
@@ -27,7 +30,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.regex.Pattern;
 
 /**
  * Created by zhaowenx on 2018/8/23.
@@ -38,6 +44,7 @@ public class LoginController {
 
     private final static Logger logger = LoggerFactory.getLogger(LoginController.class);
     private static final String SESSION_ID = "sessionId";
+    private static final String CHECK = "AbCdEfG";
 
     @Autowired
     private RedisUtil redisUtil;
@@ -46,6 +53,8 @@ public class LoginController {
     private UserService userService;
     @Autowired
     private PublishNotificationService publishNotificationService;
+    @Autowired
+    private AddressBookService addressBookService;
 
     /**
      * 登录操作，先获取登录密匙
@@ -185,6 +194,15 @@ public class LoginController {
         userDto.setUserName(userVo.getUserName());
         userService.updateUserAfterLogin(userDto);
 
+        /**
+         * 登录成功后，筛选通讯录表，将今天生日的用户推送到公告拦
+         * 将公告表中今天不是生日的公告删除
+         */
+        boolean flag = initPublish(userVo);
+        if(!flag){
+            return ResponseUtil.buildVo(false, ResponseCode.LOGIN_CODE_ERROR.getCode(),"公告初始化失败",null);
+        }
+
         return ResponseUtil.buildVo(true,ResponseCode.LOGIN_CODE_SUCCESS.getCode(),ResponseCode.LOGIN_CODE_SUCCESS.getMsg(),userVo);
     }
 
@@ -300,5 +318,69 @@ public class LoginController {
         HttpSession session = request.getSession(true);
         session.setAttribute("sessionId",null);
         logger.info("LoginController|removeCookieRedis|session:"+session.getAttribute("sessionId"));
+    }
+
+    public boolean initPublish(UserVo userVo){
+        logger.info("初始化公告信息开始");
+        String date = DateTimeUtil.getFormatDay(new Date());
+        logger.info("当前日期："+date);
+        List<PublishNotificationVo> publishNotificationVoList = publishNotificationService.selectPublishNotificationByMessageType(2);
+        logger.info("LoginController|initPublish|publishNotificationVoList:"+publishNotificationVoList.toString());
+        List<Integer> idList = new ArrayList<>();
+
+        if(publishNotificationVoList.size()>0){
+            for(PublishNotificationVo publishNotificationVo:publishNotificationVoList){
+                if(StringUtils.isNotBlank(publishNotificationVo.getMessageAttachment())){
+                    if(publishNotificationVo.getMessageAttachment().indexOf(CHECK)!=-1){
+                        String id = publishNotificationVo.getMessageAttachment().substring(publishNotificationVo.getMessageAttachment().indexOf(CHECK)+CHECK.length(),publishNotificationVo.getMessageAttachment().length());
+                        logger.info("publishNotificationVo.getMessageAttachment():"+id);
+                        idList.add(Integer.parseInt(id));
+                        AddressBookVo addressBookVo = addressBookService.selectAddressBookById(Integer.parseInt(id));
+                        if(!date.substring(4).equals(addressBookVo.getBirthday().substring(4))){
+                            publishNotificationService.delete(publishNotificationVo.getId());
+                        }
+                    }
+                }
+            }
+        }
+
+        List<AddressBookVo> addressBookVoList = addressBookService.selectAddressBookVoByUserId(userVo.getId());
+        logger.info("LoginController|initPublish|addressBookVoList:"+addressBookVoList.toString());
+
+        if(addressBookVoList.size()>0){
+            for(AddressBookVo addressBookVo:addressBookVoList){
+                if(StringUtils.isNotBlank(addressBookVo.getBirthday())){
+                    if(date.substring(4).equals(addressBookVo.getBirthday().substring(4))){
+                        boolean checkAdd = false;
+                        for(Integer id:idList){
+                            if(id == addressBookVo.getId()){
+                                checkAdd = true;
+                                break;
+                            }
+                        }
+                        if(!checkAdd){
+                            PublishNotificationDto publishNotificationDto = new PublishNotificationDto();
+                            publishNotificationDto.setNotificationTitle(addressBookVo.getChineseName()+"生日通知");
+                            publishNotificationDto.setNotificationContent(addressBookVo.getChineseName()+"出生在"+addressBookVo.getBirthday()+ ",今天"+date+"是他或者她的阳历生日,快去祝福他或她吧！");
+                            publishNotificationDto.setPublishBy(userVo.getId());
+                            publishNotificationDto.setPublishDate(DateTimeUtil.formatDateTime(new Date()));
+                            publishNotificationDto.setCreateBy(userVo.getId());
+                            publishNotificationDto.setUpdateBy(userVo.getId());
+                            publishNotificationDto.setStatus(0);
+                            publishNotificationDto.setStick(1);
+                            publishNotificationDto.setMessageType(2);
+                            publishNotificationDto.setMessageAttachment(CHECK+addressBookVo.getId().toString());
+                            Integer flag = publishNotificationService.addPublishNotification(publishNotificationDto);
+                            if(flag<0){
+                                return false;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        logger.info("初始化公告信息结束");
+        return true;
     }
 }

@@ -3,6 +3,8 @@ package com.zwx;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ImportResource;
+
 /**
  * Created by zhaowenx on 2018/8/23.
  */
