@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="../static/css/style.css" media="all">
     <link rel="stylesheet" href="../static/css/index.css" media="all">
     <link rel="icon" href="../static/images/100002.gif">
+    <style type="text/css">
+        #lay-address-a{
+            margin-top: 30px;
+            /*margin-left: 30px;*/
+        }
+    </style>
 </head>
 <script type="text/javascript" src="../static/plugins/layui/layui.js"></script>
 <script type="text/javascript" src="../static/js/shouye/vip_comm.js"></script>
@@ -122,15 +128,15 @@
 </div>
 
 <div id="open-div-show-publish" hidden>
-    <div>
+    <div id="lay-address-a">
+        <!--<div class="layui-form-item">-->
+            <!--<label class="layui-form-label">通知标题:</label>-->
+            <!--<div class="layui-input-block">-->
+                <!--<input type="text" name="notificationTitle" id="notificationTitle" class="layui-input" style="color: #eb7350;border:none;" readonly/>-->
+            <!--</div>-->
+        <!--</div>-->
         <div class="layui-form-item">
-            <label class="layui-form-label">通知标题:</label>
-            <div class="layui-input-block">
-                <input type="text" name="notificationTitle" id="notificationTitle" class="layui-input" style="color: #eb7350;border:none;" readonly/>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">内容:</label>
+            <!--<label class="layui-form-label">内容:</label>-->
             <div class="layui-input-block">
                 <textarea name="notificationContent" id="notificationContent" class="layui-textarea" style="color: #eb7350;border:none;" readonly></textarea>
             </div>

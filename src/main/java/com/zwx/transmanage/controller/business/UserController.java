@@ -66,7 +66,7 @@ public class UserController {
         }
 
         Integer count = userService.selectUserVoByPhoneAndUserName(user.getMobile(),user.getUserName());
-        if(count>0){
+        if(count>1){
             return ResponseUtil.buildVo(false, ResponseCode.PARAMETER_ERROR.getCode(),"用户名或手机号码重复",null);
         }
 

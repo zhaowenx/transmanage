@@ -47,11 +47,11 @@ function showPublish(id) {
         data : JSON.stringify(param),
         success : function(data) {
             if (data.success) {
-                $("#notificationTitle").val(data.data.notificationTitle);
+                // $("#notificationTitle").val(data.data.notificationTitle);
                 $("#notificationContent").val(data.data.notificationContent);
                 // $(".layui-layer-shade").hide();
                 var index1 = layer.open({
-                    title: '详情'
+                    title: data.data.notificationTitle
                     ,type:1
                     ,moveOut:true
                     ,area:["700px","210px"]
@@ -59,6 +59,7 @@ function showPublish(id) {
                     ,content: $("#open-div-show-publish")
                     ,cancel: function(){
                         $(".layui-layer-shade").hide();
+                        $("#notificationContent").val('');
                         layer.close(index1);
                         // window.location.reload();
                     }
