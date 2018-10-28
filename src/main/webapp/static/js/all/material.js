@@ -8,6 +8,46 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
         ,laydate = layui.laydate
         , $ = layui.jquery;
 
+    var option1;
+
+    //获取下拉框值的函数
+    function getItemVal(dict) {
+        var option = '';
+        var param = {"dict":dict};
+        $.post({
+            url : "/dict/selectDictItemByDict",
+            contentType : "application/json",
+            dataType : "json",
+            data : JSON.stringify(param),
+            success : function(data) {
+                option += "<option value=''>----请选择----</option>";
+                for(var i=0;i<data.data.length;i++){
+                    option +="<option value=\""+data.data[i].itemKey+"\">"+data.data[i].itemKey+"-"+data.data[i].itemVal+"</option>"; //动态添加数据
+                }
+                if("material_type" == dict){
+                    option1 = option;
+                }
+            },
+            error : function(xmlq, errq) {
+                layer.open({
+                    title: 'ERROR'
+                    ,content: errq
+                    ,closeBtn: 0
+                    ,btn: "取消"
+                    ,skin: 'layui-layer-molv'
+                    ,icon :2
+                    ,yes: function (index, layero) {
+                        layer.close(index);
+                    }
+                });
+            }
+        });
+    }
+
+    $(function () {
+        getItemVal("material_type");
+    })
+
     $("#close-btn-qx").click(function () {
         $("#open-div-add-daily").hide();
     });
@@ -103,6 +143,8 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
         } else if(layEvent === 'update'){ //编辑
             $("#description").val(data.description);
             $("#url").val(data.url);
+            $("select[name=type]").empty();
+            $("select[name=type]").append(option1);
             $("#type").val(data.type);
             $("#id").val(data.id);
             form.render('select');
@@ -123,6 +165,9 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
     });
 
     $('#btn-add').on('click',function () {
+        $("select[name=type]").empty();
+        $("select[name=type]").append(option1);
+        form.render('select');
         layer.open({
             title: '新增'
             ,type:1

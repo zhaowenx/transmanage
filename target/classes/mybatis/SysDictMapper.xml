@@ -19,11 +19,11 @@
     </select>
 
     <select id="selectSysDictItem" resultMap="SysDictItemVoMap">
-        select * from `sys_dict_item` where 1=1 and `dict` = #{dict} order by itemKey ASC;
+        select * from `sys_dict_item` where 1=1 and `dict` = #{dict}
     </select>
 
     <select id="countSysDict" resultType="Integer">
-        select count(1) from `sys_dict`;
+        select count(1) from `sys_dict` where DICT not in  (select dict from `sys_dict` where `groupdict` = 'root');
     </select>
 
     <select id="selectGroupDict" resultMap="SysDictVoMap">

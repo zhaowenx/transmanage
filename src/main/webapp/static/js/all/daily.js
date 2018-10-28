@@ -8,6 +8,8 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
         ,laydate = layui.laydate
         , $ = layui.jquery;
 
+    var option1;
+
     //日期
     laydate.render({
         elem: '#dailyDate'
@@ -22,6 +24,44 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
     $("#close-btn-qx").click(function () {
         $("#open-div-add-daily").hide();
     });
+
+    //获取下拉框值的函数
+    function getItemVal(dict) {
+        var option = '';
+        var param = {"dict":dict};
+        $.post({
+            url : "/dict/selectDictItemByDict",
+            contentType : "application/json",
+            dataType : "json",
+            data : JSON.stringify(param),
+            success : function(data) {
+                option += "<option value=''>----请选择----</option>";
+                for(var i=0;i<data.data.length;i++){
+                    option +="<option value=\""+data.data[i].itemKey+"\">"+data.data[i].itemKey+"-"+data.data[i].itemVal+"</option>"; //动态添加数据
+                }
+                if("isEvection" == dict){
+                    option1 = option;
+                }
+            },
+            error : function(xmlq, errq) {
+                layer.open({
+                    title: 'ERROR'
+                    ,content: errq
+                    ,closeBtn: 0
+                    ,btn: "取消"
+                    ,skin: 'layui-layer-molv'
+                    ,icon :2
+                    ,yes: function (index, layero) {
+                        layer.close(index);
+                    }
+                });
+            }
+        });
+    }
+
+    $(function () {
+        getItemVal("isEvection");
+    })
 
     // 表格渲染
     var tableIns = table.render({
@@ -115,17 +155,19 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
                 })
             });
         } else if(layEvent === 'update'){ //编辑
-            $("#content1").val(data.content);
-            $("#dailyDate1").val(data.dailyDate);
+            $("#content").val(data.content);
+            $("#dailyDate").val(data.dailyDate);
+            $("#id").val(data.id);
+            $("#dailyDate").attr("disabled","true");
+            $("select[name=isEvection]").empty();
+            $("select[name=isEvection]").append(option1);
             $("#isEvection").val(data.isEvection);
-            $("#id1").val(data.id);
-            $("#dailyDate1").attr("disabled","true");
             form.render('select');
             layer.open({
                 title: '修改'
                 ,type:1
                 ,moveOut:true
-                ,area:["700px","320px"]
+                ,area:["710px","320px"]
                 ,skin: 'layui-layer-molv'
                 ,content: $("#open-div-update-daily")
             });
@@ -138,11 +180,14 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
     });
     
     $('#btn-add').on('click',function () {
+        $("select[name=isEvection]").empty();
+        $("select[name=isEvection]").append(option1);
+        form.render('select');
         layer.open({
             title: '新增'
             ,type:1
             ,moveOut:true
-            ,area:["700px","320px"]
+            ,area:["710px","320px"]
             ,skin: 'layui-layer-molv'
             ,content: $("#open-div-add-daily")
         });

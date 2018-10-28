@@ -20,6 +20,7 @@
         <result column="CREATETIME" property="createTime"/>
         <result column="UPDATETIME" property="updateTime"/>
         <result column="BIRTHDAY" property="birthday"/>
+        <result column="SEX" property="sex"/>
     </resultMap>
 
     <select id="selectAddressBookVoByUserId" resultMap="AddressBookVoMap">
@@ -28,9 +29,12 @@
 
     <insert id="add" parameterType="com.zwx.transmanage.domain.dto.AddressBookDto">
         INSERT  INTO `addressbook` (`USERID`,`CHINESENAME`,`ENGLISHNAME`,`ANOTHERNAME`,`QQNUMBER`,
-        `WEIXIN`,`DOMICILE`,`ADDRESS`,`EMAIL`,`PHONE`,`WEIBO`,`PROFESSION`,`TYPE`,`CREATETIME`,`UPDATETIME`,`BIRTHDAY`) VALUES (
+        `WEIXIN`,`DOMICILE`,`ADDRESS`,`EMAIL`,`PHONE`,`WEIBO`,`PROFESSION`,`TYPE`,`CREATETIME`,
+        `UPDATETIME`,`BIRTHDAY`,`SEX`)
+        VALUES (
         #{userId},#{chineseName},#{englishName},#{anotherName},#{qqNumber},
-        #{weixin},#{domicile},#{address},#{email},#{phone},#{weibo},#{profession},#{type},now(),now(),#{birthday}
+        #{weixin},#{domicile},#{address},#{email},#{phone},#{weibo},#{profession},#{type},now(),
+        now(),#{birthday},#{sex}
         )
     </insert>
 
@@ -51,7 +55,10 @@
         `PHONE` = #{phone},
         `WEIBO` = #{weibo},
         `UPDATETIME` = now(),
-        `BIRTHDAY` = #{birthday}
+        `BIRTHDAY` = #{birthday},
+        `PROFESSION` = #{profession},
+        `TYPE` = #{type},
+        `SEX` = #{sex}
         where id = #{id}
     </update>
 

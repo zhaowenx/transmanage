@@ -11,8 +11,13 @@ layui.define(['layer', 'element'], function (exports) {
             // 请求数据
             $.get(addr, data, function (res) {
                 var view = "";
+                var one_icon = '&#xe857;';
+                var two_icon = '&#xe655;';
                 if (res.data) {
-                    $(res.data).each(function (k, v) {
+                    var re_data = res.data;
+                    // re_data = re_data.replaceAll("\"","'");
+                    // re_data = JSON.stringify(re_data);
+                    $(re_data).each(function (k, v) {
                         v.subset && treeStatus ? view += '<li class="layui-nav-item layui-nav-itemed">' : view += '<li class="layui-nav-item">';
                         if (v.subset) {
                             view += '<a href="javascript:;"><i class="layui-icon">' + v.icon + '</i>' + v.text + '</a><dl class="layui-nav-child">';

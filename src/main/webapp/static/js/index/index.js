@@ -3,9 +3,48 @@ layui.use(['vip_nav','jquery'], function () {
         ,$ = layui.jquery
         ,layer = layui.layer;
     // 顶部左侧菜单生成 [请求地址,过滤ID,是否展开,携带参数]
-    vipNav.top_left('../static/json/nav_top_left.json','side-top-left',false);
+    // vipNav.top_left('../static/json/nav_top_left.json','side-top-left',false);
     // 主体菜单生成 [请求地址,过滤ID,是否展开,携带参数]
-    vipNav.main('../static/json/nav_main.json','side-main',true);
+    // var addr = '';
+    // var url = '/menu/getMenu';
+    var url = '../static/json/nav_main.json';
+    // var ids = {};
+    //
+    // $.post(url, ids, function (res) {
+    //     if (res.success) {
+    //         // addr = JSON.parse(res.data);
+    //         addr = $.parseJSON(res.data);
+    //         addr = JSON.stringify(addr);
+    //     } else {
+    //         layer.msg(res.msg);
+    //     }
+    // });
+
+    // $.post({
+    //     type : "post",
+    //     url : "/menu/getMenu",
+    //     dataType : "json",
+    //     contentType : "application/json",
+    //     // data : JSON.stringify(param),
+    //     success : function(data) {
+    //         if (data.success) {
+    //             addr = data.data;
+    //         } else {
+    //             layer.msg(data.msg);
+    //         }
+    //     },
+    //     error : function(xmlq, errq) {
+    //         layer.msg(errq);
+    //     }
+    // })
+
+    // vipNav.main('../static/json/nav_main.json','side-main',false);
+    vipNav.main(url,'side-main',false);
+    // vipNav.top_left('../static/json/nav_top_left.json','side-top-left',false);
+
+
+
+
 
     $(function () {
         time1();

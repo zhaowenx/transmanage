@@ -25,6 +25,7 @@ public class AddressBook {
     private String createTime;//创建时间
     private String updateTime;//更新时间
     private String birthday;//生日
+    private String sex;//性别
 
     public String getBirthday() {
         return birthday;
@@ -162,6 +163,14 @@ public class AddressBook {
         this.updateTime = updateTime;
     }
 
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
     @Override
     public String toString() {
         return "AddressBook{" +
@@ -182,6 +191,7 @@ public class AddressBook {
                 ", createTime='" + createTime + '\'' +
                 ", updateTime='" + updateTime + '\'' +
                 ", birthday='" + birthday + '\'' +
+                ", sex='" + sex + '\'' +
                 '}';
     }
 }

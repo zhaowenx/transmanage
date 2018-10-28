@@ -39,29 +39,30 @@
     }
 </style>
 <body layadmin-themealias="default">
-<input type="hidden" id="sysDict" th:value="${sysDict}">
+<!--<input type="hidden" id="sysDict" th:value="${sysDict}">-->
 <div class="my-btn-box">
     <span class="fl">
         <a class="layui-btn btn-add btn-default" id="btn-add">添加</a>
         <a class="layui-btn btn-add btn-default" id="btn-refresh"><i class="layui-icon">&#xe669;</i></a>
+        &nbsp;&nbsp;&nbsp;<span>共</span><span th:text="${count}" style="color: #eb7350"></span><span>个联系人</span>
     </span>
 </div>
 <div class="layui-fluid layadmin-maillist-fluid">
     <div class="layui-row layui-col-space15">
-            <div class="layui-col-md4 layui-col-sm6 layui-show-1" th:each="address:${addressBookVoList}">
+            <div class="layui-col-md4 layui-col-sm6 layui-show-1" th:each="address,iterStat:${addressBookVoList}">
                 <div class="layadmin-contact-box">
                     <div class="layui-col-md4 layui-col-sm6">
                         <a href="javascript:;">
                             <div class="layadmin-text-center">
-                                <div th:if="${address.englishName eq 'shushu'}">
-                                    <img src="../static/images/100010.jpg">
+                                <div th:if="${address.sex eq '0'}">
+                                    <img src="../static/images/100011.jpg">
                                 </div>
-                                <div th:if="${address.englishName ne 'shushu'}">
-                                    <img src="../static/images/100001.gif">
+                                <div th:if="${address.sex ne '0'}">
+                                    <img src="../static/images/100012.jpg">
                                 </div>
                                 <div class="layadmin-maillist-img layadmin-font-blod">
                                     <span th:text="${address.profession}"></span>
-                                    <!--<input type="hidden" th:value="${address.id}" id="address-id"/>-->
+                                    <!--<input type="hidden" th:value="${address.id}" th:id="'address-id-'+${iterStat.index}"/>-->
                                 </div>
                             </div>
                         </a>
@@ -74,12 +75,12 @@
                         <a href="javascript:;">
                             <h3 class="layadmin-title">
                                 <strong th:text="${address.anotherName}"></strong>&nbsp;~~
-                                <strong th:text="${address.type}"></strong>
+                                <strong th:text="${address.type}"></strong>&nbsp;&nbsp;&nbsp;
+                                <!--<p class="layadmin-textimg">-->
+                                    <i class="layui-icon layui-icon-location"></i>
+                                    <span th:text="${address.address}"></span>
+                                <!--</p>-->
                             </h3>
-                            <p class="layadmin-textimg">
-                                <i class="layui-icon layui-icon-location"></i>
-                                <span th:text="${address.address}"></span>
-                            </p>
                         </a>
                         <div class="layadmin-address">
                             <a href="javascript:;">
@@ -175,14 +176,14 @@
             <div class="layui-inline">
                 <label class="layui-form-label">职业：</label>
                 <div class="layui-input-inline">
-                    <select name="profession">
+                    <select name="profession" class="layui-select" lay-verify="required">
                     </select>
                 </div>
             </div>
             <div class="layui-inline">
                 <label class="layui-form-label">分类：</label>
                 <div class="layui-input-inline">
-                    <select name="type">
+                    <select name="type" class="layui-select" lay-verify="required">
                     </select>
                 </div>
             </div>
@@ -194,6 +195,15 @@
                     <input type="text" placeholder="请输入出生日期" name="birthday" class="layui-input"  lay-verify="required|number" maxlength="8" />
                 </div>
             </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">性别：</label>
+                <div class="layui-input-inline">
+                    <select name="sex" class="layui-select" lay-verify="required">
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
             <div class="layui-inline layui-form-btn-all">
                 <button class="layui-btn layui-btn-sm" lay-submit lay-filter="addAddressBook"><a class="layui-icon">&#xe609;</a><span>保存</span></button>
             </div>
@@ -278,42 +288,15 @@
             <div class="layui-inline">
                 <label class="layui-form-label">职业：</label>
                 <div class="layui-input-inline">
-                    <!--<select name="profession" id="profession">-->
-                        <!--<option value="1">互联网/IT计算机</option>-->
-                        <!--<option value="2">制造业</option>-->
-                        <!--<option value="3">电子/微电子</option>-->
-                        <!--<option value="4">广告/公关</option>-->
-                        <!--<option value="5">房地产/建筑</option>-->
-                        <!--<option value="6">贸易/进出口/零售批发</option>-->
-                        <!--<option value="7">消费品</option>-->
-                        <!--<option value="8">交通/运输/物流</option>-->
-                        <!--<option value="9">教育/培训/科研</option>-->
-                        <!--<option value="10">艺术/休闲/运动</option>-->
-                        <!--<option value="11">农/林/牧/渔/水利</option>-->
-                        <!--<option value="12">石油/化工/能源</option>-->
-                        <!--<option value="13">金融/银行</option>-->
-                        <!--<option value="14">文化/媒体/出版/印刷</option>-->
-                        <!--<option value="15">服务/中介/物业</option>-->
-                        <!--<option value="16">政府/非营利机构</option>-->
-                        <!--<option value="17">其他</option>-->
-                    <!--</select>-->
-                    <!--<span id="profession"></span>-->
-                    <input type="text" id="profession" class="layui-input" readonly>
+                    <select name="profession" id="profession" class="layui-select" lay-verify="required">
+                    </select>
                 </div>
             </div>
             <div class="layui-inline">
                 <label class="layui-form-label">分类：</label>
                 <div class="layui-input-inline">
-                    <!--<select name="type" id="type">-->
-                        <!--<option value="1">本人</option>-->
-                        <!--<option value="2">亲人</option>-->
-                        <!--<option value="3">朋友</option>-->
-                        <!--<option value="4">同事</option>-->
-                        <!--<option value="5">同学</option>-->
-                        <!--<option value="6">其他</option>-->
-                    <!--</select>-->
-                    <!--<span id="type"></span>-->
-                    <input type="text" id="type" class="layui-input" readonly>
+                    <select name="type" id="type" class="layui-select" lay-verify="required">
+                    </select>
                 </div>
             </div>
         </div>
@@ -324,6 +307,15 @@
                     <input type="text" placeholder="请输入出生日期" name="birthday" id="birthday" class="layui-input"  lay-verify="required|number" maxlength="8" />
                 </div>
             </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">性别：</label>
+                <div class="layui-input-inline">
+                    <select name="sex" id="sex" class="layui-select" lay-verify="required">
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
             <div class="layui-inline layui-form-btn-all">
                 <button class="layui-btn layui-btn-sm" lay-submit lay-filter="updateAddressBook"><a class="layui-icon">&#xe609;</a><span>保存</span></button>
             </div>

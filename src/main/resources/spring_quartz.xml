@@ -28,7 +28,8 @@
 		<property name="cronExpression">
 			<!--<value>0 30 11 * * ?</value>-->
 			<!--<value>*/5 * * * * ?</value>-->
-			<value>0 0 10,14,16 * * ?</value>
+			<!--<value>0 0 10,14,16 * * ?</value>-->
+			<value>0 30/5 9-11 * * ?</value>
 		</property>
 	</bean>
 

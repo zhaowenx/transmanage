@@ -7,19 +7,23 @@
         {
           "text": "日报",
           "icon": "&#xe60a;",
-          "href": "/html/daily.html"
+          "href": "/html/daily.html",
+          "subset":""
         },{
           "text": "记事本",
           "icon": "&#xe656;",
-          "href": "/html/wordpad.html"
+          "href": "/html/wordpad.html",
+          "subset":""
         },{
           "text": "资料",
           "icon": "&#xe655;",
-          "href": "/html/material.html"
+          "href": "/html/material.html",
+          "subset":""
         },{
           "text": "通讯录",
           "icon": "&#xe613;",
-          "href": "/address/show"
+          "href": "/address/show",
+          "subset":""
         }
       ]
     },
@@ -30,14 +34,17 @@
         {
           "text": "数据字典",
           "icon": "&#xe857;",
-          "href": "/html/sys-dict.html"
+          "href": "/html/sys-dict.html",
+          "subset":""
         },
         {
           "text": "公告消息",
           "icon": "&#xe857;",
-          "href": "/html/publish-notification.html"
+          "href": "/html/publish-notification.html",
+          "subset":""
         }
-      ]
+      ],
+      "href": ""
     }
   ]
 }

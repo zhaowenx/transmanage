@@ -7,6 +7,7 @@ import java.util.Date;
  */
 public class AddressBookVo {
 
+    private int index;//下标
     private Integer id;//ID
     private Integer userId;//用户ID
     private String chineseName;//中文名
@@ -24,6 +25,7 @@ public class AddressBookVo {
     private Date createTime;//创建时间
     private Date updateTime;//更新时间
     private String birthday;//生日
+    private String sex;//性别
 
     public String getBirthday() {
         return birthday;
@@ -161,10 +163,27 @@ public class AddressBookVo {
         this.updateTime = updateTime;
     }
 
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
+
     @Override
     public String toString() {
         return "AddressBookVo{" +
-                "id=" + id +
+                "index=" + index +
+                ", id=" + id +
                 ", userId=" + userId +
                 ", chineseName='" + chineseName + '\'' +
                 ", englishName='" + englishName + '\'' +
@@ -181,6 +200,7 @@ public class AddressBookVo {
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +
                 ", birthday='" + birthday + '\'' +
+                ", sex='" + sex + '\'' +
                 '}';
     }
 }

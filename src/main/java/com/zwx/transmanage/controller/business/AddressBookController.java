@@ -75,7 +75,8 @@ public class AddressBookController {
             addressBookVos.add(addressBookVo);
         }
         request.setAttribute("addressBookVoList",addressBookVos);
-//        request.setAttribute("sysDict",redisUtil.get(KeyNameConstant.SYS_DICT));
+        request.setAttribute("count",addressBookVos.size());
+        logger.info("AddressBookController|show|count:"+addressBookVos.size());
         return "address-book";
     }
 
@@ -109,6 +110,15 @@ public class AddressBookController {
         if(!check(addressBook.getBirthday(),BIRTHDAY)){
             return ResponseUtil.buildVo(false,ResponseCode.PARAMETER_NULL.getCode(),"出生日期的格式为yyyyMMdd",null);
         }
+        if(StringUtils.isBlank(addressBook.getProfession())){
+            return ResponseUtil.buildVo(false,ResponseCode.PARAMETER_NULL.getCode(),"职业不能为空",null);
+        }
+        if(StringUtils.isBlank(addressBook.getType())){
+            return ResponseUtil.buildVo(false,ResponseCode.PARAMETER_NULL.getCode(),"所属分类不能为空",null);
+        }
+        if(StringUtils.isBlank(addressBook.getSex())){
+            return ResponseUtil.buildVo(false,ResponseCode.PARAMETER_NULL.getCode(),"性别不能为空",null);
+        }
 
         Integer userId = UserUtil.getUserId(request,redisUtil);
         addressBook.setUserId(userId);
@@ -134,23 +144,6 @@ public class AddressBookController {
         logger.info("AddressBookController|selectAddressBookById|addressBookVo："+addressBookVo.toString());
         if (addressBookVo==null){
             return ResponseUtil.buildVo(false,ResponseCode.CODE_ERROR.getCode(),"系统错误",null);
-        }
-        Map<String,Map<String,String>> map=new HashMap<>();
-        List<SysDictVo> sysDictVoList = sysDictService.selectSysDictVo();
-        for(SysDictVo sysDictVo:sysDictVoList){
-            List<SysDictItemVo> sysDictItemVoList = sysDictService.selectSysDictItem(sysDictVo.getDict());
-            Map<String,String> dictItemMap = new HashMap<>();
-            for(SysDictItemVo sysDictItemVo:sysDictItemVoList){
-                dictItemMap.put(sysDictItemVo.getItemKey(),sysDictItemVo.getItemVal());
-            }
-            map.put(sysDictVo.getDict(),dictItemMap);
-        }
-        logger.info("AddressBookController|selectAddressBookById|map:"+map.toString());
-        if(StringUtils.isNotBlank(addressBookVo.getProfession())){
-            addressBookVo.setProfession(map.get("profession").get(addressBookVo.getProfession()));
-        }
-        if(StringUtils.isNotBlank(addressBookVo.getType())){
-            addressBookVo.setType(map.get("type").get(addressBookVo.getType()));
         }
         return ResponseUtil.buildVo(true,ResponseCode.CODE_SUCCESS.getCode(),ResponseCode.CODE_SUCCESS.getMsg(),addressBookVo);
     }
@@ -184,6 +177,15 @@ public class AddressBookController {
         }
         if(!check(addressBook.getBirthday(),BIRTHDAY)){
             return ResponseUtil.buildVo(false,ResponseCode.PARAMETER_NULL.getCode(),"出生日期的格式为yyyyMMdd",null);
+        }
+        if(StringUtils.isBlank(addressBook.getProfession())){
+            return ResponseUtil.buildVo(false,ResponseCode.PARAMETER_NULL.getCode(),"职业不能为空",null);
+        }
+        if(StringUtils.isBlank(addressBook.getType())){
+            return ResponseUtil.buildVo(false,ResponseCode.PARAMETER_NULL.getCode(),"所属分类不能为空",null);
+        }
+        if(StringUtils.isBlank(addressBook.getSex())){
+            return ResponseUtil.buildVo(false,ResponseCode.PARAMETER_NULL.getCode(),"性别不能为空",null);
         }
         AddressBookDto addressBookDto = new AddressBookDto();
         BeanUtils.copyProperties(addressBookDto,addressBook);

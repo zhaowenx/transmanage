@@ -8,6 +8,54 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
         , laydate = layui.laydate
         , $ = layui.jquery;
 
+    var option1;
+    var option2;
+    var option3
+
+    //获取下拉框值的函数
+    function getItemVal(dict) {
+        var option = '';
+        var param = {"dict":dict};
+        $.post({
+            url : "/dict/selectDictItemByDict",
+            contentType : "application/json",
+            dataType : "json",
+            data : JSON.stringify(param),
+            success : function(data) {
+                option += "<option value=''>----请选择----</option>";
+                for(var i=0;i<data.data.length;i++){
+                    option +="<option value=\""+data.data[i].itemKey+"\">"+data.data[i].itemKey+"-"+data.data[i].itemVal+"</option>"; //动态添加数据
+                }
+                if("status" == dict){
+                    option1 = option;
+                }else if("stick" == dict){
+                    option2 = option;
+                }else if("messageType" == dict){
+                    option3 = option;
+                }
+            },
+            error : function(xmlq, errq) {
+                layer.open({
+                    title: 'ERROR'
+                    ,content: errq
+                    ,closeBtn: 0
+                    ,btn: "取消"
+                    ,skin: 'layui-layer-molv'
+                    ,icon :2
+                    ,yes: function (index, layero) {
+                        layer.close(index);
+                    }
+                });
+            }
+        });
+    }
+
+    $(function () {
+        getItemVal("status");
+        getItemVal("stick");
+        getItemVal("messageType");
+    });
+
     // //日期
     // laydate.render({
     //     elem: '#dailyDate'
@@ -144,6 +192,12 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
         } else if(layEvent === 'update'){ //编辑
             $("#notificationTitle").val(data.notificationTitle);
             $("#notificationContent").val(data.notificationContent);
+            $("select[name=status]").empty();
+            $("select[name=stick]").empty();
+            $("select[name=messageType]").empty();
+            $("select[name=status]").append(option1);
+            $("select[name=stick]").append(option2);
+            $("select[name=messageType]").append(option3);
             $("#status").val(data.status);
             $("#stick").val(data.stick);
             $("#messageType").val(data.messageType);
@@ -218,6 +272,13 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
     });
 
     $('#btn-add').on('click',function () {
+        $("select[name=status]").empty();
+        $("select[name=stick]").empty();
+        $("select[name=messageType]").empty();
+        $("select[name=status]").append(option1);
+        $("select[name=stick]").append(option2);
+        $("select[name=messageType]").append(option3);
+        form.render('select');
         layer.open({
             title: '新增'
             ,type:1

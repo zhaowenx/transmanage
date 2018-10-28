@@ -66,25 +66,26 @@
         <div class="layui-form-item">
             <div class="layui-inline">
                 <label class="layui-form-label">是否发布</label>
-                <div class="layui-input-inline" style="width: 60px;">
-                    <select name="status">
-                        <option value="0">是</option>
-                        <option value="1">否</option>
+                <div class="layui-input-inline">
+                    <select name="status" lay-verify="required">
                     </select>
                 </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
                 <label class="layui-form-label">是否置顶</label>
-                <div class="layui-input-inline" style="width: 60px;">
-                    <select name="stick">
-                        <option value="1">是</option>
-                        <option value="2">否</option>
+                <div class="layui-input-inline">
+                    <select name="stick" lay-verify="required">
                     </select>
                 </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
                 <label class="layui-form-label">消息类型</label>
-                <div class="layui-input-inline" style="width: 100px;">
-                    <select name="messageType">
-                        <option value="1">系统消息</option>
-                        <option value="2">生日消息</option>
-                        <option value="3">其他消息</option>
+                <div class="layui-input-inline">
+                    <select name="messageType" lay-verify="required">
                     </select>
                 </div>
             </div>
@@ -119,25 +120,26 @@
         <div class="layui-form-item">
             <div class="layui-inline">
                 <label class="layui-form-label">是否发布</label>
-                <div class="layui-input-inline" style="width: 60px;">
-                    <select name="status" id="status">
-                        <option value="0">是</option>
-                        <option value="1">否</option>
+                <div class="layui-input-inline">
+                    <select name="status" lay-verify="required" id="status">
                     </select>
                 </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
                 <label class="layui-form-label">是否置顶</label>
-                <div class="layui-input-inline" style="width: 60px;">
-                    <select name="stick" id="stick">
-                        <option value="1">是</option>
-                        <option value="2">否</option>
+                <div class="layui-input-inline">
+                    <select name="stick" lay-verify="required" id="stick">
                     </select>
                 </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
                 <label class="layui-form-label">消息类型</label>
-                <div class="layui-input-inline" style="width: 100px;">
-                    <select name="messageType" id="messageType">
-                        <option value="1">系统消息</option>
-                        <option value="2">生日消息</option>
-                        <option value="3">其他消息</option>
+                <div class="layui-input-inline">
+                    <select name="messageType" lay-verify="required" id="messageType">
                     </select>
                 </div>
             </div>
