@@ -3,6 +3,7 @@
 
     <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
     <property name="LOG_HOME" value="C:/project/lord-of-war/transmanage/src/log" />
+    <!--<property name="LOG_HOME" value="/home/zwx" />-->
 
     <springProperty name="appName" scope="context" source="spring.application.name"/>
     <include resource="org/springframework/boot/logging/logback/defaults.xml" />
@@ -28,7 +29,7 @@
 
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!--日志文件输出的文件名-->
-            <fileNamePattern>${LOG_HOME}/tomcat_${appName}/${appName}-log.%d{yyyy-MM-dd}%i</fileNamePattern>
+            <fileNamePattern>${LOG_HOME}/tomcat_${appName}/${appName}-log.%d{yyyy-MM-dd}</fileNamePattern>
             <!--日志文件保留天数-->
             <maxHistory>30</maxHistory>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">

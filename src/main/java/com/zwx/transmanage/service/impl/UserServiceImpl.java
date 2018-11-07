@@ -16,7 +16,7 @@ import java.util.List;
  * Created by zhaowenx on 2018/8/23.
  */
 //是为了找到对应的UserMapper对象
-@ComponentScan({"com.zwx.transmanage.mapper"})
+//@ComponentScan({"com.zwx.transmanage.mapper"})
 //表示这是service
 @Service("userService")
 public class UserServiceImpl implements UserService{
@@ -95,6 +95,11 @@ public class UserServiceImpl implements UserService{
     @Override
     public Integer countUserNotSuper() {
         return userMapper.countUserNotSuper();
+    }
+
+    @Override
+    public List<UserVo> selectReceiveUser(Integer userId) {
+        return userMapper.selectReceiveUser(userId);
     }
 
     @Override

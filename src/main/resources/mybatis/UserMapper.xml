@@ -100,7 +100,7 @@
     </select>
 
     <select id="checkUserNameAndPassWord" resultMap="UserVoMap" parameterType="com.zwx.transmanage.domain.dto.UserDto">
-        SELECT * FROM USER
+        SELECT * FROM `user`
         WHERE  1=1 and USERNAME = #{userName}  and PASSWORD = #{passWord}
     </select>
 
@@ -143,4 +143,8 @@
     <delete id="deleteUserById" >
         delete FROM  `user` where `id` = #{id}  and `ISSUPERUSER` =0;
     </delete>
+
+    <select id="selectReceiveUser" resultMap="UserVoMap">
+        select * from USER  where id !=#{userId};
+    </select>
 </mapper>

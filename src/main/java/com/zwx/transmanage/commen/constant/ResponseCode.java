@@ -33,10 +33,7 @@ public enum ResponseCode {
     SUCCESS(0,"成功"),
     FILE(1,"失败");
 
-
-
     // 业务返回码
-
     private Integer code;
     private String msg;
     private boolean success;

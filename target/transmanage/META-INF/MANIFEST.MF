@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: transaction-management
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: zhaowenx
+Implementation-Vendor-Id: com.zwx.transmanage
+Created-By: IntelliJ IDEA
+Build-Jdk: 1.8.0_171
+Main-Class: ${start-class}
+

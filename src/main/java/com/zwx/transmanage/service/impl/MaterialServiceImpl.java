@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by zhaowenx on 2018/9/4.
  */
-@ComponentScan({"com.zwx.transmanage.mapper"})
+//@ComponentScan({"com.zwx.transmanage.mapper"})
 @Service("materialService")
 public class MaterialServiceImpl implements MaterialService {
 

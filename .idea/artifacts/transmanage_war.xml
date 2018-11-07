@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="transmanage:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="transmanage.war">
+      <element id="artifact" artifact-name="transmanage:war exploded" />
+    </root>
+  </artifact>
+</component>

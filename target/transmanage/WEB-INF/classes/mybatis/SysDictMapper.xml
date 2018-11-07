@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zwx.transmanage.mapper.SysDictMapper">
+    <resultMap id="SysDictVoMap" type="com.zwx.transmanage.domain.vo.SysDictVo">
+        <result column="dict" property="dict"/>
+        <result column="dictname" property="dictName"/>
+        <result column="groupdict" property="groupDict"/>
+    </resultMap>
+
+    <resultMap id="SysDictItemVoMap" type="com.zwx.transmanage.domain.vo.SysDictItemVo">
+        <result column="dict" property="dict"/>
+        <result column="itemkey" property="itemKey"/>
+        <result column="itemval" property="itemVal"/>
+    </resultMap>
+
+    <select id="selectSysDict" resultMap="SysDictVoMap">
+        select * from `sys_dict` where DICT not in  (select dict from `sys_dict` where `groupdict` = 'root')
+        limit #{pageModel.startRow},#{pageModel.pageSize};
+    </select>
+
+    <select id="selectSysDictItem" resultMap="SysDictItemVoMap">
+        select * from `sys_dict_item` where 1=1 and `dict` = #{dict}
+    </select>
+
+    <select id="countSysDict" resultType="Integer">
+        select count(1) from `sys_dict` where DICT not in  (select dict from `sys_dict` where `groupdict` = 'root');
+    </select>
+
+    <select id="selectGroupDict" resultMap="SysDictVoMap">
+        select * from `sys_dict` where `groupdict` = 'root';
+    </select>
+
+    <select id="countDictByDict" resultType="Integer">
+        select count(1) from `sys_dict` where `dict` = #{dict};
+    </select>
+
+    <insert id="addDict" parameterType="com.zwx.transmanage.domain.dto.SysDictDto">
+        INSERT  INTO  `sys_dict` (`dict`,`dictname`,`groupdict`) VALUES (#{dict},#{dictName},#{groupDict});
+    </insert>
+
+    <update id="updateDict" parameterType="com.zwx.transmanage.domain.dto.SysDictDto">
+        update `sys_dict` set `dictname` = #{dictName} where `dict` = #{dict};
+    </update>
+
+    <delete id="deleteDict" parameterType="String">
+        delete from `sys_dict` where `dict` = #{dict} and `groupdict` !='root';
+    </delete>
+
+    <delete id="deleteDictItemByDict" parameterType="String">
+        delete from `sys_dict_item` where `dict` = #{dict} ;
+    </delete>
+
+    <select id="countDictItemByItemKey" resultType="Integer">
+        select count(1) from `sys_dict_item` where `dict` = #{dict} and `itemkey` = #{itemKey};
+    </select>
+
+    <insert id="addDictItem" parameterType="com.zwx.transmanage.domain.dto.SysDictItemDto">
+        INSERT  INTO  `sys_dict_item` (`dict`,`itemkey`,`itemval`) VALUES (#{dict},#{itemKey},#{itemVal});
+    </insert>
+
+    <delete id="deleteDictItem">
+        delete from `sys_dict_item` where `dict` = #{dict} and `itemkey` = #{itemKey};
+    </delete>
+
+    <select id="selectSysDictVo" resultMap="SysDictVoMap">
+        select * from sys_dict where GROUPDICT != 'root';
+    </select>
+
+    <select id="selectItemValByKey" resultType="String">
+        select `itemval` from `sys_dict_item` where `dict` = #{dict} and `itemkey` = #{itemKey};
+    </select>
+</mapper>

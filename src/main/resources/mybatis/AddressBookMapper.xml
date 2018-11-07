@@ -24,7 +24,7 @@
     </resultMap>
 
     <select id="selectAddressBookVoByUserId" resultMap="AddressBookVoMap">
-        select * from `addressbook` where `USERID` = #{userId};
+        select * from `addressbook` where `USERID` = #{userId} order by  `UPDATETIME`,`CREATETIME` desc;
     </select>
 
     <insert id="add" parameterType="com.zwx.transmanage.domain.dto.AddressBookDto">

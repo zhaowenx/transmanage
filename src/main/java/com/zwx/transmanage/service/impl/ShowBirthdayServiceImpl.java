@@ -16,7 +16,7 @@ import java.util.Date;
 /**
  * Created by zhaowenx on 2018/10/18.
  */
-@ComponentScan({"com.zwx.transmanage.mapper"})
+//@ComponentScan({"com.zwx.transmanage.mapper"})
 @Service("showBirthdayService")
 public class ShowBirthdayServiceImpl implements ShowBirthdayService{
 

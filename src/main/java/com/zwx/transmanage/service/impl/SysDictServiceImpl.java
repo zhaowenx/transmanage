@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by zhaowenx on 2018/10/10.
  */
-@ComponentScan({"com.zwx.transmanage.mapper"})
+//@ComponentScan({"com.zwx.transmanage.mapper"})
 @Service("sysDictService")
 public class SysDictServiceImpl implements SysDictService{
 

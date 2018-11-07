@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by zhaowenx on 2018/10/22.
  */
-@ComponentScan({"com.zwx.transmanage.mapper"})
+//@ComponentScan({"com.zwx.transmanage.mapper"})
 @Service("menuService")
 public class MenuServiceImpl implements MenuService{
 

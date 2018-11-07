@@ -5,6 +5,7 @@ import com.zwx.transmanage.domain.dto.SysDictItemDto;
 import com.zwx.transmanage.domain.vo.SysDictItemVo;
 import com.zwx.transmanage.domain.vo.SysDictVo;
 import com.zwx.transmanage.model.PageModel;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.List;
 /**
  * Created by zhaowenx on 2018/10/10.
  */
+@Mapper
 public interface SysDictMapper {
     Integer countSysDict();
     List<SysDictVo> selectSysDict(@Param("pageModel") PageModel pageModel);

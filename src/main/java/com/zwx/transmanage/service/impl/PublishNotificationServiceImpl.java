@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by zhaowenx on 2018/10/8.
  */
-@ComponentScan({"com.zwx.transmanage.mapper"})
+//@ComponentScan({"com.zwx.transmanage.mapper"})
 @Service("publishNotificationService")
 public class PublishNotificationServiceImpl implements PublishNotificationService{
 

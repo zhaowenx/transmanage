@@ -29,4 +29,6 @@ public interface UserMapper {
     List<UserVo> selectAllNotSuper(@Param("pageModel") PageModel pageModel);
     Integer countUserNotSuper();
     void deleteUserById(@Param("id") Integer id);
+
+    List<UserVo> selectReceiveUser(@Param("userId") Integer userId);
 }

@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by zhaowenx on 2018/9/3.
  */
-@ComponentScan({"com.zwx.transmanage.mapper"})
+//@ComponentScan({"com.zwx.transmanage.mapper"})
 @Service("dailyService")
 public class DailyServiceImpl implements DailyService{
 

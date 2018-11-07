@@ -125,6 +125,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/select",method = RequestMethod.GET)
+    @ResponseBody
     public ResponseVo selectUserByName(@RequestParam String name){
         logger.info("UserController|selectUserByName|name:"+name);
         if(StringUtils.isBlank(name)){
@@ -204,6 +205,24 @@ public class UserController {
         }
         userService.deleteUserById(user.getId());
         return ResponseUtil.buildVo(true,ResponseCode.CODE_SUCCESS.getCode(),ResponseCode.CODE_SUCCESS.getMsg(),null);
+    }
+
+    @RequestMapping(value = "/receiveUser",method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseVo receiveUser(HttpServletRequest request){
+        logger.info("UserController|receiveUser|start");
+        Integer userId = UserUtil.getUserId(request,redisUtil);
+        List<UserVo> userVoList= userService.selectReceiveUser(userId);
+        if(userVoList.size()==0){
+            return ResponseUtil.buildVo(false, ResponseCode.GET_INFORMATION_NULL.getCode(),ResponseCode.GET_INFORMATION_NULL.getMsg(),null);
+        }
+        for(UserVo userVo:userVoList){
+            userVo.setRealName(StringUtils.isBlank(userVo.getRealName())?" ":userVo.getRealName());
+        }
+        logger.info("UserController|receiveUser|userVoList:"+userVoList.toString());
+        logger.info("UserController|receiveUser|count:"+userVoList.size());
+        logger.info("UserController|receiveUser|end");
+        return ResponseUtil.buildVo(true,ResponseCode.CODE_SUCCESS.getCode(),ResponseCode.CODE_SUCCESS.getMsg(),userVoList);
     }
 
 }

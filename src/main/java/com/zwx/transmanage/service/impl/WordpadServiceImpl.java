@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by zhaowenx on 2018/8/31.
  */
-@ComponentScan({"com.zwx.transmanage.mapper"})
+//@ComponentScan({"com.zwx.transmanage.mapper"})
 @Service("wordpadService")
 public class WordpadServiceImpl implements WordpadService {
 

@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by zhaowenx on 2018/9/5.
  */
-@ComponentScan({"com.zwx.transmanage.mapper"})
+//@ComponentScan({"com.zwx.transmanage.mapper"})
 @Service("addressBookService")
 public class AddressBookServiceImpl implements AddressBookService{
     @Autowired

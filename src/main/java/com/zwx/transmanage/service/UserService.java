@@ -28,4 +28,6 @@ public interface UserService {
     List<UserVo> selectAllNotSuper(PageModel pageModel);
     Integer countUserNotSuper();
     void deleteUserById(Integer id);
+
+    List<UserVo> selectReceiveUser(Integer userId);
 }

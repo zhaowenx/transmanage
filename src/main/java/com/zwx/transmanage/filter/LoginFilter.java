@@ -57,6 +57,7 @@ public class LoginFilter implements Filter {
             return;
         } else {
             HttpSession session = req.getSession(true);
+            logger.info("filter拦截器：sessionId:"+session.getAttribute(SESSION_ID));
             if (session.getAttribute(SESSION_ID) == null) {
                 resp.setHeader("Cache-Control", "no-store");
                 resp.setDateHeader("Expires", 0);
@@ -64,6 +65,7 @@ public class LoginFilter implements Filter {
                 //此处设置了访问静态资源类
                 String basePath = req.getScheme() + "://" + req.getServerName() + ":" + req.getServerPort() + req.getContextPath();
                 resp.sendRedirect(basePath + "/html/login.html");
+//                req.getRequestDispatcher("login.html").forward(req, resp);
             } else {
                 // Filter 只是链式处理，请求依然转发到目的地址。
                 filterChain.doFilter(req, resp);
