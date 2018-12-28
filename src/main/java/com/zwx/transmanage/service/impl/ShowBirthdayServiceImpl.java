@@ -29,9 +29,9 @@ public class ShowBirthdayServiceImpl implements ShowBirthdayService{
 
     @Override
     public void timerTaskShowBirthday() {
-        logger.info("timerTaskShowBirthday开始：");
+        logger.info("==========timerTaskShowBirthday开始============");
         String date = DateTimeUtil.getFormatDay(new Date());
         logger.info("当前日期："+date);
-        logger.info("timerTaskShowBirthday结束：");
+        logger.info("==========timerTaskShowBirthday结束============");
     }
 }

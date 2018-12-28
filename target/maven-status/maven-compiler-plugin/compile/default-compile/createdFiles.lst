@@ -30,6 +30,7 @@ com\zwx\transmanage\controller\business\UserController.class
 com\zwx\transmanage\mapper\MaterialMapper.class
 com\zwx\transmanage\util\CommenUtil.class
 com\zwx\transmanage\util\IpUtils.class
+com\zwx\transmanage\aop\CheckLogin.class
 com\zwx\transmanage\service\impl\UserServiceImpl.class
 com\zwx\transmanage\domain\vo\AddressBookVo.class
 com\zwx\transmanage\domain\dto\AddressBookDto.class
@@ -75,6 +76,7 @@ com\zwx\transmanage\domain\dto\UserDto.class
 com\zwx\transmanage\controller\business\SysDictController.class
 com\zwx\transmanage\service\UserService.class
 com\zwx\transmanage\service\WordpadService.class
+com\zwx\transmanage\aop\CheckLoginAop.class
 com\zwx\transmanage\domain\dto\SysDictDto.class
 com\zwx\transmanage\controller\business\MaterialController.class
 com\zwx\transmanage\mapper\SysDictMapper.class

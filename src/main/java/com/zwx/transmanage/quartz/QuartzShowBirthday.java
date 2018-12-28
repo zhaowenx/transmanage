@@ -21,6 +21,6 @@ public class QuartzShowBirthday {
     public void showBirthday(){
         logger.info("quartz定时器任务开始：将生日为当天的信息生成一个公告消息");
         showBirthdayService.timerTaskShowBirthday();
-        logger.info("quartz定时器任务结束：");
+        logger.info("--------------------quartz定时器任务结束-------------------");
     }
 }

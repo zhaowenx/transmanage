@@ -166,8 +166,9 @@ public class LoginController {
         String redisKey = RandomUtil.createRandom(10)+userVo.getId()+RandomUtil.createRandom(10);
         // 生成cookie
         Cookie cookie = new Cookie(CookieNameConstant.LOGIN_COOKIE, redisKey);
-        // 设置失效时间，不设置过期时间就是会话
-        // cookie.setMaxAge(365 * 24 * 60 * 60);
+        // 设置失效时间，不设置过期时间就是会话  365 * 24 * 60 * 60一年
+        //单位为秒
+        cookie.setMaxAge(-1);
         // 设置路径
         // 这个路径即该工程下都可以访问该cookie 如果不设置路径，那么只有设置该cookie路径及其子路径可以访问
         cookie.setPath("/");
@@ -182,6 +183,7 @@ public class LoginController {
          * 登录成功后向session中存放sessionId
          */
         session.setAttribute(SESSION_ID,userVo.getId());
+        session.setMaxInactiveInterval(20*60);//秒为单位
 
         /**
          * 登录成功后修改用户信息

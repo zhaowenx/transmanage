@@ -36,6 +36,7 @@ public class IndexController {
         }
         List<DailyVo> dailyVoList = dailyService.selectDailyVoByUserId(userVo.getId());
         request.setAttribute("dailyVoList",dailyVoList);
+        request.setAttribute("userVo",userVo);
         return "welcome";
     }
 }

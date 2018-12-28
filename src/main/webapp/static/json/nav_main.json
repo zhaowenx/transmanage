@@ -42,6 +42,24 @@
           "icon": "&#xe857;",
           "href": "/html/publish-notification.html",
           "subset":""
+        },
+        {
+          "text": "笔趣阁",
+          "icon": "&#xe857;",
+          "href": "http://www.biquyun.com/16_16978/7681700.html",
+          "subset":""
+        },
+        {
+          "text": "开科OA",
+          "icon": "&#xe857;",
+          "href": "http://oa.kayakwise.com:39090/login.jsp",
+          "subset":""
+        },
+        {
+          "text": "百度搜索",
+          "icon": "&#xe857;",
+          "href": "https://www.baidu.com",
+          "subset":""
         }
       ],
       "href": ""

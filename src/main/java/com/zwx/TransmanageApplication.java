@@ -17,19 +17,19 @@ import org.springframework.context.annotation.ImportResource;
 @MapperScan("com.zwx.transmanage.mapper")
 //@EnableFeignClients
 //@EnableDiscoveryClient
-public class TransmanageApplication extends SpringBootServletInitializer{
-//public class TransmanageApplication{
-//    public static void main(String[] args) {
-//        SpringApplication.run(TransmanageApplication.class, args);
-//    }
-
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-        return builder.sources(TransmanageApplication.class);
-    }
-
+//public class TransmanageApplication extends SpringBootServletInitializer{
+public class TransmanageApplication{
     public static void main(String[] args) {
         SpringApplication.run(TransmanageApplication.class, args);
     }
+
+//    @Override
+//    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+//        return builder.sources(TransmanageApplication.class);
+//    }
+//
+//    public static void main(String[] args) {
+//        SpringApplication.run(TransmanageApplication.class, args);
+//    }
 
 }

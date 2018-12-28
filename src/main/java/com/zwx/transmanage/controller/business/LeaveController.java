@@ -1,5 +1,6 @@
 package com.zwx.transmanage.controller.business;
 
+import com.zwx.transmanage.aop.CheckLogin;
 import com.zwx.transmanage.commen.constant.ResponseCode;
 import com.zwx.transmanage.domain.Leave;
 import com.zwx.transmanage.domain.dto.LeaveDto;
@@ -40,6 +41,7 @@ public class LeaveController {
     private RedisUtil redisUtil;
 
     @RequestMapping(value = "/show")
+    @CheckLogin
     public String show(HttpServletRequest request, HttpServletResponse response){
         logger.info("LeaveController|show|start");
         Integer userId = UserUtil.getUserId(request,redisUtil);

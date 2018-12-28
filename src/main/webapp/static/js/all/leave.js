@@ -52,7 +52,7 @@ layui.use(['form', 'layer','laydate'], function () {
         $("#showError").html();
 
         //循环执行，每隔1秒钟执行一次 1000
-        interval=window.setInterval(refreshCount, 60000);
+        interval=window.setInterval(refreshCount, 30000);
         //去掉定时器的方法
         // window.clearInterval(interval);
     })

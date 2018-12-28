@@ -8,6 +8,7 @@ layui.use(['vip_nav','jquery'], function () {
     // var addr = '';
     // var url = '/menu/getMenu';
     var url = '../static/json/nav_main.json';
+    var interval;
     // var ids = {};
     //
     // $.post(url, ids, function (res) {
@@ -48,7 +49,14 @@ layui.use(['vip_nav','jquery'], function () {
 
     $(function () {
         time1();
+
+        //循环执行，每隔1秒钟执行一次 1000
+        interval=window.setInterval(refreshCount, 60000*20);
     })
+
+    function refreshCount() {
+        window.location.href="toIndex";
+    }
 });
 
 function time1(){

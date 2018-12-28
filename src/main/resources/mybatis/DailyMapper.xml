@@ -18,7 +18,7 @@
 
     <select id="selectDailyListByUserId" resultMap="DailyVoMap">
         SELECT  * from `daily` where 1=1 and
-        `USERID` = #{userId} order by UPDATETIME desc
+        `USERID` = #{userId} order by DAILYDATE desc
         limit #{pageModel.startRow},#{pageModel.pageSize}
     </select>
 

@@ -1,14 +1,18 @@
 package com.zwx.transmanage.filter;
 
+import com.zwx.transmanage.commen.constant.CookieNameConstant;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.*;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -37,6 +41,7 @@ public class LoginFilter implements Filter {
         patterns.add(Pattern.compile(".*/html/login.html"));
         patterns.add(Pattern.compile(".*/api/customer/.*"));
         patterns.add(Pattern.compile(".*/user/.*"));
+        patterns.add(Pattern.compile(".*/html/error.html"));
     }
 
     @Override
@@ -57,11 +62,15 @@ public class LoginFilter implements Filter {
             return;
         } else {
             HttpSession session = req.getSession(true);
-            logger.info("filter拦截器：sessionId:"+session.getAttribute(SESSION_ID));
-            if (session.getAttribute(SESSION_ID) == null) {
+            Object sessionId = session.getAttribute(SESSION_ID);
+            logger.info("filter拦截器：sessionId:"+sessionId);
+            if (sessionId == null) {
+//                req.setAttribute("flag","1");
+//                req.setAttribute("msg","登录超时或未登录");
+//                req.setAttribute("code","500");
                 resp.setHeader("Cache-Control", "no-store");
                 resp.setDateHeader("Expires", 0);
-                resp.setHeader("Prama", "no-cache");
+                resp.setHeader("Pragma", "no-cache");
                 //此处设置了访问静态资源类
                 String basePath = req.getScheme() + "://" + req.getServerName() + ":" + req.getServerPort() + req.getContextPath();
                 resp.sendRedirect(basePath + "/html/login.html");
@@ -101,6 +110,26 @@ public class LoginFilter implements Filter {
         String url = request.getRequestURI().substring(request.getContextPath().length());
         if(!url.contains("static")){
             logger.info("******URL******: [ "+basePath+url+" ]");
+        }
+    }
+
+    public boolean checkCookie(HttpServletRequest req){
+        Cookie[] cookies = req.getCookies();
+        if (cookies == null) {
+            return false;
+        }
+        String redisKey = "";
+        for (Cookie cookie : cookies) {
+            // 找到匹配的COOKIE信息
+            if (CookieNameConstant.LOGIN_COOKIE.equals(cookie.getName())) {
+                redisKey = cookie.getValue();
+            }
+        }
+        logger.info("LoginFilter|checkCookie|redisKey:"+redisKey);
+        if(StringUtils.isBlank(redisKey)){
+            return false;
+        }else{
+            return true;
         }
     }
 

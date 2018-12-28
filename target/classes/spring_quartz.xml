@@ -6,6 +6,7 @@
 
 	<!-- 数据分析定时下发工作类 -->
 	<bean id="quartzShowBirthday" class="com.zwx.transmanage.quartz.QuartzShowBirthday"/>
+	<bean id="quartzRefreshLeave" class="com.zwx.transmanage.quartz.QuartzRefreshLeave"/>
 	<!-- 定义调用对象和调用对象的方法 -->
 	<bean id="jobTask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
 		<!-- 调用的类 -->
@@ -19,6 +20,18 @@
 		<property name="concurrent" value="false"/>
 	</bean>
 
+	<bean id="refreshLeave" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<!-- 调用的类 -->
+		<property name="targetObject">
+			<ref bean="quartzRefreshLeave"/>
+		</property>
+		<!-- 调用类中的方法 -->
+		<property name="targetMethod">
+			<value>refreshLeave</value>
+		</property>
+		<property name="concurrent" value="false"/>
+	</bean>
+
 	<!-- 定义触发时间 -->
 	<bean id="showBirthdayTaskTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
 		<property name="jobDetail">
@@ -26,10 +39,17 @@
 		</property>
 		<!-- cron表达式 -->
 		<property name="cronExpression">
-			<!--<value>0 30 11 * * ?</value>-->
-			<!--<value>*/5 * * * * ?</value>-->
+			<value>0 */20 * * * ?</value>
+		</property>
+	</bean>
+
+	<bean id="refreshLeaveTaskTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail">
+			<ref bean="refreshLeave"/>
+		</property>
+		<!-- cron表达式 -->
+		<property name="cronExpression">
 			<value>0 0 8,10,12,14,16 * * ?</value>
-			<!--<value>0 30/5 9-11 * * ?</value>-->
 		</property>
 	</bean>
 
@@ -40,6 +60,7 @@
 			<list>
 				<ref bean="showBirthdayTaskTrigger"/>
 				<!--<ref bean="cronReportTrigger"/>-->
+				<ref bean="refreshLeaveTaskTrigger"/>
 			</list>
 		</property>
 	</bean>
