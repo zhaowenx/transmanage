@@ -11,8 +11,8 @@ import java.util.List;
  * Created by zhaowenx on 2018/9/3.
  */
 public interface DailyService {
-    Integer countDaily(Integer userId);
-    List<DailyVo> selectDailyListByUserId(UserVo userVo, PageModel pageModel);
+    Integer countDaily(Integer userId,String dailyDate,String isEvection);
+    List<DailyVo> selectDailyListByUserId(UserVo userVo, PageModel pageModel,String dailyDate,String isEvection);
     Integer countDailyByDate(String dailyDate,Integer userId);
     Integer addDaily(DailyDto dailyDto);
     void delete(Integer id);

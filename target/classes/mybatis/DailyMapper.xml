@@ -12,13 +12,27 @@
         <result column="UPDATETIME" property="updateTime"/>
     </resultMap>
 
-    <select id="countDaily" parameterType="Integer" resultType="Integer">
-        select count(1) from `daily` where `USERID` = #{userId};
+    <select id="countDaily" resultType="Integer">
+        select count(1) from `daily` where 1=1
+        and `USERID` = #{userId}
+        <if test="dailyDate !=null and dailyDate!=''">
+            and `DAILYDATE` = #{dailyDate}
+        </if>
+        <if test="isEvection !=null and isEvection!=''">
+            and `ISEVECTION` = #{isEvection}
+        </if>
     </select>
 
     <select id="selectDailyListByUserId" resultMap="DailyVoMap">
-        SELECT  * from `daily` where 1=1 and
-        `USERID` = #{userId} order by DAILYDATE desc
+        SELECT  * from `daily` where 1=1
+        and `USERID` = #{userId}
+        <if test="dailyDate !=null and dailyDate!=''">
+          and `DAILYDATE` = #{dailyDate}
+        </if>
+        <if test="isEvection !=null and isEvection!=''">
+            and `ISEVECTION` = #{isEvection}
+        </if>
+        order by DAILYDATE desc
         limit #{pageModel.startRow},#{pageModel.pageSize}
     </select>
 

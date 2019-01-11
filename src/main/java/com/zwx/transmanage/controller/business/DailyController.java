@@ -37,21 +37,21 @@ public class DailyController {
     private DailyService dailyService;
 
     @GetMapping("/show")
-    public ResponseTVo show(HttpServletRequest request, Integer pageSize, Integer currentPage){
-        logger.info("DailyController|show|pageSize:"+pageSize+"|currentPage:"+currentPage);
+    public ResponseTVo show(HttpServletRequest request, Integer pageSize, Integer currentPage,String dailyDate,String isEvection){
+        logger.info("DailyController|show|pageSize:"+pageSize+"|currentPage:"+currentPage+"|dailyDate:"+dailyDate+"|isEvection:"+isEvection);
         if(pageSize == null || currentPage == null){
             return  ResponseUtil.buildTVo(ResponseCode.FILE.getCode(),ResponseCode.FILE.getMsg(),0,null);
         }
         UserVo userVo = UserUtil.getLoginUser(request,redisUtil);
         logger.info("DailyController|show|userId:"+userVo.getId());
-        Integer count = dailyService.countDaily(userVo.getId());
+        Integer count = dailyService.countDaily(userVo.getId(),dailyDate,isEvection);
         logger.info("DailyController|show|count："+count);
         if(count == 0){
             return  ResponseUtil.buildTVo(ResponseCode.FILE.getCode(),"还没有日报记录，您可以新增",0,null);
         }
         logger.info("DailyController|show|count："+count);
         PageModel pageModel=new PageModel(currentPage,pageSize,count,null);
-        List<DailyVo> dailyVoList = dailyService.selectDailyListByUserId(userVo,pageModel);
+        List<DailyVo> dailyVoList = dailyService.selectDailyListByUserId(userVo,pageModel,dailyDate,isEvection);
         logger.info("DailyController|show|dailyVoList:"+dailyVoList.toString());
 //        pageModel.setDataList(dailyVoList);
         logger.info("DailyController|show|pageModel:"+pageModel.toString());

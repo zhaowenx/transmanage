@@ -20,6 +20,9 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
     laydate.render({
         elem: '#dailyDate2'
     });
+    laydate.render({
+       elem: '#daily_date_s'
+    });
 
     $("#close-btn-qx").click(function () {
         $("#open-div-add-daily").hide();
@@ -41,6 +44,9 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
                 }
                 if("isEvection" == dict){
                     option1 = option;
+                    $("select[name=is_evection]").empty();
+                    $("select[name=is_evection]").append(option1);
+                    form.render('select');
                 }
             },
             error : function(xmlq, errq) {
@@ -69,8 +75,8 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
         , height: vipTable.getFullHeight()    //容器高度
         , cols: [[                  //标题栏
             // {checkbox: true, fixed: true, space: true,width:80},
-              {field: 'id', title: 'ID', width: 50}
-            , {field: 'userName', title: '用户名', width: 100}
+            //{field: 'id', title: 'ID', width: 50},
+            {field: 'userName', title: '用户名', width: 150}
             , {field: 'content', title: '内容', width: 380}
             , {field: 'isEvection', title: '是否出差', width: 90,templet:function (data) {
                 return data.isEvection == 'Y'?'是':'否';
@@ -78,7 +84,7 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
             , {field: 'dailyDate', title: '日报日期', width: 120}
             , {field: 'createTime', title: '创建时间', width: 170}
             , {field: 'updateTime', title: '更新时间', width: 170}
-            , {fixed: 'right', title: '操作', width: 208, align: 'center', toolbar: '#barOption'} //这里的toolbar值是模板元素的选择器
+            , {field: 'right1', title: '操作', width: 208, align: 'center', toolbar: '#barOption'} //这里的toolbar值是模板元素的选择器
         ]]
         , id: 'dataCheck'
         , url: '/daily/show'
@@ -94,6 +100,26 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
             // console.log(res);
         }
     });
+
+    $("#user-defined-select").click(function () {
+        tableIns.reload({
+            where:{
+                "dailyDate":$("#daily_date_s").val(),
+                "isEvection":$("#is_evection_s").val()
+            }
+        });
+    });
+    
+    $("#user-defined-reset").click(function () {
+        $("#daily_date_s").val('');
+        $("#is_evection_s").val('');
+        // tableIns.reload({
+        //     where:{
+        //         "dailyDate":$("#daily_date_s").val(),
+        //         "isEvection":$("#is_evection_s").val()
+        //     }
+        // });
+    })
 
     // 获取选中行
     // table.on('checkbox(dataCheck)', function (obj) {
@@ -175,9 +201,9 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
     });
 
     // 刷新
-    $('#btn-refresh').on('click', function () {
-        tableIns.reload();
-    });
+    // $('#btn-refresh').on('click', function () {
+    //     tableIns.reload();
+    // });
     
     $('#btn-add').on('click',function () {
         $("select[name=isEvection]").empty();

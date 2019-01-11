@@ -11,6 +11,7 @@
 </head>
 <script type="text/javascript" src="../static/plugins/layui/layui.js"></script>
 <script type="text/javascript" src="../static/js/all/update-user-information.js"></script>
+<script type="text/javascript" src="../static/js/all/province_city_district.js"></script>
 <style type="text/css">
     .layui-form .layui-form-label{
         width: 150px;
@@ -135,14 +136,32 @@
             </div>
         </div>
     </div>
-    <div class="layui-form-item">
-        <label class="layui-form-label">性别</label>
-        <div class="layui-input-block">
-            <input type="radio" name="sex" value="1" title="男" th:checked="${user.sex == 1}"/>
-            <input type="radio" name="sex" value="0" title="女" th:checked="${user.sex == 0}"/>
-        </div>
-    </div>
-    <div class="layui-form-item">
+    <!--<div class="layui-form-item">-->
+        <!--<label class="layui-form-label">性别</label>-->
+        <!--<div class="layui-input-block">-->
+            <!--<input type="radio" name="sex" value="1" title="男" th:checked="${user.sex == 1}"/>-->
+            <!--<input type="radio" name="sex" value="0" title="女" th:checked="${user.sex == 0}"/>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="layui-form-item" id="lay-distpicker-id">
+            <!--<div class="layui-inline">-->
+                <!--<label class="layui-form-label">归属省份名称</label>-->
+                <!--<div class="layui-input-inline">-->
+                    <!--<select name="provinceName" id="provinceName" class="layui-select" lay-filter="province"></select>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-inline">-->
+                <!--<label class="layui-form-label">归属城市名称</label>-->
+                <!--<div class="layui-input-inline">-->
+                    <!--<select name="cityName" id="cityName" class="layui-select" lay-filter="city"></select>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-inline">-->
+                <!--<label class="layui-form-label">归属地区名称</label>-->
+                <!--<div class="layui-input-inline">-->
+                    <!--<select name="countyName" id="countyName"  class="layui-select" lay-filter="district"></select>-->
+                <!--</div>-->
+            <!--</div>-->
         <div class="layui-inline">
             <label class="layui-form-label">归属省份名称</label>
             <div class="layui-input-inline">
@@ -192,28 +211,36 @@
         <div class="layui-inline">
             <label class="layui-form-label">职业</label>
             <div class="layui-input-inline">
-                <select name="profession">
-                    <option value="" th:selected="${user.profession == ''}" >请选择</option>
-                    <option value="1" th:selected="${user.profession == '1'}">农牧业</option>
-                    <option value="2" th:selected="${user.profession == '2'}">渔业</option>
-                    <option value="3" th:selected="${user.profession == '3'}">矿业</option>
-                    <option value="4" th:selected="${user.profession == '4'}">交通运输业</option>
-                    <option value="5" th:selected="${user.profession == '5'}">餐旅业</option>
-                    <option value="6" th:selected="${user.profession == '6'}">建筑工程业</option>
-                    <option value="7" th:selected="${user.profession == '7'}">制造业</option>
-                    <option value="8" th:selected="${user.profession == '8'}">新闻、出版、广告业</option>
-                    <option value="9" th:selected="${user.profession == '9'}">卫生</option>
-                    <option value="10" th:selected="${user.profession == '10'}">娱乐业</option>
-                    <option value="11" th:selected="${user.profession == '11'}">文教</option>
-                    <option value="12" th:selected="${user.profession == '12'}">宗教</option>
-                    <option value="13" th:selected="${user.profession == '13'}">公共事业</option>
-                    <option value="14" th:selected="${user.profession == '14'}">商业</option>
-                    <option value="15" th:selected="${user.profession == '15'}">金融业</option>
-                    <option value="16" th:selected="${user.profession == '16'}">服务业</option>
-                    <option value="17" th:selected="${user.profession == '17'}">军人</option>
-                    <option value="18" th:selected="${user.profession == '18'}">体育</option>
-                    <option value="19" th:selected="${user.profession == '19'}">高科技</option>
+                <input type="hidden" id="profession1" th:value="${user.profession}"/>
+                <select name="profession" class="layui-select" id="profession">
+                    <!--<option value="" th:selected="${user.profession == ''}" >请选择</option>-->
+                    <!--<option value="1" th:selected="${user.profession == '1'}">农牧业</option>-->
+                    <!--<option value="2" th:selected="${user.profession == '2'}">渔业</option>-->
+                    <!--<option value="3" th:selected="${user.profession == '3'}">矿业</option>-->
+                    <!--<option value="4" th:selected="${user.profession == '4'}">交通运输业</option>-->
+                    <!--<option value="5" th:selected="${user.profession == '5'}">餐旅业</option>-->
+                    <!--<option value="6" th:selected="${user.profession == '6'}">建筑工程业</option>-->
+                    <!--<option value="7" th:selected="${user.profession == '7'}">制造业</option>-->
+                    <!--<option value="8" th:selected="${user.profession == '8'}">新闻、出版、广告业</option>-->
+                    <!--<option value="9" th:selected="${user.profession == '9'}">卫生</option>-->
+                    <!--<option value="10" th:selected="${user.profession == '10'}">娱乐业</option>-->
+                    <!--<option value="11" th:selected="${user.profession == '11'}">文教</option>-->
+                    <!--<option value="12" th:selected="${user.profession == '12'}">宗教</option>-->
+                    <!--<option value="13" th:selected="${user.profession == '13'}">公共事业</option>-->
+                    <!--<option value="14" th:selected="${user.profession == '14'}">商业</option>-->
+                    <!--<option value="15" th:selected="${user.profession == '15'}">金融业</option>-->
+                    <!--<option value="16" th:selected="${user.profession == '16'}">服务业</option>-->
+                    <!--<option value="17" th:selected="${user.profession == '17'}">军人</option>-->
+                    <!--<option value="18" th:selected="${user.profession == '18'}">体育</option>-->
+                    <!--<option value="19" th:selected="${user.profession == '19'}">高科技</option>-->
                 </select>
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">性别</label>
+            <div class="layui-input-inline">
+                <input type="radio" name="sex" value="1" title="男" th:checked="${user.sex == 1}"/>
+                <input type="radio" name="sex" value="0" title="女" th:checked="${user.sex == 0}"/>
             </div>
         </div>
     </div>

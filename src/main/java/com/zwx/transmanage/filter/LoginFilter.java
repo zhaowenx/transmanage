@@ -58,6 +58,7 @@ public class LoginFilter implements Filter {
         String url = req.getRequestURI().substring(req.getContextPath().length());
 
         if (isInclude(url)){
+            req.setAttribute("flag","0");
             filterChain.doFilter(req, resp);
             return;
         } else {
@@ -65,9 +66,9 @@ public class LoginFilter implements Filter {
             Object sessionId = session.getAttribute(SESSION_ID);
             logger.info("filter拦截器：sessionId:"+sessionId);
             if (sessionId == null) {
-//                req.setAttribute("flag","1");
+//                req.setAttribute("flag","0");
 //                req.setAttribute("msg","登录超时或未登录");
-//                req.setAttribute("code","500");
+//                req.setAttribute("code","50   0");
                 resp.setHeader("Cache-Control", "no-store");
                 resp.setDateHeader("Expires", 0);
                 resp.setHeader("Pragma", "no-cache");

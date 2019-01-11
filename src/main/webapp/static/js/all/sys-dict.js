@@ -21,7 +21,7 @@ layui.use(['tree', 'table', 'vip_table', 'layer','form'], function () {
             {field: 'dict', title: '字典标识', width: 150}
             , {field: 'dictName', title: '字典名称', width: 150}
             , {field: 'groupDict', title: '字典上级组', width: 100}
-            , {field: 'right', title: '操作', width: 350, align: 'center', toolbar: '#sys_dict_a'} //这里的toolbar值是模板元素的选择器
+            , {field: 'right1', title: '操作', width: 350, align: 'center', toolbar: '#sys_dict_a'} //这里的toolbar值是模板元素的选择器
         ]]
         , url: '/dict/showDict'
         , method: 'get'
@@ -105,7 +105,7 @@ layui.use(['tree', 'table', 'vip_table', 'layer','form'], function () {
                 , cols: [[                  //标题栏
                     {field: 'itemKey', title: '子项值', width: 100}
                     , {field: 'itemVal', title: '子项名', width: 200}
-                    , {field: 'right', title: '操作', width: 230, align: 'center', toolbar: '#sys_dict_item_a'} //这里的toolbar值是模板元素的选择器
+                    , {field: 'right1', title: '操作', width: 230, align: 'center', toolbar: '#sys_dict_item_a'} //这里的toolbar值是模板元素的选择器
                 ]]
                 , url: '/dict/showDictItem?dict='+dict
                 , method: 'get'
@@ -120,7 +120,7 @@ layui.use(['tree', 'table', 'vip_table', 'layer','form'], function () {
         , cols: [[                  //标题栏
             {field: 'itemKey', title: '子项值', width: 100}
             , {field: 'itemVal', title: '子项名', width: 200}
-            , {field: 'right', title: '操作', width: 230, align: 'center', toolbar: '#sys_dict_item_a'} //这里的toolbar值是模板元素的选择器
+            , {field: 'right1', title: '操作', width: 230, align: 'center', toolbar: '#sys_dict_item_a'} //这里的toolbar值是模板元素的选择器
         ]]
         , url: '/dict/showDictItem?dict='+dict
         , method: 'get'
@@ -258,7 +258,7 @@ layui.use(['tree', 'table', 'vip_table', 'layer','form'], function () {
                         , cols: [[                  //标题栏
                             {field: 'itemKey', title: '子项值', width: 100}
                             , {field: 'itemVal', title: '子项名', width: 200}
-                            , {field: 'right', title: '操作', width: 230, align: 'center', toolbar: '#sys_dict_item_a'} //这里的toolbar值是模板元素的选择器
+                            , {field: 'right1', title: '操作', width: 230, align: 'center', toolbar: '#sys_dict_item_a'} //这里的toolbar值是模板元素的选择器
                         ]]
                         , url: '/dict/showDictItem?dict='+dict
                         , method: 'get'
@@ -307,7 +307,7 @@ layui.use(['tree', 'table', 'vip_table', 'layer','form'], function () {
                                     , cols: [[                  //标题栏
                                         {field: 'itemKey', title: '子项值', width: 100}
                                         , {field: 'itemVal', title: '子项名', width: 200}
-                                        , {field: 'right', title: '操作', width: 230, align: 'center', toolbar: '#sys_dict_item_a'} //这里的toolbar值是模板元素的选择器
+                                        , {field: 'right1', title: '操作', width: 230, align: 'center', toolbar: '#sys_dict_item_a'} //这里的toolbar值是模板元素的选择器
                                     ]]
                                     , url: '/dict/showDictItem?dict='+dict
                                     , method: 'get'
@@ -373,7 +373,7 @@ layui.use(['tree', 'table', 'vip_table', 'layer','form'], function () {
                         , cols: [[                  //标题栏
                             {field: 'itemKey', title: '子项值', width: 100}
                             , {field: 'itemVal', title: '子项名', width: 200}
-                            , {field: 'right', title: '操作', width: 230, align: 'center', toolbar: '#sys_dict_item_a'} //这里的toolbar值是模板元素的选择器
+                            , {field: 'right1', title: '操作', width: 230, align: 'center', toolbar: '#sys_dict_item_a'} //这里的toolbar值是模板元素的选择器
                         ]]
                         , url: '/dict/showDictItem?dict='+dict
                         , method: 'get'

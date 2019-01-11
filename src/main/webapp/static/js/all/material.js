@@ -71,7 +71,7 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
                 }
             }}
             , {field: 'updateTime', title: '更新时间', width: 180}
-            , {fixed: 'right', title: '操作', width: 202, align: 'center', toolbar: '#barOption'} //这里的toolbar值是模板元素的选择器
+            , {field: 'right1', title: '操作', width: 202, align: 'center', toolbar: '#barOption'} //这里的toolbar值是模板元素的选择器
         ]]
         , id: 'dataCheck'
         , url: '/material/show'

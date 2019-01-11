@@ -13,8 +13,9 @@ import java.util.List;
  */
 @Mapper
 public interface DailyMapper {
-    Integer countDaily(Integer userId);
-    List<DailyVo> selectDailyListByUserId(@Param("userId") Integer userId, @Param("pageModel") PageModel pageModel);
+    Integer countDaily(@Param("userId") Integer userId,@Param("dailyDate") String dailyDate,@Param("isEvection") String isEvection);
+    List<DailyVo> selectDailyListByUserId(@Param("userId") Integer userId, @Param("pageModel") PageModel pageModel,
+                                          @Param("dailyDate") String dailyDate,@Param("isEvection") String isEvection);
     Integer countDailyByDate(@Param("dailyDate") String dailyDate,@Param("userId") Integer userId);
     Integer addDaily(DailyDto dailyDto);
     void delete(Integer id);

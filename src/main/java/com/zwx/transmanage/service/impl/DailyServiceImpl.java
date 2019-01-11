@@ -23,13 +23,13 @@ public class DailyServiceImpl implements DailyService{
     private DailyMapper dailyMapper;
 
     @Override
-    public Integer countDaily(Integer userId) {
-        return dailyMapper.countDaily(userId);
+    public Integer countDaily(Integer userId,String dailyDate,String isEvection) {
+        return dailyMapper.countDaily(userId,dailyDate,isEvection);
     }
 
     @Override
-    public List<DailyVo> selectDailyListByUserId(UserVo userVo, PageModel pageModel) {
-        List<DailyVo> dailyVoList = dailyMapper.selectDailyListByUserId(userVo.getId(),pageModel);
+    public List<DailyVo> selectDailyListByUserId(UserVo userVo, PageModel pageModel,String dailyDate,String isEvection) {
+        List<DailyVo> dailyVoList = dailyMapper.selectDailyListByUserId(userVo.getId(),pageModel,dailyDate,isEvection);
         for(DailyVo dailyVo:dailyVoList){
             dailyVo.setUserName(userVo.getUserName());
         }

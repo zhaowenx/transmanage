@@ -41,7 +41,7 @@
         <div class="layui-card-header"><span style="font-weight: 800">信息墙</span></div>
         <div class="layui-card-body">
             <div class="layadmin-contact-box">
-                <a href="javascript:;">
+                <!--<a href="javascript:;">-->
                     <div class="layadmin-text-center">
                         <div th:if="${userVo.sex eq '0'}">
                             <img src="../static/images/100011.jpg">
@@ -50,7 +50,7 @@
                             <img src="../static/images/100012.jpg">
                         </div>
                     </div>
-                </a>
+                <!--</a>-->
                 <!--<a href="javascript:;">-->
                     <!--<h3 class="layadmin-title">-->
                         <!--<strong th:text="${userVo.anotherName}"></strong>&nbsp;~~-->
@@ -62,7 +62,7 @@
                     <!--</h3>-->
                 <!--</a>-->
                 <div class="layadmin-address">
-                    <a href="javascript:;">
+                    <!--<a href="javascript:;">-->
                         <strong th:text="${userVo.realName}"></strong>&nbsp;&nbsp;&nbsp;&nbsp;<strong th:text="${userVo.userName}"></strong><br>
                         <strong>QQ:</strong>&nbsp;&nbsp;<span th:text="${userVo.qqNumber}"></span><br>
                         <strong>微信:</strong>&nbsp;&nbsp;<span th:text="${userVo.weixin}"></span><br>
@@ -78,7 +78,7 @@
                         <span th:text="${userVo.cityName}"></span>~
                         <span th:text="${userVo.countyName}"></span><br>
                         <strong>至理名言:</strong>&nbsp;&nbsp;<span th:text="${userVo.wisdom}"></span>
-                    </a>
+                    <!--</a>-->
                 </div>
             </div>
         </div>
