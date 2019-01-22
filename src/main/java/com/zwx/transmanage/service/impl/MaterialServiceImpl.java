@@ -23,13 +23,13 @@ public class MaterialServiceImpl implements MaterialService {
     private MaterialMapper materialMapper;
 
     @Override
-    public Integer countMaterial(Integer userId) {
-        return materialMapper.countMaterial(userId);
+    public Integer countMaterial(Integer userId,String description,String type) {
+        return materialMapper.countMaterial(userId,description,type);
     }
 
     @Override
-    public List<MaterialVo> selectMaterialListByUserId(UserVo userVo, PageModel pageModel) {
-        return materialMapper.selectMaterialListByUserId(userVo.getId(),pageModel);
+    public List<MaterialVo> selectMaterialListByUserId(UserVo userVo, PageModel pageModel,String description,String type) {
+        return materialMapper.selectMaterialListByUserId(userVo.getId(),pageModel,description,type);
     }
 
     @Override

@@ -11,8 +11,8 @@ import java.util.List;
  * Created by zhaowenx on 2018/9/4.
  */
 public interface MaterialService {
-    Integer countMaterial(Integer userId);
-    List<MaterialVo> selectMaterialListByUserId(UserVo userVo, PageModel pageModel);
+    Integer countMaterial(Integer userId,String description,String type);
+    List<MaterialVo> selectMaterialListByUserId(UserVo userVo, PageModel pageModel,String description,String type);
     Integer addMaterial(MaterialDto materialDto);
     void delete(Integer id);
     Integer update(MaterialDto materialDto);

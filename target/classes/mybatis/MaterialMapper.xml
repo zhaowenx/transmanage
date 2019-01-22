@@ -11,13 +11,26 @@
         <result column="UPDATETIME" property="updateTime"/>
     </resultMap>
 
-    <select id="countMaterial" parameterType="Integer" resultType="Integer">
-        SELECT COUNT(1) from material where 1=1 and `USERID` = #{userId};
+    <select id="countMaterial" resultType="Integer">
+        SELECT COUNT(1) from material
+        where 1=1 and `USERID` = #{userId}
+        <if test="description !=null and description!=''">
+            and `DESCRIPTION` like CONCAT('%', #{description}, '%')
+        </if>
+        <if test="type !=null and type!=''">
+            and `TYPE` = #{type}
+        </if>
     </select>
 
     <select id="selectMaterialListByUserId" resultMap="MaterialVoMap">
-        SELECT  * from `material` where 1=1 and
-        `USERID` = #{userId} order by UPDATETIME desc
+        SELECT  * from `material` where 1=1 and `USERID` = #{userId}
+        <if test="description !=null and description!=''">
+            and `DESCRIPTION` like CONCAT('%', #{description}, '%')
+        </if>
+        <if test="type !=null and type!=''">
+            and `TYPE` = #{type}
+        </if>
+        order by UPDATETIME desc
         limit #{pageModel.startRow},#{pageModel.pageSize}
     </select>
 

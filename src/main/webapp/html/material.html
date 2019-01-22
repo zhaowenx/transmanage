@@ -28,9 +28,24 @@
 <body class="body">
 <div class="my-btn-box">
     <span class="fl">
+        <span class="user-defined-label">描述：</span>
+        <div class="user-defined-input-inline">
+            <input type="text" id="description_s" placeholder="请输入描述，支持模糊搜索" autocomplete="off" class="layui-input" />
+        </div>
+        <span class="user-defined-label">分类：</span>
+        <div class="user-defined-input-inline">
+            <select id="type_s" name="type" class="layui-select" style="width: 186.4px;">
+            </select>
+        </div>
+        <button class="layui-btn" id="user-defined-select">查询</button>
+        <button class="layui-btn" id="user-defined-reset">重置</button>
         <!--<a class="layui-btn layui-btn-danger radius btn-delect" id="btn-delete-all">批量删除</a>-->
         <a class="layui-btn btn-add btn-default" id="btn-add">添加</a>
-        <a class="layui-btn btn-add btn-default" id="btn-refresh"><i class="layui-icon">&#xe669;</i></a>
+        <!--<a class="layui-btn btn-add btn-default" id="btn-refresh"><i class="layui-icon">&#xe669;</i></a>-->
+
+        <!--<a class="layui-btn layui-btn-danger radius btn-delect" id="btn-delete-all">批量删除</a>-->
+        <!--<a class="layui-btn btn-add btn-default" id="btn-add">添加</a>-->
+        <!--<a class="layui-btn btn-add btn-default" id="btn-refresh"><i class="layui-icon">&#xe669;</i></a>-->
     </span>
     <!--<span class="fr">-->
     <!--<span class="layui-form-label">日报日期：</span>-->

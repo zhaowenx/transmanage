@@ -38,21 +38,21 @@ public class MaterialController {
     private MaterialService materialService;
 
     @GetMapping("/show")
-    public ResponseTVo show(HttpServletRequest request, Integer pageSize, Integer currentPage){
-        logger.info("MaterialController|show|pageSize:"+pageSize+"|currentPage:"+currentPage);
+    public ResponseTVo show(HttpServletRequest request, Integer pageSize, Integer currentPage,String description,String type){
+        logger.info("MaterialController|show|pageSize:"+pageSize+"|currentPage:"+currentPage+"|description:"+description+"|type:"+type);
         if(pageSize == null || currentPage == null){
             return  ResponseUtil.buildTVo(ResponseCode.FILE.getCode(),ResponseCode.FILE.getMsg(),0,null);
         }
         UserVo userVo = UserUtil.getLoginUser(request,redisUtil);
         logger.info("MaterialController|show|userId:"+userVo.getId());
-        Integer count = materialService.countMaterial(userVo.getId());
+        Integer count = materialService.countMaterial(userVo.getId(),description,type);
         logger.info("MaterialController|show|count："+count);
         if(count == 0){
             return  ResponseUtil.buildTVo(ResponseCode.FILE.getCode(),"还没有新增资料，您可以新增",0,null);
         }
         logger.info("MaterialController|show|count："+count);
         PageModel pageModel=new PageModel(currentPage,pageSize,count,null);
-        List<MaterialVo> materialVoList = materialService.selectMaterialListByUserId(userVo,pageModel);
+        List<MaterialVo> materialVoList = materialService.selectMaterialListByUserId(userVo,pageModel,description,type);
         logger.info("MaterialController|show|materialVoList:"+materialVoList.toString());
         logger.info("MaterialController|show|pageModel:"+pageModel.toString());
         return  ResponseUtil.buildTVo(ResponseCode.SUCCESS.getCode(),ResponseCode.SUCCESS.getMsg(),count,materialVoList);

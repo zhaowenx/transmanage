@@ -13,8 +13,8 @@ import java.util.List;
  */
 @Mapper
 public interface MaterialMapper {
-    Integer countMaterial(Integer userId);
-    List<MaterialVo> selectMaterialListByUserId(@Param("userId") Integer userId, @Param("pageModel") PageModel pageModel);
+    Integer countMaterial(@Param("userId") Integer userId,@Param("description") String description,@Param("type") String type);
+    List<MaterialVo> selectMaterialListByUserId(@Param("userId") Integer userId, @Param("pageModel") PageModel pageModel,@Param("description") String description,@Param("type") String type);
     Integer addMaterial(MaterialDto materialDto);
     void delete(Integer id);
     Integer update(MaterialDto materialDto);

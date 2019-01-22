@@ -26,6 +26,9 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
                 }
                 if("material_type" == dict){
                     option1 = option;
+                    $("select[name=type]").empty();
+                    $("select[name=type]").append(option1);
+                    form.render('select');
                 }
             },
             error : function(xmlq, errq) {
@@ -51,6 +54,26 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
     $("#close-btn-qx").click(function () {
         $("#open-div-add-daily").hide();
     });
+
+    $("#user-defined-select").click(function () {
+        tableIns.reload({
+            where:{
+                "description":$("#description_s").val(),
+                "type":$("#type_s").val()
+            }
+        });
+    });
+
+    $("#user-defined-reset").click(function () {
+        $("#description_s").val('');
+        $("#type_s").val('');
+        // tableIns.reload({
+        //     where:{
+        //         "dailyDate":$("#daily_date_s").val(),
+        //         "isEvection":$("#is_evection_s").val()
+        //     }
+        // });
+    })
 
     // 表格渲染
     var tableIns = table.render({
