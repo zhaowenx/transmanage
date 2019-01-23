@@ -2,7 +2,7 @@
 <configuration>
 
     <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
-    <property name="LOG_HOME" value="C:/zhaowenx_project/lord-of-war/transmanage/src/log" />
+    <property name="LOG_HOME" value="C:/zhaowenx_project/transmanage/src/log" />
     <!--<property name="LOG_HOME" value="/home/zwx" />-->
 
     <springProperty name="appName" scope="context" source="spring.application.name"/>
