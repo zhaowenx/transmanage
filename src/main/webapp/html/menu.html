@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>事务管理|菜单</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="../static/plugins/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="../static/css/style.css" media="all">
+    <link rel="icon" href="../static/images/100002.gif">
+</head>
+<script type="text/javascript" src="../static/plugins/layui/layui.js"></script>
+<script type="text/javascript" src="../static/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../static/js/shouye/layui_commen.js"></script>
+<script type="text/javascript" src="../static/js/all/menu.js"></script>
+<style type="text/css">
+    .layui-id-shouye{
+        margin-top: 10px;
+        margin-left: 27px;
+    }
+    .layui-row-shouye{
+        margin-top: 5px;
+    }
+    .layui-form-address{
+        padding-left: 10px;
+        padding-top: 5px;
+        padding-right: 50px;
+    }
+    .layui-form-btn-all{
+        padding-left: 110px;
+        padding-top: 5px;
+        padding-right: 50px;
+    }
+</style>
+<body class="body">
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 10px;">
+    <legend>没时间研究，现在只支持二级菜单</legend>
+</fieldset>
+<div class="layui-id-shouye">
+    <a id="layui-id-shouye">
+        <i class="layui-icon">&#xe655;</i>
+        <span>首页</span>
+    </a>
+</div>
+<div class="layui-row layui-col-space10 layui-row-shouye">
+    <div class="layui-col-xs12 layui-col-sm2 layui-col-md2">
+        <!-- tree -->
+        <ul id="tree" class="tree-table-tree-box"></ul>
+    </div>
+    <div class="layui-col-xs12 layui-col-sm10 layui-col-md8">
+        <a class="layui-btn layui-btn-xs layui-btn-radius layui-btn-normal" id="add-menu">
+            <input type="hidden" id="parentId" />
+            <span id="layui-id-add-menu"></span>
+        </a>
+        <table class="layui-table" id="dateTable" lay-filter="dateTable"></table>
+    </div>
+</div>
+
+<!-- 表格操作按钮集 -->
+<script type="text/html" id="barOption">
+    <a class="layui-btn layui-btn-xs layui-btn-radius layui-btn-normal" lay-event="update"><i class="layui-icon">&#xe642;</i></a>
+    <a class="layui-btn layui-btn-xs layui-btn-radius layui-btn-danger" lay-event="delete"><i class="layui-icon">&#xe640;</i></a>
+</script>
+
+<div id="open-div-add-menu" hidden>
+    <form class="layui-form layui-form-address">
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">菜单名称</label>
+            <div class="layui-input-block">
+                <input type="hidden" name="parentId" id="parentId_1">
+                <input type="text" placeholder="请输入菜单名称" name="text"  lay-verify="required" class="layui-input" maxlength="30"/>
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">访问地址</label>
+            <div class="layui-input-block">
+                <input type="text" placeholder="请输入访问地址" name="href"  class="layui-input" maxlength="300" />
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-btn-all">
+            <button class="layui-btn layui-btn-sm" lay-submit lay-filter="addMenu"><a class="layui-icon">&#xe609;</a><span>保存</span></button>
+        </div>
+    </form>
+</div>
+
+<div id="open-div-update-menu" hidden>
+    <form class="layui-form layui-form-address">
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">菜单名称</label>
+            <div class="layui-input-block">
+                <input type="hidden" name="id" id="id">
+                <input type="text" placeholder="请输入菜单名称" name="text"  id="text" lay-verify="required" class="layui-input" maxlength="30"/>
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">访问地址</label>
+            <div class="layui-input-block">
+                <input type="text" placeholder="请输入访问地址" name="href"  id="href" class="layui-input" maxlength="300" />
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-btn-all">
+            <button class="layui-btn layui-btn-sm" lay-submit lay-filter="updateMenu"><a class="layui-icon">&#xe609;</a><span>修改</span></button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

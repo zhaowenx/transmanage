@@ -62,7 +62,7 @@ layui.use(['tree', 'table', 'vip_table', 'layer','form'], function () {
                                 ,btn: "重新删除"
                                 ,skin: 'layui-layer-molv'
                                 ,icon :2
-                                ,yes: function (index, layero) {
+                                ,yes: function (index, layer) {
                                     layer.close(index);
                                 }
                             });
@@ -76,7 +76,7 @@ layui.use(['tree', 'table', 'vip_table', 'layer','form'], function () {
                             ,btn: "重新删除"
                             ,skin: 'layui-layer-molv'
                             ,icon :2
-                            ,yes: function (index, layero) {
+                            ,yes: function (index, layer) {
                                 layer.close(index);
                             }
                         });

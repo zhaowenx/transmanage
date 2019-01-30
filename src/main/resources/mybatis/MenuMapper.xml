@@ -9,14 +9,43 @@
         <result column="HREF" property="href"/>
         <result column="PARENTID" property="parentId"/>
         <result column="AVAILABLE" property="available"/>
+        <result column="MAENULEVEL" property="menuLevel"/>
     </resultMap>
 
     <select id="getMenu" resultMap="MenuVoMap">
-        select `id`,`text`,`href`,`parentId`,`available`,`icon` from `menu` where `PARENTID` = 0 and `AVAILABLE` = 1;
+        select `id`,`text`,`href`,`parentId`,`available`,`icon`,`menuLevel` from `menu` where `PARENTID` = 0 and `AVAILABLE` = 1;
     </select>
 
     <select id="getMenuById" resultMap="MenuVoMap">
-        select `id`,`text`,`href`,`parentId`,`available`,`icon` from `menu` where `AVAILABLE` = 1 and `PARENTID` = #{id};
+        select `id`,`text`,`href`,`parentId`,`available`,`icon`,`menuLevel`
+        from `menu` where `AVAILABLE` = 1 and `PARENTID` = #{id}
+        order by id asc
     </select>
+
+    <select id="countMenuById" resultType="Integer">
+        select COUNT(1) from `menu` where `AVAILABLE` = 1 and `PARENTID` = #{id};
+    </select>
+
+    <select id="getMenuLevelById" resultType="Integer">
+        select `menulevel` from `menu` where `id` = #{id}
+    </select>
+
+    <insert id="addMenu" parameterType="com.zwx.transmanage.domain.dto.MenuDto">
+        insert into `menu` (`TEXT`,`icon`,`href`,`PARENTID`,`AVAILABLE`,`MENULEVEL`) values (
+        #{text},#{icon},#{href},#{parentId},1,#{menuLevel}
+        )
+    </insert>
+
+    <select id="countChildrenById" resultType="Integer">
+        select count(1) from `menu` where `parentId` = #{id}
+    </select>
+
+    <delete id="delete" >
+        delete from `menu` where id = #{id}
+    </delete>
+
+    <update id="update" parameterType="com.zwx.transmanage.domain.dto.MenuDto">
+        update `menu` set `TEXT` = #{text},`href` = #{href} where `id` = #{id}
+    </update>
 
 </mapper>

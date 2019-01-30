@@ -93,7 +93,7 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- 内置接口 -->
+        <!-- 健康监控 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>

@@ -204,24 +204,27 @@ CREATE TABLE `menu` (
   `ID` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `TEXT` varchar(64) DEFAULT NULL COMMENT '菜单名称',
   `ICON` varchar(32) DEFAULT NULL COMMENT '菜单图标',
-  `HREF` varchar(32) DEFAULT NULL COMMENT '访问地址',
+  `HREF` varchar(200) DEFAULT NULL COMMENT '访问地址',
   `PARENTID` int(11) DEFAULT NULL COMMENT '父菜单id,所有一级菜单的父菜单id都为0',
   `AVAILABLE` tinyint(1) DEFAULT '1' COMMENT '是否可用，1：可用，2：不可用',
+	`MENULEVEL` int(2) DEFAULT null COMMENT '菜单级别',
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='菜单表';
 
 -- ----------------------------
 -- Records of menu
 -- ----------------------------
-INSERT INTO `menu` VALUES ('1', '个人中心', '&#xe653;', '', '0', '1');
-INSERT INTO `menu` VALUES ('2', '系统管理', '&#xe716;', '', '0', '1');
-INSERT INTO `menu` VALUES ('3', '日报', '&#xe60a;', '/html/daily.html', '1', '1');
-INSERT INTO `menu` VALUES ('4', '记事本', '&#xe656;', '/html/wordpad.html', '1', '1');
-INSERT INTO `menu` VALUES ('5', '资料', '&#xe655;', '/html/material.html', '1', '1');
-INSERT INTO `menu` VALUES ('6', '通讯录', '&#xe613;', '/address/show', '1', '1');
-INSERT INTO `menu` VALUES ('7', '数据字典', '&#xe857;', '/html/sys-dict.html', '2', '1');
-INSERT INTO `menu` VALUES ('8', '公告消息', '&#xe857;', '/html/publish-notification.html', '2', '1');
-INSERT INTO `menu` VALUES ('9', '客户管理', '&#xe717;', '', '0', '1');
+INSERT INTO `menu` VALUES (1, '个人中心', '&#xe653;', '', 0, 1, 1);
+INSERT INTO `menu` VALUES (2, '系统管理', '&#xe716;', '', 0, 1, 1);
+INSERT INTO `menu` VALUES (3, '日报', '&#xe60a;', '/html/daily.html', 1, 1, 2);
+INSERT INTO `menu` VALUES (4, '记事本', '&#xe656;', '/html/wordpad.html', 1, 1, 2);
+INSERT INTO `menu` VALUES (5, '资料', '&#xe655;', '/html/material.html', 1, 1, 2);
+INSERT INTO `menu` VALUES (6, '通讯录', '&#xe613;', '/address/show', 1, 1, 2);
+INSERT INTO `menu` VALUES (7, '数据字典', '&#xe857;', '/html/sys-dict.html', 2, 1, 2);
+INSERT INTO `menu` VALUES (8, '公告管理', '&#xe857;', '/html/publish-notification.html', 2, 1, 2);
+INSERT INTO `menu` VALUES (10, '开科OA', '&#xe857;', 'http://oa.kayakwise.com:39090/login.jsp', 2, 1, 2);
+INSERT INTO `menu` VALUES (11, '笔趣阁', '&#xe857;', 'http://www.biquyun.com', 2, 1, 2);
+INSERT INTO `menu` VALUES (12, '菜单管理', '&#xe857;', '/menu/init', 2, 1 , 2);
 
 -- ----------------------------
 -- Table structure for publishnotification

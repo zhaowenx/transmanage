@@ -11,6 +11,7 @@ public class Menu {
     private String href;//访问地址
     private Integer parentId;//父菜单id,所有一级菜单的父菜单id都为0
     private Integer available;//是否可用，1：可用，2：不可用
+    private Integer menuLevel;//菜单级别
 
     public Integer getId() {
         return id;
@@ -60,6 +61,14 @@ public class Menu {
         this.available = available;
     }
 
+    public Integer getMenuLevel() {
+        return menuLevel;
+    }
+
+    public void setMenuLevel(Integer menuLevel) {
+        this.menuLevel = menuLevel;
+    }
+
     @Override
     public String toString() {
         return "Menu{" +
@@ -69,6 +78,7 @@ public class Menu {
                 ", href='" + href + '\'' +
                 ", parentId=" + parentId +
                 ", available=" + available +
+                ", menuLevel=" + menuLevel +
                 '}';
     }
 }
