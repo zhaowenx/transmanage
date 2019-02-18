@@ -25,7 +25,7 @@ public interface UserService {
     String selectUserNameByUserId(Integer userId);
     Integer selectUserVoByPhoneAndUserName(String mobile,String userName);
     Integer addUser(UserDto userDto);
-    List<UserVo> selectAllNotSuper(PageModel pageModel);
+    List<UserVo> selectAll(PageModel pageModel,String userName,String mobile);
     Integer countUserNotSuper();
     void deleteUserById(Integer id);
 

@@ -88,8 +88,8 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public List<UserVo> selectAllNotSuper(PageModel pageModel) {
-        return userMapper.selectAllNotSuper(pageModel);
+    public List<UserVo> selectAll(PageModel pageModel,String userName,String mobile) {
+        return userMapper.selectAll(pageModel,userName,mobile);
     }
 
     @Override

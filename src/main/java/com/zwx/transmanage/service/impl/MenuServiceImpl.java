@@ -60,4 +60,14 @@ public class MenuServiceImpl implements MenuService{
     public Integer update(MenuDto menuDto) {
         return menuMapper.update(menuDto);
     }
+
+    @Override
+    public List<Integer> getMenuByRoleId(List<Integer> roleId) {
+        return menuMapper.getMenuByRoleId(roleId);
+    }
+
+    @Override
+    public List<MenuVo> getMenuVoListByRoleId(List<Integer> roleId) {
+        return menuMapper.getMenuVoListByRoleId(roleId);
+    }
 }

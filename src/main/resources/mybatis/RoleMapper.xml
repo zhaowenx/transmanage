@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zwx.transmanage.mapper.RoleMapper">
+
+    <resultMap id="RoleVoMap" type="com.zwx.transmanage.domain.vo.RoleVo">
+        <result column="ROLEID" property="roleId"/>
+        <result column="ROLENAME" property="roleName"/>
+        <result column="ROLETYPE" property="roleType"/>
+        <result column="DESCRIPT" property="descript"/>
+    </resultMap>
+
+    <resultMap id="RoleMenuVoMap" type="com.zwx.transmanage.domain.vo.RoleMenuVo">
+        <result column="ROLEID" property="roleId"/>
+        <result column="MENUID" property="menuId"/>
+    </resultMap>
+
+    <resultMap id="UserRoleVoMap" type="com.zwx.transmanage.domain.vo.UserRoleVo">
+        <result column="ROLEID" property="roleId"/>
+        <result column="USERID" property="userId"/>
+    </resultMap>
+
+    <select id="countRole" resultType="Integer">
+        select count(1) from `role`;
+    </select>
+
+    <select id="selectRole" resultMap="RoleVoMap">
+        select `ROLEID`,`ROLENAME`,`ROLETYPE`,`DESCRIPT` from `role`
+        where 1=1
+        <if test="roleName !=null and roleName!=''">
+            and `ROLENAME` = #{roleName}
+        </if>
+        <if test="roleType !=null and roleType!=''">
+            and `ROLETYPE` = #{roleType}
+        </if>
+        order by `ROLEID` ASC
+         limit #{pageModel.startRow},#{pageModel.pageSize}
+    </select>
+
+    <insert id="addRole" parameterType="com.zwx.transmanage.domain.dto.RoleDto">
+        insert into `role`(`ROLENAME`,`ROLETYPE`,`DESCRIPT`)values(#{roleName},#{roleType},#{descript})
+    </insert>
+
+    <update id="updateRole" parameterType="com.zwx.transmanage.domain.dto.RoleDto">
+        update `role` set `ROLENAME` = #{roleName},`ROLETYPE` = #{roleType},`DESCRIPT` = #{descript}
+        where `ROLEID` = #{roleId}
+    </update>
+
+    <delete id="deleteRole">
+        delete from `role` where `ROLEID` = #{roleId}
+    </delete>
+
+    <select id="selectRoleVoById" parameterType="Integer" resultMap="RoleVoMap">
+        select `ROLEID`,`ROLENAME`,`ROLETYPE`,`DESCRIPT` from `role` where `ROLEID` = #{roleId}
+    </select>
+
+    <select id="selectRoleMenuVoByRoleId" parameterType="Integer" resultMap="RoleMenuVoMap">
+        select `ROLEID`,`MENUID` from `role_menu` where `ROLEID` = #{roleId}
+    </select>
+
+    <delete id="deleteRoleMenuByRoleId">
+        DELETE FROM `role_menu` where `ROLEID` = #{roleId}
+    </delete>
+
+    <insert id="addRoleMenu" parameterType="com.zwx.transmanage.domain.dto.RoleMenuDto">
+        insert INTO `role_menu` (`ROLEID`,`MENUID`) values (#{roleId},#{menuId})
+    </insert>
+
+    <select id="selectAll" resultMap="RoleVoMap">
+        SELECT `ROLEID`,`ROLENAME` FROM  `role`
+    </select>
+
+</mapper>

@@ -13,7 +13,6 @@ CREATE TABLE `user` (
   `WEIXIN` varchar(100) DEFAULT NULL COMMENT '微信',
   `QQNUMBER` varchar(100) DEFAULT NULL COMMENT 'QQ',
   `STAFFNO` varchar(300) DEFAULT NULL COMMENT '工号',
-  `ISSUPERUSER` int(1) NOT NULL COMMENT '是否超级用户，0：非超级用户，1：超级用户',
   `LOGINTIMES` bigint(20) DEFAULT NULL COMMENT '登录次数',
   `LASTLOGINDATE` varchar(100) DEFAULT NULL COMMENT '最后一次登录时间',
   `LASTIP` varchar(50) DEFAULT NULL COMMENT '最后登录的IP',
@@ -36,11 +35,9 @@ CREATE TABLE `user` (
   UNIQUE KEY `MOBILE` (`MOBILE`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户表';
 
--- ----------------------------
--- Records of user
--- ----------------------------
-INSERT INTO `user` VALUES (1,'admin', '123456', '管理员', '', '', '', '', '', '', '1', '59', '2018-11-01 11:32:00', '172.168.71.15', null, '2018-08-23 17:29:59', '2018-11-01 11:32:00', 'N', '', '', '', '', '', '', null, null, null, null);
-INSERT INTO `user` VALUES (2,'zhaowenx', '204813', '赵文宣', '18171414730', '18171414730', 'zhaowenxuan@kayak.com.cn', 'zwx1533147879', '1533147879', '01800', '0', '366', '2018-11-01 16:51:33', '172.168.71.15', '1', '2018-08-23 17:29:59', '2018-11-01 16:51:33', 'N', '江西省', '南昌市', '进贤县', '财富管理软件中心-技术研发部', '北京开科唯识技术有限公司', '2018-04-19', '360124199508204813', '19', 'a,b,c,d,e,f', '永远不要小瞧任何人！');
+INSERT INTO `user` (`ID`, `USERNAME`, `PASSWORD`, `REALNAME`, `PHONE`, `MOBILE`, `EMAIL`, `WEIXIN`, `QQNUMBER`, `STAFFNO`, `LOGINTIMES`, `LASTLOGINDATE`, `LASTIP`, `SEX`, `CREATETIME`, `UPDATETIME`, `ISDELETE`, `PROVINCENAME`, `CITYNAME`, `COUNTYNAME`, `DEPARTMENT`, `COMPANY`, `HIREDATE`, `IDCARD`, `PROFESSION`, `HOBBY`, `WISDOM`) VALUES (1, 'admin', '123456', '管理员', '', '', '', '', '', '', 69, '2019-02-18 15:22:47', '96.2.96.115', NULL, '2018-8-23 17:29:59', '2019-2-18 15:22:47', 'N', '', '', '', '', '', '', NULL, '15', NULL, NULL);
+INSERT INTO `user` (`ID`, `USERNAME`, `PASSWORD`, `REALNAME`, `PHONE`, `MOBILE`, `EMAIL`, `WEIXIN`, `QQNUMBER`, `STAFFNO`, `LOGINTIMES`, `LASTLOGINDATE`, `LASTIP`, `SEX`, `CREATETIME`, `UPDATETIME`, `ISDELETE`, `PROVINCENAME`, `CITYNAME`, `COUNTYNAME`, `DEPARTMENT`, `COMPANY`, `HIREDATE`, `IDCARD`, `PROFESSION`, `HOBBY`, `WISDOM`) VALUES (2, 'zhaowenxuan', '204813', '赵文宣', '18171414730', '18171414730', 'zhaowenxuan@kayak.com.cn', 'zwx1533147879', '1533147879', '01800', 561, '2019-02-18 14:38:48', '96.2.96.115', 1, '2018-8-23 17:29:59', '2019-2-18 14:38:48', 'N', '江西省', '南昌市', '进贤县', '财富管理软件中心-技术研发部', '北京开科唯识技术有限公司', '2018-04-19', '360124199508204813', '1', 'a,b,c,d,e,f', '得之我幸，失之我命');
+INSERT INTO `user` (`ID`, `USERNAME`, `PASSWORD`, `REALNAME`, `PHONE`, `MOBILE`, `EMAIL`, `WEIXIN`, `QQNUMBER`, `STAFFNO`, `LOGINTIMES`, `LASTLOGINDATE`, `LASTIP`, `SEX`, `CREATETIME`, `UPDATETIME`, `ISDELETE`, `PROVINCENAME`, `CITYNAME`, `COUNTYNAME`, `DEPARTMENT`, `COMPANY`, `HIREDATE`, `IDCARD`, `PROFESSION`, `HOBBY`, `WISDOM`) VALUES (3, 'ycs', '123456', NULL, NULL, '17585380490', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, '2019-2-18 15:22:35', '2019-2-18 15:22:35', 'N', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 
 -- ----------------------------
@@ -366,3 +363,26 @@ INSERT INTO `wordpad` VALUES (2,'2', '叹昭君塞', '暮至晨光夕阳醉，�
 INSERT INTO `wordpad` VALUES (3,'2', '叹昭君塞', '暮至晨光夕阳醉，万里春纱漫思泪。\n思君不见半敛眉，归去胡边落叶悲。', '2018-09-04 15:49:24', '2018-09-04 15:49:24', 'N', 'N');
 INSERT INTO `wordpad` VALUES (4,'2', '北京攻略', '【天安们广场】【人民英雄纪念碑】【人民大会堂】【毛主席纪念堂】【中国国家博物馆】【故宫】【老北京胡同】【王府井】【天坛公园】【八达岭长城】【鸟巢】【水立方】【国家体育馆】【颐和园】【军事博物馆】【清华大学】【定陵】', '2018-10-19 15:02:10', '2018-10-19 15:02:10', 'N', 'N');
 INSERT INTO `wordpad` VALUES (5,'2', '评语', '交通基本靠走，通讯基本靠吼，治安基本靠狗，取暖基本靠抖，娱乐基本靠手，致富基本靠抢，吃饭基本靠党，娶妻基本靠想', '2018-10-26 14:52:28', '2018-10-26 14:52:28', 'N', 'N');
+
+DROP TABLE IF EXISTS `role`;
+CREATE TABLE `role` (
+  `ROLEID` int(11) NOT NULL AUTO_INCREMENT COMMENT '角色ID',
+  `ROLENAME` varchar(32) NOT NULL COMMENT '角色名称',
+  `ROLETYPE` int(2) DEFAULT NULL COMMENT '角色类型',
+  `DESCRIPT` varchar(200) DEFAULT NULL COMMENT '描述',
+  PRIMARY KEY (`ROLEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='角色表';
+
+DROP TABLE IF EXISTS `user_role`;
+CREATE TABLE `user_role` (
+  `USERID` int(11) NOT NULL COMMENT '用户ID',
+  `ROLEID` int(11) NOT NULL COMMENT '角色ID',
+  KEY `user_role_index` (`USERID`,`ROLEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户角色表';
+
+DROP TABLE IF EXISTS `role_menu`;
+CREATE TABLE `role_menu` (
+  `ROLEID` int(11) NOT NULL COMMENT '角色ID',
+  `MENUID` int(11) NOT NULL COMMENT '菜单ID',
+  KEY `role_menu_index` (`MENUID`,`ROLEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='角色权限表';

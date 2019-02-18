@@ -1,20 +1,20 @@
 package com.zwx.transmanage.controller.business;
 
-import com.alibaba.fastjson.JSON;
-import com.google.gson.Gson;
 import com.zwx.transmanage.commen.constant.ResponseCode;
 import com.zwx.transmanage.domain.Menu;
 import com.zwx.transmanage.domain.dto.MenuDto;
 import com.zwx.transmanage.domain.vo.MenuVo;
 import com.zwx.transmanage.model.*;
 import com.zwx.transmanage.service.MenuService;
+import com.zwx.transmanage.service.UserRoleService;
+import com.zwx.transmanage.util.RedisUtil;
 import com.zwx.transmanage.util.ResponseUtil;
+import com.zwx.transmanage.util.UserUtil;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,27 +36,36 @@ public class MenuController {
 
     @Autowired
     private MenuService menuService;
+    @Autowired
+    private RedisUtil redisUtil;
+    @Autowired
+    private UserRoleService userRoleService;
 
     @RequestMapping(value = "/getMenu",method = RequestMethod.GET)
     @ResponseBody
-    public ResponseVo getMenu(){
+    public ResponseVo getMenu(HttpServletRequest request){
         logger.info("MenuController|getMenu|start");
 
-        List<Object> oneList = new ArrayList<>();
+        Integer userId = UserUtil.getUserId(request,redisUtil);
+        List<Integer> roleIdList = userRoleService.selectRoleByUserId(userId);
 
-        List<MenuVo> menuVoList = menuService.getMenu();
+        List<Object> oneList = new ArrayList<>();
+//        List<MenuVo> menuVoList = menuService.getMenu();
+        List<MenuVo> menuVoList = menuService.getMenuVoListByRoleId(roleIdList);
         logger.info("MenuController|getMenu|menuVoList:"+menuVoList.toString());
         if(menuVoList.size()==0){
             return ResponseUtil.buildVo(false, ResponseCode.CODE_ERROR.getCode(),"还无菜单，您可以联系管理员",null);
         }
         //递归
         for(MenuVo menuVo:menuVoList){
-            MenuModel menuModel = new MenuModel();
-            menuModel.setText(menuVo.getText());
-            menuModel.setIcon(menuVo.getIcon());
-            menuModel.setHref(menuVo.getHref());
-            menuModel.setSubset(getSubset(menuVo.getId()));
-            oneList.add(menuModel);
+            if(menuVo.getParentId() == 0){
+                MenuModel menuModel = new MenuModel();
+                menuModel.setText(menuVo.getText());
+                menuModel.setIcon(menuVo.getIcon());
+                menuModel.setHref(menuVo.getHref());
+                menuModel.setSubset(getSubset(menuVo.getId(),menuVoList));
+                oneList.add(menuModel);
+            }
         }
 
         logger.info("MenuController|getMenu|data"+oneList);
@@ -113,18 +122,26 @@ public class MenuController {
         }
     }
 
-    public Object getSubset(Integer id){
+    public Object getSubset(Integer id,List<MenuVo> menuVoList){
         List<MenuVo> sonMenuVoList = menuService.getMenuById(id);
+        List<MenuVo> menuVoList1 = new ArrayList<>();
         if(sonMenuVoList.size()==0){
             return "";
         }else{
+            for(MenuVo menuVo2:sonMenuVoList){
+                for(MenuVo menuVo3:menuVoList){
+                    if(menuVo2.getId() == menuVo3.getId()){
+                        menuVoList1.add(menuVo2);
+                    }
+                }
+            }
             List<Object> twoList = new ArrayList<>();
-            for(MenuVo menuVo1:sonMenuVoList){
+            for(MenuVo menuVo1:menuVoList1){
                 MenuModel menuModel = new MenuModel();
                 menuModel.setText(menuVo1.getText());
                 menuModel.setIcon(menuVo1.getIcon());
                 menuModel.setHref(menuVo1.getHref());
-                menuModel.setSubset(getSubset(menuVo1.getId()));
+                menuModel.setSubset(getSubset(menuVo1.getId(),menuVoList1));
                 twoList.add(menuModel);
             }
             return twoList;

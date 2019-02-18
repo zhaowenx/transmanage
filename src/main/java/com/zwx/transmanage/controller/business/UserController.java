@@ -3,10 +3,13 @@ package com.zwx.transmanage.controller.business;
 import com.zwx.transmanage.commen.constant.ResponseCode;
 import com.zwx.transmanage.domain.User;
 import com.zwx.transmanage.domain.dto.UserDto;
+import com.zwx.transmanage.domain.vo.RoleVo;
 import com.zwx.transmanage.model.PageModel;
 import com.zwx.transmanage.model.ResponseTVo;
 import com.zwx.transmanage.model.ResponseVo;
 import com.zwx.transmanage.domain.vo.UserVo;
+import com.zwx.transmanage.service.RoleService;
+import com.zwx.transmanage.service.UserRoleService;
 import com.zwx.transmanage.service.UserService;
 import com.zwx.transmanage.util.*;
 import org.apache.commons.beanutils.BeanUtils;
@@ -42,6 +45,10 @@ public class UserController {
     private UserService userService;
     @Autowired
     private RedisUtil redisUtil;
+    @Autowired
+    private UserRoleService userRoleService;
+    @Autowired
+    private RoleService roleService;
 
     @RequestMapping(value = "/replenish")
     public String replenish(HttpServletRequest request){
@@ -160,9 +167,29 @@ public class UserController {
             return ResponseUtil.buildVo(false, ResponseCode.PARAMETER_ERROR.getCode(),"用户名或手机号码重复",null);
         }
         UserVo userVo = UserUtil.getLoginUser(request,redisUtil);
-        if(userVo.getIsSuperUser() !=1){
-            return ResponseUtil.buildVo(false, ResponseCode.CODE_SYSTEM_ERROR.getCode(),"不是超级管理员不能添加用户",null);
+        List<Integer> loginRoleId = userRoleService.selectRoleByUserId(userVo.getId());
+        for(Integer a:loginRoleId){
+            if(a !=1){
+                return ResponseUtil.buildVo(false, ResponseCode.CODE_SYSTEM_ERROR.getCode(),"不是超级管理员不能添加用户",null);
+            }
         }
+
+        //新增用户的时候，同时设置角色，可以设置多个
+        //设置了超级管理员角色就不能设置其他角色，不是超机管理员可以设置多个角色
+        if(StringUtils.isBlank(user.getRoleId())){
+            return ResponseUtil.buildVo(false, ResponseCode.PARAMETER_ERROR.getCode(),"角色不能为空",null);
+        }else{
+            String[] roleId = user.getRoleId().split(",");
+            if(roleId.length != 1){
+                for(String a : roleId){
+                    RoleVo roleVo = roleService.selectRoleVoById(Integer.valueOf(a));
+                    if(roleVo.getRoleType() == 1){
+                        return ResponseUtil.buildVo(false, ResponseCode.PARAMETER_ERROR.getCode(),"超级管理员角色和其他角色不能同时存在",null);
+                    }
+                }
+            }
+        }
+
         UserDto userDto = new UserDto();
         BeanUtils.copyProperties(userDto,user);
         logger.info("UserController|addUser|userDto:"+userDto.toString());
@@ -171,20 +198,30 @@ public class UserController {
         if(flag<0){
             return ResponseUtil.buildVo(false, ResponseCode.CODE_ERROR.getCode(),ResponseCode.CODE_ERROR.getMsg(),null);
         }
+
+        //新增用户角色表
+        String[] roleId = user.getRoleId().split(",");
+        for(String b:roleId){
+            Integer flag1 = userRoleService.addUserRole(userDto.getId(),Integer.valueOf(b));
+            if(flag1<0){
+                return ResponseUtil.buildVo(false, ResponseCode.CODE_ERROR.getCode(),ResponseCode.CODE_ERROR.getMsg(),null);
+            }
+        }
+
         return ResponseUtil.buildVo(true,ResponseCode.CODE_SUCCESS.getCode(),ResponseCode.CODE_SUCCESS.getMsg(),null);
     }
 
     @GetMapping(value = "/selectAll")
     @ResponseBody
-    public ResponseTVo selectAll(Integer pageSize, Integer currentPage){
+    public ResponseTVo selectAll(Integer pageSize, Integer currentPage,String userName,String mobile){
         logger.info("UserController|selectAll|start");
-        logger.info("UserController|selectAll|pageSize:"+pageSize+" currentPage:"+currentPage);
+        logger.info("UserController|selectAll|pageSize:"+pageSize+" currentPage:"+currentPage+" userName:"+userName+" mobile："+mobile);
         Integer count = userService.countUserNotSuper();
         if(count == 0){
             return  ResponseUtil.buildTVo(ResponseCode.FILE.getCode(),"还没有普通用户，您可以新增",0,null);
         }
         PageModel pageModel=new PageModel(currentPage,pageSize,count,null);
-        List<UserVo> userVoList = userService.selectAllNotSuper(pageModel);
+        List<UserVo> userVoList = userService.selectAll(pageModel,userName,mobile);
         logger.info("UserController|selectAll|userVoList："+userVoList.toString());
         return  ResponseUtil.buildTVo(ResponseCode.SUCCESS.getCode(),ResponseCode.SUCCESS.getMsg(),count,userVoList);
     }
@@ -196,14 +233,21 @@ public class UserController {
         if(user == null || user.getId() == null){
             return ResponseUtil.buildVo(false, ResponseCode.PARAMETER_NULL.getCode(),ResponseCode.PARAMETER_NULL.getMsg(),null);
         }
-        if(user.getIsSuperUser() == 1){
-            return ResponseUtil.buildVo(false, ResponseCode.CODE_SYSTEM_ERROR.getCode(),"超级管理员用户不能删除",null);
+        List<Integer> userRoleId = userRoleService.selectRoleByUserId(user.getId());
+        for(Integer a:userRoleId){
+            if(a == 1){
+                return ResponseUtil.buildVo(false, ResponseCode.CODE_SYSTEM_ERROR.getCode(),"超级管理员用户不能删除",null);
+            }
         }
         UserVo userVo = UserUtil.getLoginUser(request,redisUtil);
-        if(userVo.getIsSuperUser() !=1){
-            return ResponseUtil.buildVo(false, ResponseCode.CODE_SYSTEM_ERROR.getCode(),"不是超级管理员不能删除用户",null);
+        List<Integer> loginRoleId = userRoleService.selectRoleByUserId(userVo.getId());
+        for(Integer a:loginRoleId){
+            if(a != 1){
+                return ResponseUtil.buildVo(false, ResponseCode.CODE_SYSTEM_ERROR.getCode(),"不是超级管理员不能删除用户",null);
+            }
         }
         userService.deleteUserById(user.getId());
+        userRoleService.deleteUserRoleByUserId(user.getId());
         return ResponseUtil.buildVo(true,ResponseCode.CODE_SUCCESS.getCode(),ResponseCode.CODE_SUCCESS.getMsg(),null);
     }
 
@@ -225,4 +269,36 @@ public class UserController {
         return ResponseUtil.buildVo(true,ResponseCode.CODE_SUCCESS.getCode(),ResponseCode.CODE_SUCCESS.getMsg(),userVoList);
     }
 
+
+    @PostMapping("/addUserRole")
+    @ResponseBody
+    public ResponseVo addUserRole(User user){
+        logger.info("UserController|addUserRole|start");
+        logger.info("UserController|addUserRole|user:"+user.toString());
+        if(user == null || user.getId() == null){
+            return ResponseUtil.buildVo(false, ResponseCode.PARAMETER_NULL.getCode(),ResponseCode.PARAMETER_NULL.getMsg(),null);
+        }
+        if(StringUtils.isBlank(user.getRoleId())){
+            return ResponseUtil.buildVo(false, ResponseCode.PARAMETER_NULL.getCode(),"角色不能为空",null);
+        }
+        String[] roleId = user.getRoleId().split(",");
+        if(roleId.length != 1){
+            for(String a : roleId){
+                RoleVo roleVo = roleService.selectRoleVoById(Integer.valueOf(a));
+                if(roleVo.getRoleType() == 1){
+                    return ResponseUtil.buildVo(false, ResponseCode.PARAMETER_ERROR.getCode(),"超级管理员角色和其他角色不能同时存在",null);
+                }
+            }
+        }
+        userRoleService.deleteUserRoleByUserId(user.getId());
+        //新增用户角色表
+        for(String b:roleId){
+            Integer flag1 = userRoleService.addUserRole(user.getId(),Integer.valueOf(b));
+            if(flag1<0){
+                return ResponseUtil.buildVo(false, ResponseCode.CODE_ERROR.getCode(),ResponseCode.CODE_ERROR.getMsg(),null);
+            }
+        }
+        logger.info("UserController|addUserRole|end");
+        return ResponseUtil.buildVo(true,ResponseCode.CODE_SUCCESS.getCode(),ResponseCode.CODE_SUCCESS.getMsg(),null);
+    }
 }

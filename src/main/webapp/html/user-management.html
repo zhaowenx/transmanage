@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>事务管理|用户</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="../static/plugins/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="../static/css/style.css" media="all">
+    <link rel="icon" href="../static/images/100002.gif">
+</head>
+<script type="text/javascript" src="../static/plugins/layui/layui.js"></script>
+<script type="text/javascript" src="../static/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../static/js/shouye/layui_commen.js"></script>
+<script type="text/javascript" src="../static/js/all/user-management.js"></script>
+<style type="text/css">
+    .layui-form-address{
+        padding-left: 10px;
+        padding-top: 5px;
+        padding-right: 50px;
+    }
+    .layui-form-btn-all{
+        padding-left: 110px;
+        padding-top: 5px;
+        padding-right: 50px;
+    }
+    /*.user-defined-label,.user-defined-input-inline{*/
+    /*float: left;*/
+    /*margin-right: 10px;*/
+    /*}*/
+    /*.user-defined-label{*/
+    /*margin-top: 8px;*/
+    /*}*/
+</style>
+<body class="body">
+<div class="my-btn-box">
+    <span class="fl">
+        <span class="user-defined-label">用户名称：</span>
+        <div class="user-defined-input-inline">
+            <input type="text" id="user_name_s" placeholder="请输入用户名称" autocomplete="off" class="layui-input" />
+        </div>
+        <span class="user-defined-label">手机号码：</span>
+        <div class="user-defined-input-inline">
+            <input type="text" id="mobile_s" placeholder="请输入手机号码" autocomplete="off" lay-verify="phone" class="layui-input" />
+        </div>
+        <button class="layui-btn" id="user-defined-select">查询</button>
+        <button class="layui-btn" id="user-defined-reset">重置</button>
+        <!--<a class="layui-btn layui-btn-danger radius btn-delect" id="btn-delete-all">批量删除</a>-->
+        <a class="layui-btn btn-add btn-default" id="btn-add">添加</a>
+        <!--<a class="layui-btn btn-add btn-default" id="btn-refresh"><i class="layui-icon">&#xe669;</i></a>-->
+    </span>
+    <span class="fr">
+    </span>
+</div>
+<table class="layui-table" id="dateTable" lay-filter="dateTable"></table>
+
+<!-- 表格操作按钮集 -->
+<script type="text/html" id="barOption">
+    <a class="layui-btn layui-btn-xs layui-btn-radius layui-btn-danger" lay-event="delete"><i class="layui-icon">&#xe640;</i></a>
+    <a class="layui-btn layui-btn-xs layui-btn-radius layui-btn" lay-event="set" lay-filter="set"><i class="layui-icon">&#xe631;</i></a>
+</script>
+
+<div id="open-div-set-role" hidden>
+    <form class="layui-form layui-form-address">
+        <div class="layui-form-item">
+            <input type="hidden" name="id" id="userId">
+            <label class="layui-form-label">角色</label>
+            <div class="layui-input-block">
+                <a id="role"></a>
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-btn-all">
+            <button class="layui-btn layui-btn-sm" lay-submit lay-filter="addUserRole"><a class="layui-icon">&#xe609;</a><span>保存</span></button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

@@ -17,7 +17,6 @@ public class UserVo{
     private String weixin;//微信
     private String qqNumber;//qq
     private String staffNo;//工号
-    private Integer isSuperUser;//是否超级用户，0：非超级用户，1：超级用户
     private Integer loginTimes;//登录次数
     private Date lastLoginDate;//最后一次登录时间
     private String lastIp;//最后登录的IP
@@ -115,14 +114,6 @@ public class UserVo{
 
     public void setStaffNo(String staffNo) {
         this.staffNo = staffNo;
-    }
-
-    public Integer getIsSuperUser() {
-        return isSuperUser;
-    }
-
-    public void setIsSuperUser(Integer isSuperUser) {
-        this.isSuperUser = isSuperUser;
     }
 
     public Integer getLoginTimes() {
@@ -282,7 +273,6 @@ public class UserVo{
                 ", weixin='" + weixin + '\'' +
                 ", qqNumber='" + qqNumber + '\'' +
                 ", staffNo='" + staffNo + '\'' +
-                ", isSuperUser=" + isSuperUser +
                 ", loginTimes=" + loginTimes +
                 ", lastLoginDate=" + lastLoginDate +
                 ", lastIp='" + lastIp + '\'' +

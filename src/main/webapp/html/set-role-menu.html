@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>事务管理|角色</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="../static/plugins/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="../static/css/style.css" media="all">
+    <link rel="icon" href="../static/images/100002.gif">
+</head>
+<script type="text/javascript" src="../static/plugins/layui/layui.js"></script>
+<script type="text/javascript" src="../static/plugins/layui/layui-xtree.js"></script>
+<script type="text/javascript" src="../static/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../static/js/shouye/layui_commen.js"></script>
+<script type="text/javascript" src="../static/js/all/set-role-menu.js"></script>
+<style type="text/css">
+    .xtree_contianer {
+        width: 500px;
+        /*border: 1px solid #9C9C9C;*/
+        overflow: auto;
+        margin-bottom: 30px;
+        background-color: #fff;
+        padding: 10px 0 25px 5px;
+    }
+    .layui-div-1{
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+</style>
+<body class="body">
+<div class="layui-div-1">
+    <input type="hidden" id="roleId" th:value="${roleVo.roleId}">
+    <span>角色ID：</span><span th:text="${roleVo.roleId}" style="color: #eb7350"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span>角色名称：</span><span th:text="${roleVo.roleName}" style="color: #eb7350"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span>描述：</span><span th:text="${roleVo.descript}" style="color: #eb7350"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="layui-btn layui-btn-xs" id="addRoleMenu"><a class="layui-icon">&#xe609;</a><span>保存</span></button>
+</div>
+    <form class="layui-form">
+        <div id="xtree" class="xtree_contianer"></div>
+    </form>
+<div>
+
+</div>
+</body>
+</html>

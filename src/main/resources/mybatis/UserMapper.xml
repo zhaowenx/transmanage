@@ -13,7 +13,6 @@
         <result column="WEIXIN" property="weixin"/>
         <result column="QQNUMBER" property="qqNumber"/>
         <result column="STAFFNO" property="staffNo"/>
-        <result column="ISSUPERUSER" property="isSuperUser"/>
         <result column="LOGINTIMES" property="loginTimes"/>
         <result column="LASTLOGINDATE" property="lastLoginDate"/>
         <result column="LASTIP" property="lastIp"/>
@@ -37,21 +36,21 @@
         INSERT INTO USER
         (
         `USERNAME`,`PASSWORD`,`REALNAME`,`PHONE`,`MOBILE`,`EMAIL`,`WEIXIN`,`QQNUMBER`,`STAFFNO`,
-        `ISSUPERUSER`,`LOGINTIMES`,`LASTLOGINDATE`,`LASTIP`,`SEX`,`CREATETIME`,`UPDATETIME`,
+        `LOGINTIMES`,`LASTLOGINDATE`,`LASTIP`,`SEX`,`CREATETIME`,`UPDATETIME`,
         `ISDELETE`,`PROVINCENAME`,`CITYNAME`,`COUNTYNAME`,`DEPARTMENT`,`COMPANY`,`HIREDATE`
         )VALUES(
         #{userName},#{passWord},#{realName},#{phone},#{mobile},#{email},#{weixin},#{qqNumber},#{staffNo},
-        #{isSuperUser},#{loginTimes},#{lastLoginDate},#{lastIp},#{sex},NOW(),NOW(),
+        #{loginTimes},#{lastLoginDate},#{lastIp},#{sex},NOW(),NOW(),
         #{isDelete},#{provinceName},#{cityName},#{countyName},#{department},#{company},#{hireDate}
   	    );
     </insert>
 
-    <insert id="addUser" parameterType="com.zwx.transmanage.domain.dto.UserDto">
+    <insert id="addUser" parameterType="com.zwx.transmanage.domain.dto.UserDto" useGeneratedKeys="true" keyProperty="id" keyColumn="ID">
         INSERT INTO USER
         (
-        `USERNAME`,`PASSWORD`,`MOBILE`,`ISSUPERUSER`,`LOGINTIMES`,`CREATETIME`,`UPDATETIME`,`ISDELETE`
+        `USERNAME`,`PASSWORD`,`MOBILE`,`LOGINTIMES`,`CREATETIME`,`UPDATETIME`,`ISDELETE`
         )VALUES(
-        #{userName},#{passWord},#{mobile},0,0,NOW(),NOW(),'N'
+        #{userName},#{passWord},#{mobile},0,NOW(),NOW(),'N'
         );
     </insert>
 
@@ -130,18 +129,25 @@
         select count(1) from `user` where `mobile` = #{mobile} or `username` = #{userName};
     </select>
 
-    <select id="selectAllNotSuper" resultMap="UserVoMap">
-        select * from `user` where `ISSUPERUSER` =0
+    <select id="selectAll" resultMap="UserVoMap">
+        select * from `user`
+        where 1=1
+        <if test="userName !=null and userName!=''">
+            and `USERNAME` = #{userName}
+        </if>
+        <if test="mobile !=null and mobile!=''">
+            and `MOBILE` = #{mobile}
+        </if>
         ORDER  by `UPDATETIME` desc
         limit #{pageModel.startRow},#{pageModel.pageSize};
     </select>
 
     <select id="countUserNotSuper" resultType="Integer">
-        select count(1) from `user` where `ISSUPERUSER` =0;
+        select count(1) from `user`
     </select>
 
     <delete id="deleteUserById" >
-        delete FROM  `user` where `id` = #{id}  and `ISSUPERUSER` =0;
+        delete FROM  `user` where `id` = #{id}
     </delete>
 
     <select id="selectReceiveUser" resultMap="UserVoMap">

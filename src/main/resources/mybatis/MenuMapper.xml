@@ -48,4 +48,30 @@
         update `menu` set `TEXT` = #{text},`href` = #{href} where `id` = #{id}
     </update>
 
+    <select id="getMenuByRoleId" resultType="Integer">
+        select DISTINCT(`menuid`) from `role_menu` t where 1=1
+        <if test="roleId!=null">
+            AND t.ROLEID IN
+            <foreach item="item" index="index" collection="roleId"
+                     open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+    </select>
+
+    <select id="getMenuVoListByRoleId" resultMap="MenuVoMap">
+        SELECT `id`,`text`,`href`,`parentId`,`available`,`icon`,`menuLevel` from `menu` where 1=1
+        and `id` in (
+        select DISTINCT(`menuid`) from `role_menu` t where 1=1
+        <if test="roleId!=null">
+            AND t.ROLEID IN
+            <foreach item="item" index="index" collection="roleId"
+                     open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        )
+        and `AVAILABLE` = 1;
+    </select>
+
 </mapper>

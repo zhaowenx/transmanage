@@ -18,4 +18,6 @@ public interface MenuService {
     Integer countChildrenById(Integer id);
     void delete(Integer id);
     Integer update(MenuDto menuDto);
+    List<Integer> getMenuByRoleId(List<Integer> roleId);
+    List<MenuVo> getMenuVoListByRoleId( List<Integer> roleId);
 }

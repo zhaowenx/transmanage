@@ -21,7 +21,6 @@ public class User{
     private String weixin;//微信
     private String qqNumber;//qq
     private String staffNo;//工号
-    private Integer isSuperUser;//是否超级用户，0：非超级用户，1：超级用户
     private Integer loginTimes;//登录次数
     private String lastLoginDate;//最后一次登录时间
     private String lastIp;//最后登录的IP
@@ -40,6 +39,7 @@ public class User{
     private String profession;//职业
     private String hobby;//兴趣爱好
     private String wisdom;//至理名言
+    private String roleId;//角色id列表
 
     public Integer getId() {
         return id;
@@ -119,14 +119,6 @@ public class User{
 
     public void setStaffNo(String staffNo) {
         this.staffNo = staffNo;
-    }
-
-    public Integer getIsSuperUser() {
-        return isSuperUser;
-    }
-
-    public void setIsSuperUser(Integer isSuperUser) {
-        this.isSuperUser = isSuperUser;
     }
 
     public Integer getLoginTimes() {
@@ -273,6 +265,14 @@ public class User{
         this.wisdom = wisdom;
     }
 
+    public String getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(String roleId) {
+        this.roleId = roleId;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -286,7 +286,6 @@ public class User{
                 ", weixin='" + weixin + '\'' +
                 ", qqNumber='" + qqNumber + '\'' +
                 ", staffNo='" + staffNo + '\'' +
-                ", isSuperUser=" + isSuperUser +
                 ", loginTimes=" + loginTimes +
                 ", lastLoginDate='" + lastLoginDate + '\'' +
                 ", lastIp='" + lastIp + '\'' +
@@ -305,6 +304,7 @@ public class User{
                 ", profession='" + profession + '\'' +
                 ", hobby='" + hobby + '\'' +
                 ", wisdom='" + wisdom + '\'' +
+                ", roleId='" + roleId + '\'' +
                 '}';
     }
 }

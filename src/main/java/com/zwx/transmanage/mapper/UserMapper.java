@@ -26,7 +26,7 @@ public interface UserMapper {
     String selectUserNameByUserId(Integer userId);
     Integer selectUserVoByPhoneAndUserName(@Param("mobile") String mobile,@Param("userName") String userName);
     Integer addUser(UserDto userDto);
-    List<UserVo> selectAllNotSuper(@Param("pageModel") PageModel pageModel);
+    List<UserVo> selectAll(@Param("pageModel") PageModel pageModel,@Param("userName") String userName,@Param("mobile") String mobile);
     Integer countUserNotSuper();
     void deleteUserById(@Param("id") Integer id);
 

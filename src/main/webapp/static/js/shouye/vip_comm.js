@@ -54,21 +54,28 @@ layui.use(['layer', 'element', 'util','element'], function () {
     }
 
     // 添加TAB选项卡.attributes[1].context.outerText
-    window.addTab = function (elem, tit, url) {
+    //status 用来单独check 不是菜单栏新增tab页
+    window.addTab = function (elem, tit, url, status) {
         // console.log(elem['context'].attributes[1].nodeValue);
         // console.log(elem['context'].text);
+        // console.log(elem);
         var title;
         var src;
-        if(elem['context'].attributes[1] == null){
-            title = tit ? tit : elem.children('a').html();
-            src = url ? url : elem.children('a').attr('href-url');
+        if(status == '1'){
+            title = tit;
+            src = url;
         }else{
-            if(elem['context'].attributes[1].nodeValue == 'javascript:;'){
-                title = tit;
-                src = src;
+            if(elem['context'].attributes[1] == null){
+                title = tit ? tit : elem.children('a').html();
+                src = url ? url : elem.children('a').attr('href-url');
             }else{
-                title = tit ? tit : elem['context'].innerHTML;
-                src = url ? url : elem['context'].attributes[1].nodeValue;
+                if(elem['context'].attributes[1].nodeValue == 'javascript:;'){
+                    title = tit;
+                    src = src;
+                }else{
+                    title = tit ? tit : elem['context'].innerHTML;
+                    src = url ? url : elem['context'].attributes[1].nodeValue;
+                }
             }
         }
         var card = 'card';                                              // 选项卡对象

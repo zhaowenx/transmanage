@@ -24,10 +24,6 @@ layui.use(['table', 'form', 'layer', 'vip_table','laydate'], function () {
        elem: '#daily_date_s'
     });
 
-    $("#close-btn-qx").click(function () {
-        $("#open-div-add-daily").hide();
-    });
-
     //获取下拉框值的函数
     function getItemVal(dict) {
         var option = '';

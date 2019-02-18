@@ -21,4 +21,6 @@ public interface MenuMapper {
     Integer countChildrenById(@Param("id") Integer id);
     void delete(@Param("id") Integer id);
     Integer update(MenuDto menuDto);
+    List<Integer> getMenuByRoleId(@Param("roleId") List<Integer> roleId);
+    List<MenuVo> getMenuVoListByRoleId(@Param("roleId") List<Integer> roleId);
 }

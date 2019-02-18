@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zwx.transmanage.mapper.UserRoleMapper">
+
+    <resultMap id="UserRoleVoMap" type="com.zwx.transmanage.domain.vo.UserRoleVo">
+        <result column="USERID" property="userId"/>
+        <result column="ROLEID" property="roleId"/>
+    </resultMap>
+
+    <select id="selectRoleByUserId" resultType="Integer">
+        select `ROLEID` from `user_role` where 1=1 and `USERID` = #{userId}
+    </select>
+
+    <delete id="deleteUserRoleByUserId">
+        DELETE from  `user_role` where `USERID` = #{userId}
+    </delete>
+
+    <insert id="addUserRole">
+        insert into `user_role` (`USERID`,`ROLEID`)values(#{userId},#{roleId});
+    </insert>
+
+</mapper>

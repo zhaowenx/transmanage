@@ -95,15 +95,6 @@
     </div>
     <div class="layui-form-item">
         <div class="layui-inline">
-            <label class="layui-form-label">用户角色</label>
-            <div class="layui-input-inline">
-                <select name="isSuperUser" disabled>
-                    <option value="1" th:selected="${user.isSuperUser == 1}" >超级用户</option>
-                    <option value="0" th:selected="${user.isSuperUser == 0}" >普通用户</option>
-                </select>
-            </div>
-        </div>
-        <div class="layui-inline">
             <label class="layui-form-label">登录次数</label>
             <div class="layui-input-inline">
                 <input type="text" name="loginTimes" autocomplete="off" class="layui-input" th:value="${user.loginTimes}" readonly />
@@ -113,6 +104,12 @@
             <label class="layui-form-label">创建时间</label>
             <div class="layui-input-inline">
                 <input type="text" name="createTime"  autocomplete="off" class="layui-input" th:value="${#dates.format(user.createTime, 'yyyy-MM-dd hh:mm:ss')}" readonly />
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">更新时间</label>
+            <div class="layui-input-inline">
+                <input type="text" name="updateTime" autocomplete="off" class="layui-input" th:value="${#dates.format(user.updateTime, 'yyyy-MM-dd hh:mm:ss')}" readonly />
             </div>
         </div>
     </div>
@@ -130,9 +127,10 @@
             </div>
         </div>
         <div class="layui-inline">
-            <label class="layui-form-label">更新时间</label>
+            <label class="layui-form-label">性别</label>
             <div class="layui-input-inline">
-                <input type="text" name="updateTime" autocomplete="off" class="layui-input" th:value="${#dates.format(user.updateTime, 'yyyy-MM-dd hh:mm:ss')}" readonly />
+                <input type="radio" name="sex" value="1" title="男" th:checked="${user.sex == 1}"/>
+                <input type="radio" name="sex" value="0" title="女" th:checked="${user.sex == 0}"/>
             </div>
         </div>
     </div>
@@ -234,13 +232,6 @@
                     <!--<option value="18" th:selected="${user.profession == '18'}">体育</option>-->
                     <!--<option value="19" th:selected="${user.profession == '19'}">高科技</option>-->
                 </select>
-            </div>
-        </div>
-        <div class="layui-inline">
-            <label class="layui-form-label">性别</label>
-            <div class="layui-input-inline">
-                <input type="radio" name="sex" value="1" title="男" th:checked="${user.sex == 1}"/>
-                <input type="radio" name="sex" value="0" title="女" th:checked="${user.sex == 0}"/>
             </div>
         </div>
     </div>
