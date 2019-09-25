@@ -192,7 +192,7 @@ INSERT INTO `menu` VALUES ('5', '资料', '&#xe655;', '/html/material.html', '1'
 INSERT INTO `menu` VALUES ('6', '通讯录', '&#xe613;', '/address/show', '1', '1', '2');
 INSERT INTO `menu` VALUES ('7', '数据字典', '&#xe857;', '/html/sys-dict.html', '2', '1', '2');
 INSERT INTO `menu` VALUES ('8', '公告管理', '&#xe857;', '/html/publish-notification.html', '2', '1', '2');
-INSERT INTO `menu` VALUES ('9', '开科OA', '&#xe857;', 'http://oa.kayakwise.com:39090/login.jsp', '2', '1', '2');
+INSERT INTO `menu` VALUES ('9', '百度', '&#xe857;', 'www.baidu.com', '2', '1', '2');
 INSERT INTO `menu` VALUES ('10', '笔趣阁', '&#xe857;', 'http://www.biquyun.com', '2', '1', '2');
 INSERT INTO `menu` VALUES ('11', '菜单管理', '&#xe857;', '/menu/init', '2', '1', '2');
 INSERT INTO `menu` VALUES ('12', '用户', '&#xe857;', '', '0', '1', '1');
